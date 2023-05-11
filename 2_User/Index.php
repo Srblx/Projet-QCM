@@ -17,7 +17,7 @@
     require_once 'Utils/header.php';
 
     //* Tableau des contrôleurs disponibles
-    $controllers = ["home"];
+    $controllers = ["home", "choice", "contact", "leaderboard", "profile", "question_correction"];
 
     //* Nom du contrôleur par défaut
     $controller_default = "home";

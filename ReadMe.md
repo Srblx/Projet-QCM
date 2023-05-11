@@ -1,5 +1,4 @@
-Ce projet est actuellement en cours de developpement ! 
-
+Ce projet est actuellement en cours de developpement !
 
 Trame de couleur :
 .color1 {color: #342d5c;}
@@ -8,3 +7,5 @@ Trame de couleur :
 .color4 {color: #e44f79;}
 .color5 {color: #ff7c74;}
 Nom du site ByteMaster
+
+Alex

@@ -1,0 +1,150 @@
+/* Reset CSS */
+
+/* Remise à zéro des marges, des rembourrages et des bordures */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote,
+pre,
+figure,
+hr,
+dl,
+dd,
+dt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Remise à zéro des styles de base pour une compatibilité croisée */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Police de caractères par défaut et taille de police */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Styles de base pour les liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Réinitialisation des listes */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Éléments de formulaire */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Styles de base pour les éléments de formulaire */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+select,
+textarea {
+  cursor: pointer;
+}
+
+/* Placeholder */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+:-moz-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+::-moz-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+/* Images réactives */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 129, 203, 1),
+    rgba(255, 203, 234, 1),
+    rgba(255, 154, 213, 1)
+  );
+}
+
+#home-main {
+  margin: 30% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home-h1-bytemaster {
+  font-size: 3rem;
+}
+
+#home-btn-jouer {
+  width: 60vw;
+  height: 20vw;
+  border-radius: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 2rem 0 20% 0;
+  border: 2px solid black;
+  box-shadow: 4px 4px 4px black;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgb(255, 56, 172) 100%
+  );
+}
+
+#home-span-jouer {
+  font-size: 10vw;
+  color: white;
+}

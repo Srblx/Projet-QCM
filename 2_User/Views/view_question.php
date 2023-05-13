@@ -27,14 +27,17 @@
             <footer>
                 <p id="progress">Question x of y</p> <!-- Emplacement pour afficher la progression du quiz -->
             </footer>
-            <button id="show-correction-btn" class="result-button" style="display: none;" onclick="redirectToCorrectionPage()"></button> <!-- Bouton pour afficher la correction (caché par défaut) -->
+            <button id="showCorrectionBtn" class="result-button" style="display: none;" onclick="redirectToCorrection()"></button> <!-- Bouton pour afficher la correction (caché par défaut) -->
         </div>
     </div>
 
     <script type="text/JavaScript" src="../Content/js/app.js"></script> <!-- Lien vers le fichier JavaScript -->
     <script type="text/JavaScript">
-        function redirectToCorrectionPage() {
+        function redirectToCorrection() {
             window.location.replace("./view_correction.php"); // Redirection vers la page de correction
+        }
+            function redirectToLeaderboard() {
+            window.location.replace("./view_leaderboard.php");
         }
     </script>
 </body>

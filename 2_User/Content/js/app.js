@@ -69,6 +69,7 @@ function showScores() {
     var gameOverHTML = "<h1>Result</h1>";
     gameOverHTML += "<h2 id='score'> Votre Score: " + quiz.score + "</h2>";
     gameOverHTML += "<button id='showCorrectionBtn'>Correction</button>";
+    // gameOverHTML += "<button id='showLeaderboardBtn'>Tableau des Scores</button>";
     var element = document.getElementById('quiz');
     element.innerHTML = gameOverHTML;
     var showCorrectionBtn = document.getElementById('showCorrectionBtn');

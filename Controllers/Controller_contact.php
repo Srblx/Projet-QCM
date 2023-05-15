@@ -11,12 +11,11 @@ class Controller_contact extends Controller
 	public function action_home()
 	{
 		$this->render("home");
+
 	}
 
 	public function action_contact()
 	{
 		$this->render("contact");
 	}
-
-
 }

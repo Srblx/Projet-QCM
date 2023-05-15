@@ -1,3 +1,4 @@
+
 /* Script exécuté uniquement sur la page About  */
 
 document.addEventListener("DOMContentLoaded", function () {

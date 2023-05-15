@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Quiz ByteMaster</title>
-    <link rel="stylesheet" href="../Content/css/style.css">
-</head>
-
-<body>
+<main>
     <button type='button' onclick='location.reload()'>Reload</button> <!-- Bouton pour recharger la page -->
     <div class="container">
         <h1>Quiz ByteMaster</h1> <!-- Titre du quiz -->
@@ -31,7 +22,7 @@
         </div>
     </div>
 
-    <script type="text/JavaScript" src="../Content/js/app.js"></script> <!-- Lien vers le fichier JavaScript -->
+    <script type="text/JavaScript" src="../Content/js/app.js" defer></script> <!-- Lien vers le fichier JavaScript -->
     <script type="text/JavaScript">
         function redirectToCorrection() {
             window.location.replace("./view_correction.php"); // Redirection vers la page de correction
@@ -40,6 +31,4 @@
             window.location.replace("./view_leaderboard.php");
         }
     </script>
-</body>
-
-</html>
+</main>

@@ -8,5 +8,13 @@ class Controller_leaderboard extends Controller
 		$this->action_home();
 	}
 
-	
+	public function action_home()
+	{
+		$this->render("home");
+	}
+
+	public function action_leaderboard()
+	{
+		$this->render("leaderboard");
+	}
 }

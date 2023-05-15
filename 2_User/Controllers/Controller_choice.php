@@ -7,5 +7,10 @@ class Controller_choice extends Controller
 	{
 		$this->action_home();
 	}
-    
+
+	public function action_choice()
+	{
+		$this->render("choice");
+	}
+
 }

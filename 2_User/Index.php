@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Index</title>
+    <link rel="stylesheet" href="./Content/css/style.css">
+    <link rel="stylesheet" href="./Content/css/style_choice.css">
 </head>
 
 <body>

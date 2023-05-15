@@ -23,8 +23,9 @@
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
         crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="./Content/css/style.css">
+    <link rel="stylesheet" href="./Content/css/style_about.css">
+
     <title>Index</title>
 
 </head>
@@ -35,7 +36,7 @@
     //* Inclure les fichiers nécessaires
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
-    require_once 'Utils/header.php';
+    /* require_once 'Utils/header.php'; */
 
     //* Tableau des contrôleurs disponibles
     $controllers = ["home", "login_signup", "leaderboard", "contact"];
@@ -77,7 +78,7 @@
 </body>
 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
 <script src="Content/js/app.js"></script>
-<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+<!-- <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"> -->
 </script>
 
 </html>

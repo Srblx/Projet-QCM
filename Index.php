@@ -7,7 +7,6 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
     <link rel="stylesheet" href="Content/css/style.css">
-    
 
     
     <!-- Link font awesome -->
@@ -80,4 +79,5 @@
 <script src="Content/js/app.js"></script>
 <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
+
 </html>

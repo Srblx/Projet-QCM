@@ -8,6 +8,16 @@ class Controller_login_signup extends Controller
 		$this->action_home();
 	}
 
+	public function aciton_home()
+	{
+		$this->render('home');
+	}
+
+	public function action_login()
+	{
+		$this->render("login");
+	}
+	
 	
     
 }

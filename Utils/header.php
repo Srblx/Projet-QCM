@@ -1,27 +1,31 @@
-<header>
-  <section id="navigation">
-  <div class="logo_titre_nav">
-    <img src="Content/img/logo_detoure.png" alt="" width="3%" class="img_logo_nav">
-    <h1 id="home-h1-bytemaster">ByteMaster</h1>
-<div class="outer-menu">
-  <input class="checkbox-toggle" type="checkbox" />
-  <div class="hamburger">
-    <div></div>
-  </div>
-  <div class="menu">
-    <div>
-      <div class="container_list">
-        <ul class="container_list_link">
-          <li class="link_nav_accueil"><a href="#">Accueil</a></li>
-          <li class="link_nav_classement"><a href="#">Classement</a></li>
-          <li class="link_nav_apropos"><a href="#">A Propos</a></li>
-          <li class="link_nav_contact"><a href="#">Contact</a></li>
-          <li class="link_nav_connexion"><a href="#">Connexion</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section>
+<!-- Barre de navigation -->
+<nav class="navbar navbar-expand-lg navbar-light" id="nav_nav">
+      <a class="navbar-brand" href="?controller=home&action=home"><img src="Content/img/logo_detoure.png" alt="" width="3%" class="img_logo_nav">
+      ByteMaster
+    </a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon" id="menu_hamburger"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="?controller=home&action=home">Accueil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?controller=leaderboard&action=leaderboard">Classement</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?controller=about&action=about">APropos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?controller=contact&action=contact">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?controller=login_signup&action=login">Connexion</a>
+				</li>
+      
+			</ul>
+		</div>
+	</nav>
 </header>

@@ -9,9 +9,6 @@ Trame de couleur :
 Nom du site ByteMaster
 
 
-#Mathieu
-
-Alex
 
 
 Alexis : Page d'accueil / Nav / Connexion / Inscription

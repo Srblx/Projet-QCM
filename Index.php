@@ -59,4 +59,6 @@
 </body>
 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
 <script src="Content/js/app.js"></script>
+<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 </html>

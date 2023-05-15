@@ -24,6 +24,12 @@
 				<li class="nav-item">
 					<a class="nav-link" href="?controller=login_signup&action=login">Connexion</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/2_User/?controller=leaderboard&action=leaderboard">leaderboard user</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/2_User/?controller=choice&action=choice">choice</a>
+				</li>
       
 			</ul>
 		</div>

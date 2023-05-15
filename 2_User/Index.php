@@ -7,7 +7,10 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Index</title>
     <link rel="stylesheet" href="./Content/css/style.css">
+
     <link rel="stylesheet" href="./Content/css/style_choice.css">
+
+
 </head>
 
 <body>
@@ -51,9 +54,9 @@
     }
 
     //* Inclure le fichier de pied de page
-    require_once 'Utils/footer.php';
-    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
-    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
+    // require_once 'Utils/footer.php';
+    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
+    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
     ?>
 </body>
 

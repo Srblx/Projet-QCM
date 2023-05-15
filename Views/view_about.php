@@ -1,15 +1,62 @@
-<main id="about-main">
-    <h1 id="about-h1">FAQ</h1>
-    <div class="about-div-qr">
-        <div class="about-question">Question 1</div>
-        <div class="about-answer">Réponse 1</div>
+<main id="about_main">
+    <h1 id="about_h1">FAQ</h1>
+    <div class="about_faq">
+        <div class="about_question">
+            <div class="about_question-header">
+                <h3>Qu'est-ce que ByteMaster ?</h3>
+                <span class="about_toggle_icon">+</span>
+            </div>
+            <div class="about_answer">
+                <p>ByteMaster est un site de quiz en ligne qui propose une grande variété de quiz sur différents sujets,
+                    y compris la technologie, l'informatique, la culture générale, le divertissement et bien plus
+                    encore.</p>
+            </div>
+        </div>
+        <div class="about_question">
+            <div class="about_question-header">
+                <h3>Comment puis-je jouer à des quiz sur ByteMaster ?</h3>
+                <span class="about_toggle_icon">+</span>
+            </div>
+            <div class="about_answer">
+                <p>Pour jouer à des quiz sur ByteMaster, vous devez vous inscrire sur le site en créant un compte. Une
+                    fois inscrit, vous pourrez parcourir les différentes catégories de quiz, sélectionner ceux qui vous
+                    intéressent et commencer à jouer.</p>
+            </div>
+        </div>
+        <div class="about_question">
+            <div class="about_question-header">
+                <h3>Comment sont notés les quiz sur ByteMaster ?</h3>
+                <span class="about_toggle_icon">+</span>
+            </div>
+            <div class="about_answer">
+                <p>Chaque quiz sur ByteMaster est noté en fonction du nombre de réponses correctes que vous donnez. À la
+                    fin du quiz, vous recevrez un score et éventuellement un classement par rapport aux autres joueurs.
+                </p>
+            </div>
+        </div>
+        <div class="about_question">
+            <div class="about_question-header">
+                <h3>Puis-je créer mes propres quiz sur ByteMaster ?</h3>
+                <span class="about_toggle_icon">+</span>
+            </div>
+            <div class="about_answer">
+                <p>Pour le moment, ByteMaster ne permet pas aux utilisateurs de créer leurs propres quiz. Cependant,
+                    l'équipe de ByteMaster ajoute régulièrement de nouveaux quiz pour offrir une expérience variée et
+                    divertissante à tous les joueurs.
+                </p>
+            </div>
+        </div>
+        <div class="about_question">
+            <div class="about_question-header">
+                <h3>Comment puis-je contacter l'équipe de support de ByteMaster ?</h3>
+                <span class="about_toggle_icon">+</span>
+            </div>
+            <div class="about_answer">
+                <p>Si vous avez des questions, des problèmes techniques ou des commentaires concernant ByteMaster, vous
+                    pouvez contacter notre équipe de support par e-mail à l'adresse support@bytemaster.com. Nous nous
+                    efforcerons de vous répondre dans les plus brefs délais.
+                </p>
+            </div>
+        </div>
     </div>
-
-    <div class="about-div-qr">
-        <div class="about-question">Question 2</div>
-        <div class="about-answer">Réponse 2</div>
-    </div>
-
-    <!-- Ajoutez autant de paires question/réponse que nécessaire -->
-
 </main>

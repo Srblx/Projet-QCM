@@ -72,8 +72,8 @@ function showScores() {
     // gameOverHTML += "<button id='showLeaderboardBtn'>Tableau des Scores</button>";
     var element = document.getElementById('quiz');
     element.innerHTML = gameOverHTML;
-    var showCorrectionBtn = document.getElementById('showCorrectionBtn');
-    showCorrectionBtn.addEventListener('click', showCorrection); // Ajout de l'écouteur d'événement pour afficher la correction
+    // var showCorrectionBtn = document.getElementById('showCorrectionBtn');
+    // showCorrectionBtn.addEventListener('click', showCorrection); // Ajout de l'écouteur d'événement pour afficher la correction
 }
 
 function showCorrection() {
@@ -89,5 +89,6 @@ var questions = [
 ];
 
 var quiz = new Quiz(questions);
+
 
 populate();

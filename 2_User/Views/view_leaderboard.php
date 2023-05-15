@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Leaderboard</title>
-    <link rel="stylesheet" href="../Content/css/style.css">
-</head>
-
-<body>
+<main>
     <div class="leaderboard-container">
         <h1 class="leaderboard-title">Résultat final</h1>
         <h3 id="result-title">Vous avez obtenu X bonnes réponses</h3>
@@ -59,12 +50,10 @@
         </div>
     </div>
 
-    <script type="text/JavaScript" src="../Content/js/app.js"></script>
+    <script type="text/JavaScript" src="../Content/js/app.js" defer></script>
     <script type="text/JavaScript">
         function redirectToCorrection() {
             window.location.replace("./view_correction.php");
         }
     </script>
-</body>
-
-</html>
+</main>

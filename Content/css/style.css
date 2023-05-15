@@ -403,6 +403,8 @@ body {
     rgba(255, 203, 234, 1),
     rgba(255, 154, 213, 1)
   );
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #home-main {

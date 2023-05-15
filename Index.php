@@ -11,6 +11,7 @@
     <title>Index</title>
 
     <link rel="stylesheet" href="./Content/css/style.css">
+    <link rel="stylesheet" href="./Content/css/style_about.css">
 
 </head>
 
@@ -20,7 +21,7 @@
     //* Inclure les fichiers nécessaires
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
-    require_once 'Utils/header.php';
+    /* require_once 'Utils/header.php'; */
 
     //* Tableau des contrôleurs disponibles
     $controllers = ["home", "login_signup", "leaderboard", "contact"];

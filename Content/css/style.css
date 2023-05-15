@@ -46,7 +46,7 @@ body {
     rgba(255, 203, 234, 1),
     rgba(255, 154, 213, 1)
   );
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -121,14 +121,14 @@ body {
 
 /** Style pour la page Contact */
 
-#contact-main {
+#contact_main {
   padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#contact-form {
+#contact_form {
   border: 2px solid black;
   border-top: 0;
   display: flex;
@@ -139,7 +139,7 @@ body {
   gap: 1rem;
 }
 
-#contact-header-form {
+#contact_header_form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,21 +157,21 @@ body {
   border-bottom: 0;
 }
 
-#contact-h3-underline {
+#contact_h3_underline {
   background-color: black;
   width: 50px;
   height: 4px;
   border-radius: 20px;
 }
 
-.contact-inputs {
+.contact_inputs {
   display: flex;
   flex-direction: column;
   padding-bottom: 1.4rem;
 }
 
-.contact-inputs input,
-.contact-inputs textarea {
+.contact_inputs input,
+.contact_inputs textarea {
   width: 70%;
   margin: 1rem 0;
   resize: none;
@@ -180,18 +180,18 @@ body {
   border: 1px solid black;
 }
 
-.contact-inputs input:focus,
-.contact-inputs textarea:focus {
+.contact_inputs input:focus,
+.contact_inputs textarea:focus {
   outline-color: rgb(255, 74, 201);
 }
 
-.contact-inputs {
+.contact_inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#contact-submit {
+#contact_submit {
   background-color: rgb(255, 74, 201);
   border: none;
   border-radius: 20px;

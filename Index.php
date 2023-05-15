@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="Content/css/style.css">
     
     <title>Index</title>
+
+    <link rel="stylesheet" href="./Content/css/style.css">
+
 </head>
 
 <body>

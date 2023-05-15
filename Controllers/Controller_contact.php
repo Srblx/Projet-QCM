@@ -8,5 +8,10 @@ class Controller_contact extends Controller
 		$this->action_home();
 	}
 
+	public function action_home()
+	{
+		$this->render("contact");
+	}
+
 
 }

@@ -1,3 +1,15 @@
+
+const questions = document.querySelectorAll(".about-question");
+
+questions.forEach((question) => {
+  question.addEventListener("click", () => {
+    const answer = question.nextElementSibling;
+    answer.style.display = answer.style.display === "none" ? "block" : "none";
+  });
+});
+
+
+// Javascript pour le menu hamburger
 const hamburger_menu = document.querySelector(".hamburger-menu");
 const container = document.querySelector(".container");
 
@@ -13,3 +25,4 @@ hamburger_menu.addEventListener("click", () => {
     ga('create', 'UA-46156385-1', 'cssscript.com');
     ga('send', 'pageview');
   
+

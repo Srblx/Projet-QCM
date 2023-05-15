@@ -8,12 +8,12 @@
 
     <link rel="stylesheet" href="Content/css/style.css">
 
-    
+
     <!-- Link font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
     <!-- link boostrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -36,7 +36,7 @@
     //* Inclure les fichiers nécessaires
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
-    require_once 'Utils/header.php'; 
+    require_once 'Utils/header.php';
 
     //* Tableau des contrôleurs disponibles
     $controllers = ["home", "login_signup", "leaderboard", "contact"];
@@ -72,13 +72,12 @@
 
     //* Inclure le fichier de pied de page
     require_once 'Utils/footer.php';
-    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
-    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
+    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
+    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>";
     ?>
 </body>
 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
 <script src="Content/js/app.js"></script>
-<!-- <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"> -->
 </script>
 
 </html>

@@ -23,8 +23,8 @@
         integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="./Content/css/style.css">
-    <link rel="stylesheet" href="./Content/css/style_about.css">
+    <link rel="stylesheet" href="Content/css/style.css">
+    <link rel="stylesheet" href="Content/css/style_about.css">
 
     <title>Index</title>
 
@@ -36,7 +36,7 @@
     //* Inclure les fichiers nécessaires
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
-    /* require_once 'Utils/header.php'; */
+    require_once 'Utils/header.php'; 
 
     //* Tableau des contrôleurs disponibles
     $controllers = ["home", "login_signup", "leaderboard", "contact"];

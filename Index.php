@@ -7,6 +7,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Index</title>
     <link rel="stylesheet" href="./Content/css/style.css">
+    <script src="./Content/js/app.js" defer></script>
 </head>
 
 <body>

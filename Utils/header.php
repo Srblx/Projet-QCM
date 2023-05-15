@@ -1,8 +1,8 @@
 <header>
   <section id="navigation">
   <div class="logo_titre_nav">
+    <img src="Content/img/logo_detoure.png" alt="" width="3%" class="img_logo_nav">
     <h1 id="home-h1-bytemaster">ByteMaster</h1>
-  <img src="Content/img/logo_detoure.png" alt="" width="5%" class="img_logo_nav">
 <div class="outer-menu">
   <input class="checkbox-toggle" type="checkbox" />
   <div class="hamburger">

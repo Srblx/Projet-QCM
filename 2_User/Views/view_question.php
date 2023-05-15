@@ -27,7 +27,7 @@
             <footer>
                 <p id="progress">Question x of y</p> <!-- Emplacement pour afficher la progression du quiz -->
             </footer>
-            <button id="showCorrectionBtn" class="result-button" style="display: none;" onclick="redirectToCorrection()"></button> <!-- Bouton pour afficher la correction (caché par défaut) -->
+            <!-- <button id="showCorrectionBtn" class="result-button" style="display: none;" onclick="redirectToCorrection()"></button> Bouton pour afficher la correction (caché par défaut) -->
         </div>
     </div>
 

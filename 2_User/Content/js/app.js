@@ -68,7 +68,7 @@ function showProgress() {
 function showScores() {
     var gameOverHTML = "<h1>Result</h1>";
     gameOverHTML += "<h2 id='score'> Votre Score: " + quiz.score + "</h2>";
-    gameOverHTML += "<button id='showCorrectionBtn'>Correction</button>";
+    // gameOverHTML += "<button id='showCorrectionBtn'>Correction</button>";
     // gameOverHTML += "<button id='showLeaderboardBtn'>Tableau des Scores</button>";
     var element = document.getElementById('quiz');
     element.innerHTML = gameOverHTML;
@@ -85,6 +85,7 @@ window.addEventListener('load', showCorrection);
 
 var questions = [
     new Question("Quelle propriété CSS permet de spécifier la couleur de fond d'un élément ?", ["background-color", "color", "font-color", "text-color"], "background-color"),
+    new Question("Quel est le sélecteur CSS qui cible tous les éléments ?", ["*", "all", "every", "any"], "*"),
 ];
 
 var quiz = new Quiz(questions);

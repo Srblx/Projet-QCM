@@ -1,5 +1,5 @@
-<footer>
+<!-- <footer>
 	<div>
 		Mathieu, Ahmed, Alex, Alexis
 	</div>
-</footer>
+</footer> -->

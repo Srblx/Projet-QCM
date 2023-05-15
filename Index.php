@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link rel="stylesheet" href="Content/css/style.css">
+    
     <title>Index</title>
+
     <link rel="stylesheet" href="./Content/css/style.css">
-    <script src="./Content/js/app.js" defer></script>
+
 </head>
 
 <body>
@@ -52,9 +56,12 @@
 
     //* Inclure le fichier de pied de page
     require_once 'Utils/footer.php';
-    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
-    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
+    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
+    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
     ?>
 </body>
-
+<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+<script src="Content/js/app.js"></script>
+<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 </html>

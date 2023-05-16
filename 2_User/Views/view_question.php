@@ -1,7 +1,7 @@
 <main>
     <button type='button' onclick='location.reload()'>Reload</button> <!-- Bouton pour recharger la page -->
-    <div class="container">
-        <h1>Quiz ByteMaster</h1> <!-- Titre du quiz -->
+    <div class="container_question">
+        <h1 id="byte">Quiz ByteMaster</h1> <!-- Titre du quiz -->
         <div id="quiz">
             <hr style="margin-bottom: 20px">
             <p id="question"></p> <!-- Emplacement pour afficher la question -->

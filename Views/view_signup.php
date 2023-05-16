@@ -1,88 +1,35 @@
-<!-- MAUVAIS CODE
-     <div class="form_back">
-            <div class="form_details_inscription">SignUp</div>
-            <input type="text" class="input" placeholder="Firstname">
-            <input type="text" class="input" placeholder="Username">
-            <input type="text" class="input" placeholder="Password">
-            <input type="text" class="input" placeholder="Confirm Password">
-            <button class="btn">Signup</button>
-            <span class="switch">Already have an account? 
-                <label for="signup_toggle" class="signup_tog">
-                    Sign In
-                </label>
-            </span>
-        </div>
-    </form>
-</div> -->
-<!-- 
-<div class="container_form_inscription">
-    <input id="signup_toggle" type="checkbox">
-    <form class="form_inscription">
-        <div class="form_front_inscription">
-            <div class="form_details_inscription">Inscription</div>
-            <input type="text" class="input" placeholder="Firstname">
-            <input type="text" class="input" placeholder="Username">
-            <input type="text" class="input" placeholder="Password">
-            <input type="text" class="input" placeholder="Confirm Password">
-            <div class="condition_general_utilisation">
+    <form class="form">
+     <div class="form-title"><span>Inscription</span></div>
+      <div class="title-2">ByteMaster</div>
+      <div class="input-container">
+        <input class="input-nom" type="email" placeholder="Entrer Nom"><sup class="sup_form_inscription"> *</sup>
+        <span> </span>
+      </div>
+      <div class="input-container">
+        <input class="input-prenom" type="email" placeholder="Entrer Prenom"><sup class="sup_form_inscription"> *</sup>
+        <span> </span>
+      </div>
+      <div class="input-container">
+        <input class="input-mail" type="email" placeholder="Entrer email"><sup class="sup_form_inscription"> *</sup>
+        <span> </span>
+      </div>
+
+      <section class="bg-stars">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+      </section>
+
+      <div class="input-container">
+        <input class="input-pwd" type="password" placeholder="Entrer Mot de Passe"><sup class="sup_form_inscription"> *</sup>
+      </div>
+      <div class="input-container">
+        <input class="input-cpwd" type="password" placeholder="Confirmer Mot de Passe"><sup class="sup_form_inscription"> *</sup>
+      </div>
+      <div class="condition_general_utilisation">
             <p class="text_condition_generales">
-                <label class="label_checkbox_condition" for="condition_general"></label><sup>*</sup>
-                <span id="checkbox_condition_inscription_erreur" class="erreur"></span>
-                <input type="checkbox" name="condition_general" id="condition_general">
-                En cochant cette case, j'accepte <a href="?controller=condition&action=condition" class="link_condition_generales">les conditions
-                    génerales d'utilisation</a>
-            </p>
-        </div>
-            <input type="submit" class="btn_inscirption" value="S'inscrire">
-            <span class="switch">Vous avez déja un compter? 
-                <label for="signup_toggle" class="signup_tog">
-                    <a href="?controller=login_signup&action=login">inscription</a>
-                </label>
-            </span>
-        </div>
-    </form> -->
-    <div class="content">
-         <div class="text">
-            Login
-         </div>
-         <form action="?controller_login_signup&action=signup_validate">
-            <div class="field">
-                <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><path class="" data-original="#000000" fill="#595959" d="M256 0c-74.439 0-135 60.561-135 135s60.561 135 135 135 135-60.561 135-135S330.439 0 256 0zM423.966 358.195C387.006 320.667 338.009 300 286 300h-60c-52.008 0-101.006 20.667-137.966 58.195C51.255 395.539 31 444.833 31 497c0 8.284 6.716 15 15 15h420c8.284 0 15-6.716 15-15 0-52.167-20.255-101.461-57.034-138.805z"></path></g></svg></span>
-                <label class="label"></label>
-                <input required="" type="text" class="input" name="input_nom_inscription" placeholder="Nom"><sup class="sup_form_inscription">*</sup>
-                <span class="error-message"></span>  
-            </div>
-            <div class="field">
-                <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><path class="" data-original="#000000" fill="#595959" d="M256 0c-74.439 0-135 60.561-135 135s60.561 135 135 135 135-60.561 135-135S330.439 0 256 0zM423.966 358.195C387.006 320.667 338.009 300 286 300h-60c-52.008 0-101.006 20.667-137.966 58.195C51.255 395.539 31 444.833 31 497c0 8.284 6.716 15 15 15h420c8.284 0 15-6.716 15-15 0-52.167-20.255-101.461-57.034-138.805z"></path></g></svg></span>
-                <label class="label"> </label>
-                <input required="" type="text" class="input" name="input_prenom_inscription" placeholder="Prénom"><sup class="sup_form_inscription">*</sup>
-                <span class="error-message"></span> 
-            </div>
-            <div class="field">
-                <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><path class="" data-original="#000000" fill="#595959" d="M256 0c-74.439 0-135 60.561-135 135s60.561 135 135 135 135-60.561 135-135S330.439 0 256 0zM423.966 358.195C387.006 320.667 338.009 300 286 300h-60c-52.008 0-101.006 20.667-137.966 58.195C51.255 395.539 31 444.833 31 497c0 8.284 6.716 15 15 15h420c8.284 0 15-6.716 15-15 0-52.167-20.255-101.461-57.034-138.805z"></path></g></svg></span>
-                <label class="label"></label>
-                <input required="" type="text" class="input" name="input_mail_inscription" placeholder="Mail"><sup class="sup_form_inscription">*</sup>
-                <span class="error-message"></span> 
-            </div>
-            <div class="field">
-                <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><path class="" data-original="#000000" fill="#595959" d="M336 192h-16v-64C320 57.406 262.594 0 192 0S64 57.406 64 128v64H48c-26.453 0-48 21.523-48 48v224c0 26.477 21.547 48 48 48h288c26.453 0 48-21.523 48-48V240c0-26.477-21.547-48-48-48zm-229.332-64c0-47.063 38.27-85.332 85.332-85.332s85.332 38.27 85.332 85.332v64H106.668zm0 0"></path></g></svg></span>
-                <label class="label"></label>
-                <input required="" type="password" class="input" name="input_password_inscription" placeholder="Mot de Passe"> <sup class="sup_form_inscription">*</sup>
-                <div id="password-strength" class="password-strength"></div>
-                <span class="error-message"></span> 
-            </div>
-            <div class="field">
-                <span class="span"><svg class="" xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" y="0" x="0" height="20" width="50" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"><g><path class="" data-original="#000000" fill="#595959" d="M336 192h-16v-64C320 57.406 262.594 0 192 0S64 57.406 64 128v64H48c-26.453 0-48 21.523-48 48v224c0 26.477 21.547 48 48 48h288c26.453 0 48-21.523 48-48V240c0-26.477-21.547-48-48-48zm-229.332-64c0-47.063 38.27-85.332 85.332-85.332s85.332 38.27 85.332 85.332v64H106.668zm0 0"></path></g></svg></span>
-                <label class="label"></label>
-                <input required="" type="password" class="input" name="input_cPassword_inscription" placeholder="Confirme Mot de Passe "><sup class="sup_form_inscription">*</sup>
-                <span class="error-message"></span> 
-            </div>
-            <!-- <div class="forgot-pass">
-               <a href="#">Mot de Passe oublié?</a>
-            </div> -->
-            <div class="condition_general_utilisation">
-            <p class="text_condition_generales">
-                <label class="label_checkbox_condition" for="condition_general"></label><sup>*</sup>
+                <label class="label_checkbox_condition" for="condition_general"></label><sup class="sup_form_inscription"> *</sup>
                 <span id="checkbox_condition_inscription_erreur" class="erreur"></span>
                 <input type="checkbox" name="condition_general" id="condition_general">
                 <br>
@@ -91,13 +38,19 @@
                     génerales d'utilisation</a>
             </p>
         </div>
-            <input type="submit" class="button" name="input_submit_inscription">
-            <div class="sign-up">
-               vous avez déja un compte?
-               <a href="?controller=login_signup&action=login">Connectez-vous</a>
-            </div>
-         </form>
-      </div>
+      <input type="submit" class="submit_form_inscription" value="Inscription">
+  
+      </input>
+
+      <p class="signup-link">
+        Vous avez deja un compte?
+        <a href="?controller=login_signup&action=login" class="up">Connexion</a>
+      </p>
+       
+   </form>
+
+
+
 
       <script>
       // Sélection des éléments du formulaire

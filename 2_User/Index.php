@@ -8,6 +8,7 @@
     <title>Index</title>
     <!-- link css -->
     <link rel="stylesheet" href="./Content/css/style.css">
+    <script src="./Content/js/app.js" defer></script>
     <link rel="stylesheet" href="./Content/css/style_choice.css">
     <link rel="stylesheet" href="./Content/css/style_nav.css">
    

@@ -21,18 +21,19 @@
 }
 
 .card-button {
-    transform: translate(-50%, 125%);
+    transform: translate(-50%, 50%);
     width: 60%;
     border-radius: 1rem;
     border: none;
-    background-color: #008bf8;
+    background-color: #DC53C7;
     color: #fff;
     font-size: 1rem;
     padding: .5rem 1rem;
     position: absolute;
     left: 50%;
-    bottom: 0;
-    opacity: 0;
+    bottom: 1.4rem;
+    /* Ajustement de la position */
+    opacity: 1;
     transition: 0.3s ease-out;
 }
 
@@ -40,30 +41,23 @@
     color: rgb(134, 134, 134);
 }
 
-/*Text*/
 .text-title {
     font-size: 1.5em;
     font-weight: bold;
 }
-
-/*Hover*/
-.card:hover {
-    border-color: #008bf8;
-    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-}
-
-.card:hover .card-button {
-    transform: translate(-50%, 50%);
-    opacity: 1;
-}
-
-/* code à moi */
 
 #section_choice_theme {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.card-button:hover {
+    background-color: #9A1CA3;
+    /* Couleur de fond au survol */
+    transform: translate(-50%, 50%) scale(1.1);
+    /* Effet de zoom */
 }
 
 @media screen and (min-width: 600px) {
@@ -78,6 +72,16 @@
     }
 }
 
+@media screen and (min-width: 850px) {
+    .card-button {
+        transform: translate(-50%, 50%);
+        bottom: 1.4rem;
+        /* Ajustement de la position */
+        opacity: 1;
+    }
+}
+
+
 /* ! Page choix des difficultés ci dessous */
 
 .main {
@@ -86,7 +90,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5em;
-    height: 93vh;
+    height: 70vh;
 
 }
 
@@ -182,7 +186,7 @@
 .card2:hover {
     cursor: pointer;
     scale: 1;
-    background-color: #03A9F4;
+    background-color: #66BB6A;
 }
 
 .card2:hover .twitter {
@@ -192,7 +196,7 @@
 .card3:hover {
     cursor: pointer;
     scale: 1;
-    background-color: black;
+    background-color: #F20000;
 }
 
 .card3:hover .github {
@@ -202,11 +206,16 @@
 .card4:hover {
     cursor: pointer;
     scale: 1;
-    background-color: #8c9eff;
+    background-color: #FFCA28;
 }
 
 .card4:hover .discord {
     fill: white;
+}
+
+.fa-arrow-up {
+    transform: rotate(270deg);
+    font-size: 24px;
 }
 
 @media screen and (min-width: 600px) {

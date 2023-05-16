@@ -27,6 +27,11 @@ class Controller_login_signup extends Controller
 	{
 		$this->render("login");
 	}
+
+	public function action_login_validate()
+	{
+		$this->render("home");
+	}
 	
 	
     

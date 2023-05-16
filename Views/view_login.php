@@ -1,8 +1,8 @@
-      <form class="form">
+      <form class="form" action="?controller=login_signup&action=login_validate" method="POST">
      <div class="form-title"><span>Connexion a votre compte</span></div>
       <div class="title-2">ByteMaster</div>
       <div class="input-container">
-        <input class="input-mail" type="email" placeholder="Enter email">
+        <input class="input-mail" type="email" placeholder="Enter email" name="mail_connexion">
         <span> </span>
       </div>
 
@@ -14,11 +14,10 @@
       </section>
 
       <div class="input-container">
-        <input class="input-pwd" type="password" placeholder="Enter password">
+        <input class="input-pwd" type="password" placeholder="Enter password" name="password_connexion">
       </div>
-      <button type="submit" class="submit_form_connexion">
-        <span class="sign-text">Connexion</span>
-      </button>
+      <input type="submit" class="submit_form_connexion" value="Connexion" name="submit_form_connexion">
+     
 
       <p class="signup-link">
         Vous n'avez pas de compte?

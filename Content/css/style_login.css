@@ -451,9 +451,16 @@
     animation-duration: 1.6s;
   }
   
-  
-  
-  
+.error-message-checkbox,
+.error-message-password,
+.error-message-cpassword,
+.error-message-nom,
+.error-message-prenom,
+.error-message-mail {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+}
   
   
   

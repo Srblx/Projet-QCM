@@ -62,7 +62,7 @@
   font-size: 1.3rem;
   text-shadow: -1.3px -1.3px 0 black, 1.3px -1.3px 0 black, -1.3px 1.3px 0 black,
     1.3px 1.3px 0 black;
-  border: 2px solid black;
+  border-top: 2px solid black;
   border-bottom: 0;
 }
 
@@ -109,14 +109,12 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
 #page-content {
   flex: 1 0 auto;
 }
 
 #sticky-footer {
   background-color: rgba(0, 0, 0, 0.533) !important;
-
 }
 
 .text_footer {
@@ -131,5 +129,4 @@
 
 .text-white-50 {
   color: white !important;
-
 }

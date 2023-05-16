@@ -25,8 +25,14 @@
 
     <link rel="stylesheet" href="Content/css/style.css">
     <link rel="stylesheet" href="Content/css/style_about.css">
+
+    <link rel="stylesheet" href="Content/css/style_contact.css">
+
+
+
     <link rel="stylesheet" href="Content/css/style_login.css">
     <title>ByteMaster Qcm en ligne</title>
+
 
 </head>
 

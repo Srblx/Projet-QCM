@@ -1,17 +1,18 @@
 <?php
 
 class Model
-{   //* Début de la Classe
+{ //* Début de la Classe
 
     private $bd;
 
     private static $instance = null;
 
     /*
-         * Constructeur créant l'objet PDO et l'affectant à $bd
-         */
+     * Constructeur créant l'objet PDO et l'affectant à $bd
+     */
     private function __construct()
-    {  //* Fonction qui sert à faire le lien avec la BDD
+    { //* Fonction qui sert à faire le lien avec la BDD
+
 
         $dsn = "mysql:host=localhost;dbname=qcm";   //* Coordonnées de la BDD
         $login = "root";   //* Identifiant d'accès à la BDD
@@ -32,4 +33,36 @@ class Model
         }
         return self::$instance;
     }
+
+
+    //* Traitement de l'envoie du mail
+/*     public function get_contact_send_mail()
+    {
+        if (isset($_POST['contact_submit'])) {
+            $to = 'alexmonac13@gmail.com';
+            $subject = 'Nouveau message de contact';
+
+            $name = $_POST['contact_name'];
+            $email = $_POST['contact_email'];
+            $object = $_POST['contact_object'];
+            $message = $_POST['contact_message'];
+
+            $headers = "From: $name <$email>" . "\r\n";
+            $headers .= "Reply-To: $email" . "\r\n";
+
+            $body = "Nom: $name\n\n";
+            $body .= "E-mail: $email\n\n";
+            $body .= "Objet: $object\n\n";
+            $body .= "Message:\n$message";
+
+            if (mail($to, $subject, $body, $headers)) {
+                // L'e-mail a été envoyé avec succès
+                echo 'Merci ! Votre message a été envoyé.';
+            } else {
+                // Une erreur s'est produite lors de l'envoi de l'e-mail
+                echo 'Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez réessayer plus tard.';
+            }
+        }
+    } */
+
 }

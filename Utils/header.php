@@ -25,10 +25,10 @@
 					<a class="nav-link" href="?controller=login_signup&action=login">Connexion</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/2_User/?controller=leaderboard&action=leaderboard">leaderboard user</a>
+					<a class="nav-link" href="/2_User/?controller=home&action=home">User</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/2_User/?controller=choice&action=choice">choice</a>
+					<a class="nav-link" href="/1_Admin/?controller=home&action=home">Admin</a>
 				</li>
       
 			</ul>

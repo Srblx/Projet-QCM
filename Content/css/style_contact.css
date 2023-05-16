@@ -130,3 +130,13 @@
 .text-white-50 {
   color: white !important;
 }
+
+#contact_message {
+  border: none;
+  width: 250px;
+  resize: none;
+}
+
+#contact_message::placeholder {
+  text-align: center;
+}

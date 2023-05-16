@@ -52,6 +52,7 @@
 .about_toggle_icon {
   font-weight: bold;
   transition: transform 0.3s ease;
+  user-select: none;
 }
 
 .about_question.active .about_answer {

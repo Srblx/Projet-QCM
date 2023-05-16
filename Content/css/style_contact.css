@@ -32,6 +32,7 @@
 
 #contact_main {
   padding: 2rem;
+  padding-bottom: 14rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,3 +141,10 @@
 #contact_message::placeholder {
   text-align: center;
 }
+
+/* ///////////////Test Mathieu//////////////// */
+
+/* .input-container {
+  display: flex;
+  justify-content: center;
+} */

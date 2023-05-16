@@ -118,7 +118,14 @@
   } */
 
 
+#signup_main, 
+#login_main {
+  padding: 2rem;
+}
 
+#login_main {
+margin-bottom: 10rem;
+}
 
 .link_condition_generales {
   text-decoration: underline;

@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="Content/css/style.css">
     <link rel="stylesheet" href="Content/css/style.css">
     <link rel="stylesheet" href="Content/css/style_about.css">
+
+    <link rel="stylesheet" href="Content/css/style_contact.css">
+
+
+
     <link rel="stylesheet" href="Content/css/style_login.css">
     <link rel="stylesheet" href="Content/css/style_mention_legal.css">
     
@@ -32,6 +37,7 @@
     <script src="./Content/js/app_inscription.js" defer></script>
   
     <title>ByteMaster Qcm en ligne</title>
+
 
 </head>
 

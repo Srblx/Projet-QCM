@@ -1,4 +1,3 @@
-
 a,
 a:visited,
 a:hover,
@@ -7,14 +6,13 @@ a:active {
   text-decoration: none;
 }
 
-
 body {
   background-image: linear-gradient(
     to bottom,
     rgba(255, 129, 203, 1),
     rgba(255, 203, 234, 1),
     rgba(255, 154, 213, 1)
-    );
+  );
 }
 
 #nav_nav {
@@ -33,11 +31,7 @@ body {
 
 .navbar-brand {
   width: 100%;
-
 }
-
-
-
 
 body {
   background-image: linear-gradient(
@@ -49,7 +43,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-
 
 #home-main {
   /* margin: 30% 0; */
@@ -87,7 +80,6 @@ body {
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
-
 
 #about-main {
   padding: 2rem;
@@ -200,4 +192,24 @@ body {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+#page-content {
+  flex: 1 0 auto;
+}
 
+#sticky-footer {
+  background-color: rgba(0, 0, 0, 0.533) !important;
+}
+
+.text_footer {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.mention {
+  text-decoration: underline;
+}
+
+.text-white-50 {
+  color: white !important;
+}

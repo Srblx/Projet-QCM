@@ -8,7 +8,7 @@ class Controller_login_signup extends Controller
 		$this->action_home();
 	}
 
-	public function aciton_home()
+	public function action_home()
 	{
 		$this->render('home');
 	}
@@ -32,7 +32,4 @@ class Controller_login_signup extends Controller
 	{
 		$this->render("home");
 	}
-	
-	
-    
 }

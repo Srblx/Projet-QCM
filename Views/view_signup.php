@@ -3,11 +3,15 @@
     <div class="form-title"><span>Inscription</span></div>
     <div class="title-2">ByteMaster</div>
     <div class="input-container">
-      <input class="input-nom" type="text" placeholder="Entrer Nom" name="inout_nom"><sup class="sup_form_inscription"> *</sup>
+      <input class="input-nom" type="text" placeholder="Entrer Nom" name="input_nom"><sup class="sup_form_inscription"> *</sup>
       <span class="error-message-nom"></span>
     </div>
     <div class="input-container">
       <input class="input-prenom" type="text" placeholder="Entrer Prenom" name="input_prenom"><sup class="sup_form_inscription"> *</sup>
+      <span class="error-message-prenom"></span>
+    </div>
+    <div class="input-container">
+      <input class="input-pseudo" type="text" placeholder="Entrer Pseudo" name="input_pseudo"><sup class="sup_form_inscription"> *</sup>
       <span class="error-message-prenom"></span>
     </div>
     <div class="input-container">

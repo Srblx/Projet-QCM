@@ -74,7 +74,7 @@ body {
   border-radius: 40px;
   text-transform: uppercase;
   cursor: pointer;
-  margin: 1rem 0 20% 0;
+  margin: 1rem 0 2% 0;
   border: 2px solid black;
   box-shadow: 4px 4px 5px black;
   background: radial-gradient(
@@ -203,3 +203,26 @@ body {
 }
 
 
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  background-color: rgba(0, 0, 0, 0.533) !important;
+
+}
+
+.text_footer {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.mention {
+  text-decoration: underline;
+}
+
+.text-white-50 {
+  color: white !important;
+
+}

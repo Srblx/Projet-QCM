@@ -6,15 +6,6 @@ a:active {
   text-decoration: none;
 }
 
-body {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(255, 129, 203, 1),
-    rgba(255, 203, 234, 1),
-    rgba(255, 154, 213, 1)
-  );
-}
-
 #nav_nav {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -29,10 +20,9 @@ body {
   font-weight: bold;
 }
 
-.navbar-brand {
+/* .navbar-brand {
   width: 100%;
-}
-
+} */
 
 body {
   background-image: linear-gradient(
@@ -82,3 +72,33 @@ body {
   font-weight: bold;
 }
 
+#about-main {
+  padding: 2rem;
+}
+
+.about-div-qr {
+  margin-bottom: 1rem;
+}
+
+.about-question {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.about-answer {
+  display: none;
+  background-color: #ffffff;
+  padding: 1rem;
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

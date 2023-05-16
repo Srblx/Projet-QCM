@@ -13,7 +13,7 @@ class Model
     private function __construct()
     {  //* Fonction qui sert à faire le lien avec la BDD
 
-        $dsn = "mysql:host=localhost;dbname=bibliotheque";   //* Coordonnées de la BDD
+        $dsn = "mysql:host=localhost;dbname=qcm";   //* Coordonnées de la BDD
         $login = "root";   //* Identifiant d'accès à la BDD
         $mdp = ""; //* Mot de passe d'accès à la BDD
         $this->bd = new PDO($dsn, $login, $mdp);

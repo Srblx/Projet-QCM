@@ -1,3 +1,33 @@
+#about-main {
+  padding: 2rem;
+}
+
+.about-div-qr {
+  margin-bottom: 1rem;
+}
+
+.about-question {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.about-answer {
+  display: none;
+  background-color: #ffffff;
+  padding: 1rem;
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /** Style pour la page Contact */
 
 #contact_main {
@@ -32,7 +62,7 @@
   font-size: 1.3rem;
   text-shadow: -1.3px -1.3px 0 black, 1.3px -1.3px 0 black, -1.3px 1.3px 0 black,
     1.3px 1.3px 0 black;
-  border-top: 2px solid black;
+  border: 2px solid black;
   border-bottom: 0;
 }
 
@@ -77,4 +107,29 @@
   font-size: 1.4rem;
   color: white;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  background-color: rgba(0, 0, 0, 0.533) !important;
+
+}
+
+.text_footer {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.mention {
+  text-decoration: underline;
+}
+
+.text-white-50 {
+  color: white !important;
+
 }

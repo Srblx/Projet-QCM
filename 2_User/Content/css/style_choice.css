@@ -1,231 +1,209 @@
 /* code récuperer de uiverse */
 .card {
-    width: 190px;
-    height: 254px;
-    border-radius: 20px;
-    background: #f5f5f5;
-    position: relative;
-    padding: 1.8rem;
-    border: 2px solid #c3c6ce;
-    transition: 0.5s ease-out;
-    overflow: visible;
-    margin: 1rem;
+  width: 190px;
+  height: 254px;
+  border-radius: 20px;
+  background: #f5f5f5;
+  position: relative;
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  margin: 1rem;
 }
 
 .card-details {
-    color: black;
-    height: 100%;
-    gap: .5em;
-    display: grid;
-    place-content: center;
+  color: black;
+  height: 100%;
+  gap: 0.5em;
+  display: grid;
+  place-content: center;
 }
 
 .card-button {
-    transform: translate(-50%, 50%);
-    width: 60%;
-    border-radius: 1rem;
-    border: none;
-    background-color: #DC53C7;
-    color: #fff;
-    font-size: 1rem;
-    padding: .5rem 1rem;
-    position: absolute;
-    left: 50%;
-    bottom: 1.4rem;
-    /* Ajustement de la position */
-    opacity: 1;
-    transition: 0.3s ease-out;
+  transform: translate(-50%, 50%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #dc53c7;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 1.4rem;
+  /* Ajustement de la position */
+  opacity: 1;
+  transition: 0.3s ease-out;
 }
 
 .text-body {
-    color: rgb(134, 134, 134);
+  color: rgb(134, 134, 134);
 }
 
 .text-title {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 #section_choice_theme {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card-button:hover {
-    background-color: #9A1CA3;
-    /* Couleur de fond au survol */
-    transform: translate(-50%, 50%) scale(1.1);
-    /* Effet de zoom */
+  background-color: #9a1ca3;
+  /* Couleur de fond au survol */
+  transform: translate(-50%, 50%) scale(1.1);
+  /* Effet de zoom */
 }
 
 @media screen and (min-width: 600px) {
-    #section_choice_theme {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  #section_choice_theme {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .card {
-        margin: 10px;
-    }
+  .card {
+    margin: 10px;
+  }
 }
 
 @media screen and (min-width: 850px) {
-    .card-button {
-        transform: translate(-50%, 50%);
-        bottom: 1.4rem;
-        /* Ajustement de la position */
-        opacity: 1;
-    }
+  .card-button {
+    transform: translate(-50%, 50%);
+    bottom: 1.4rem;
+    /* Ajustement de la position */
+    opacity: 1;
+  }
 }
-
 
 /* ! Page choix des difficultés ci dessous */
 
 .main {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5em;
-    height: 70vh;
-
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  height: 70vh;
 }
 
 .up {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
 }
 
 .down {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
 }
 
 .card1 {
-    width: 120px;
-    height: 120px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 90px 5px 5px 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: .2s ease-in-out;
-}
-
-.instagram {
-    margin-top: 1.5em;
-    margin-left: 1.2em;
-    fill: #cc39a4;
+  width: 120px;
+  height: 120px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
 }
 
 .card2 {
-    width: 120px;
-    height: 120px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 5px 90px 5px 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: .2s ease-in-out;
-}
-
-.twitter {
-    margin-top: 1.5em;
-    margin-left: -.9em;
-    fill: #03A9F4;
+  width: 120px;
+  height: 120px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
 }
 
 .card3 {
-    width: 120px;
-    height: 120px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 5px 5px 5px 90px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: .2s ease-in-out;
+  width: 120px;
+  height: 120px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
 }
 
 .github {
-    margin-top: -.6em;
-    margin-left: 1.2em;
+  margin-top: -0.6em;
+  margin-left: 1.2em;
 }
 
 .card4 {
-    width: 120px;
-    height: 120px;
-    outline: none;
-    border: none;
-    background: white;
-    border-radius: 5px 5px 90px 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    transition: .2s ease-in-out;
-}
-
-.discord {
-    margin-top: -.9em;
-    margin-left: -1.2em;
-    fill: #8c9eff;
+  width: 120px;
+  height: 120px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.2s ease-in-out;
 }
 
 .card1:hover {
-    cursor: pointer;
-    scale: 1;
-    background-color: #cc39a4;
+  cursor: pointer;
+  scale: 1;
+  background-color: #ff88df;
 }
 
 .card1:hover .instagram {
-    fill: white;
+  fill: white;
 }
 
 .card2:hover {
-    cursor: pointer;
-    scale: 1;
-    background-color: #66BB6A;
+  cursor: pointer;
+  scale: 1;
+  background-color: #adffb1;
 }
 
 .card2:hover .twitter {
-    fill: white;
+  fill: white;
 }
 
 .card3:hover {
-    cursor: pointer;
-    scale: 1;
-    background-color: #F20000;
+  cursor: pointer;
+  scale: 1;
+  background-color: #ff7676;
 }
 
 .card3:hover .github {
-    fill: white;
+  fill: white;
 }
 
 .card4:hover {
-    cursor: pointer;
-    scale: 1;
-    background-color: #FFCA28;
+  cursor: pointer;
+  scale: 1;
+  background-color: #ffd350;
 }
 
 .card4:hover .discord {
-    fill: white;
+  fill: white;
 }
 
 .fa-arrow-up {
-    transform: rotate(270deg);
-    font-size: 24px;
+  transform: rotate(270deg);
+  font-size: 24px;
 }
 
 @media screen and (min-width: 600px) {
-
-    .card1,
-    .card2,
-    .card3,
-    .card4 {
-        width: 150px;
-        height: 150px;
-    }
-
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    width: 150px;
+    height: 150px;
+  }
 }

@@ -1,18 +1,39 @@
 #nav_nav {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  
-  .nav-link {
-    font-weight: bold;
-    color: #ffffff !important;
-  }
-  
-  .navbar-brand {
-    font-weight: bold;
-  }
-  
-  .navbar-brand {
-    width: 100%;
-  
-  }
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.nav-link {
+  font-weight: bold;
+  color: #ffffff !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-brand {
+  width: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  background-color: rgba(0, 0, 0, 0.533) !important;
+}
+
+.text_footer {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.mention {
+  text-decoration: underline;
+}
+
+.text-white-50 {
+  color: white !important;
+}

@@ -65,4 +65,44 @@ class Model
         }
     } */
 
+
+    public function get_inscription($Nom, $Prenom, $Pseudo, $Mail, $Password)
+    {
+
+        $requete = "SELECT * FROM user WHERE email = :Mail";
+        $stmt = $this->bd->prepare($requete);
+        $stmt->bindParam(':Mail', $Mail);
+        $stmt->execute();
+        $row = $stmt->fetch();
+      
+
+        if ($stmt->rowCount() > 0 ) {
+
+            $requete2 = "UPDATE user SET password = :password  WHERE email = :mail";
+            $stmt2 = $this->bd->prepare($requete2);
+            $stmt2->bindParam(':mail', $Mail);
+            $stmt2->bindParam(':password', $Password);
+            $stmt2->execute();
+
+        } else if ($stmt->rowCount() > 0) {
+
+            exit('Cet email existe déjà');
+        }
+
+
+        if ($stmt->rowCount() == 0) {
+
+
+            $r = "INSERT INTO user (`nom`, `prenom`, `pseudo`, `email`, `password`, `admin`) VALUES (:Nom, :Prenom, :pseudo, :Mail, :Password, '0')";
+            $stmt = $this->bd->prepare($r);
+            $stmt->execute([
+                ':Nom' => $Nom,
+                ':Prenom' => $Prenom,
+                ':pseudo' => $Pseudo,
+                ':Mail' => $Mail,
+                ':Password' => $Password
+            ]);
+        }
+
+    }
 }

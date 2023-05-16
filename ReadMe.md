@@ -11,3 +11,4 @@ Nom du site ByteMaster
 Alexis : Page d'accueil / Nav / Connexion / Inscription
 Alex, Ahmed : FAQ, Choix thèmes, Choix difficulté, Start Quizz, Contact
 Mathieu : Question, Leaderboard, Correction
+

@@ -25,6 +25,7 @@
 
     <link rel="stylesheet" href="Content/css/style.css">
     <link rel="stylesheet" href="Content/css/style_about.css">
+    <link rel="stylesheet" href="Content/css/style_contact.css">
 
     <title>Index</title>
 

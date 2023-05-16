@@ -18,4 +18,9 @@ class Controller_home extends Controller
     {
         $this->render("about");
     }
+
+	public function action_mention_legal()
+	{
+		$this->render("mention");
+	}
 }

@@ -18,4 +18,12 @@ class Controller_contact extends Controller
 	{
 		$this->render("contact");
 	}
+
+	//* Function pour l'envoie d'e-mail
+/* 	public function action_contact_send_mail()
+	{
+		$m = Model::get_model();
+		$m->get_contact_send_mail();
+		$this->render("contact");
+	} */
 }

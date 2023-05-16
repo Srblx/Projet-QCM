@@ -7,6 +7,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Index</title>
 </head>
+<link rel="stylesheet" href="Content/css/style_contact.css">
+<link rel="stylesheet" href="Content/css/style_nav.css">
 <link rel="stylesheet" href="Content/css/style.css">
 
     

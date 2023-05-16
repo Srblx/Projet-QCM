@@ -17,6 +17,16 @@ class Controller_login_signup extends Controller
 	{
 		$this->render("login");
 	}
+
+	public function action_signup()
+	{
+		$this->render("signup");
+	}
+
+	public function action_signup_validate()
+	{
+		$this->render("login");
+	}
 	
 	
     

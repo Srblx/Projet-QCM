@@ -8,11 +8,15 @@ Trame de couleur :
 .color5 {color: #ff7c74;}
 Nom du site ByteMaster
 
-Alexis : Page d'accueil / Nav / Connexion / Inscription
+<!-- Alexis : Page d'accueil / Nav / Connexion / Inscription
 Alex, Ahmed : FAQ, Choix thèmes, Choix difficulté, Start Quizz, Contact
-Mathieu : Question, Leaderboard, Correction
+Mathieu : Question, Leaderboard, Correction -->
 
-miramas
-deploiement 
-merge git 
-contact portfolio
+Choix du them => form --Mathieu
+Choix du niveau => form --Alex
+generer classement --Alex
+Generation du logo en fonction du choix utilisateur --Ahmed
+generation et affichage question --
+genere correction des question --
+profil utilisateur (ses resultats) Alexis
+Crud --Alexis

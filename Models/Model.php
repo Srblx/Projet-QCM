@@ -163,9 +163,8 @@ class Model
             return;
         }
 
-        // Démarre la session pour stocker l'ID de l'utilisateur connecté
-        session_start();
-        $_SESSION['admin'] = $user->id;
+        // // Démarre la session pour stocker l'ID de l'utilisateur connecté
+        // $_SESSION['admin'] = $user->id;
 
         return $user;
     }

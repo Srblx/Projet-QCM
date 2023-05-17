@@ -25,6 +25,9 @@
 			<li class="nav-item">
 				<a class="nav-link" href="../?controller=login_signup&action=logout" onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?');">Déconnexion</a>
 			</li>
+			<li>
+				<a href="?controller=profile&action=profile" class="nav-link">Profil view</a>
+			</li>
 		</ul>
 	</div>
 </nav>

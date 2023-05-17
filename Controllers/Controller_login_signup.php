@@ -63,6 +63,43 @@ class Controller_login_signup extends Controller
 
 	public function action_login_validate()
 	{
+		if (isset($_POST['submit_form_connexion'])) {
+			$email = filter_input(INPUT_POST, 'mail_connexion', FILTER_VALIDATE_EMAIL);
+			$password = filter_input(INPUT_POST, 'password_connexion', FILTER_SANITIZE_STRING);
+			
+
+			if (empty($email) || empty($password)) {
+				$this->render("connexion");
+				var_dump($email);
+				var_dump($password);
+				echo 'empty';
+				exit();
+			}
+
+			$email = $this->valid_input($email);
+			$password = $this->valid_input($password);
+
+
+			$m = Model::get_model();
+			$user = $m->get_connexion_utilisateur($email, $password);
+			if ($m->get_connexion_utilisateur($email, $password)) {
+				// L'utilisateur existe dans la base de données
+				// Vérifier si l'utilisateur est admin
+				$_SESSION['user'] = array(
+					'id' => $user['id'],
+					'nom' => $user['nom'],
+					'prenom' => $user['prenom'],
+					'mail' => $user['mail'],
+					'admin' => $user['admin']
+				);
+
+
+			}
+
+			$this->render("home");
+			// header("Location: ?controller=home&action=home");
+		}
+	
 		$this->render("home");
 	}
 

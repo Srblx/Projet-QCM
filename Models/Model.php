@@ -105,4 +105,31 @@ class Model
         }
 
     }
+
+    public function get_connexion_utilisateur($email, $password)
+    {
+        $requete = "SELECT * FROM user WHERE email=:email";
+        $stmt = $this->bd->prepare($requete);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+
+        if ($stmt->rowCount() > 0) {
+            $user = $stmt->fetch();
+            if (password_verify($password, $user['password_connexion'])) {
+                // Le mot de passe est correct, renvoie l'utilisateur
+                return $user;
+
+            } else {
+                echo 'mot de passe incorrect';
+                echo $password;
+                // Le mot de passe est incorrect
+                return false;
+            }
+        } else {
+            echo 'l\'utilisateur n\'existe pas';
+            // L'utilisateur n'existe pas dans la base de données
+            return false;
+        }
+    }
 }

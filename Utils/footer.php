@@ -11,7 +11,7 @@
             </div>
     <div class="container text-center">
       <small class="text_footer">Copyright 2023 &copy; ByteMaster</small>
-      <a href="?controller=home&action=mention_legal" class="text_footer mention">Mentions Légals</a>
+      <a href="?controller=home&action=mention_legal" class="text_footer mention">Mentions Légales</a>
       <p class="text_footer">Alexis | Mathieu | Alex | Ahmed</p>
     </div>
   </footer>

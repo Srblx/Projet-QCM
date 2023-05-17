@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./Content/css/style_leaderboard.css">
     <link rel="stylesheet" href="./Content/css/style_question.css">
     <link rel="stylesheet" href="./Content/css/style_contact.css">
+    <link rel="stylesheet" href="./Content/css/style_about.css">
 
     <!-- Link font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"

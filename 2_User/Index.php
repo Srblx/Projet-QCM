@@ -1,3 +1,6 @@
+<?php if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Index</title>
-    <!-- link css -->
 
+    <!-- link js -->
     <script src="./Content/js/app.js" defer></script>
     <script src="./Content/js/about.js" defer></script>
+
+    <!-- link css -->
     <link rel="stylesheet" href="./Content/css/style.css">
     <link rel="stylesheet" href="./Content/css/style_choice.css">
     <link rel="stylesheet" href="Content/css/style_about.css">
@@ -76,8 +81,8 @@
 
     //* Inclure le fichier de pied de page
     require_once 'Utils/footer.php';
-    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
-    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
+    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
+    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
     ?>
 </body>
 

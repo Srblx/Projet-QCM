@@ -3,7 +3,7 @@
     <div class="form-title"><span>Connexion a votre compte</span></div>
     <div class="title-2">ByteMaster</div>
     <div class="input-container">
-      <input class="input-mail" type="email" placeholder="Enter email" name="mail_connexion">
+      <input class="input-email" type="email" placeholder="Enter email" name="mail_connexion">
       <span> </span>
     </div>
 
@@ -15,7 +15,7 @@
     </section>
 
     <div class="input-container">
-      <input class="input-pwd" type="password" placeholder="Enter password" name="password_connexion">
+      <input class="input-password" type="password" placeholder="Enter password" name="password_connexion">
     </div>
     <input type="submit" class="submit_form_connexion" value="Connexion" name="submit_form_connexion">
 

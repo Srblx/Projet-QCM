@@ -132,4 +132,50 @@ class Model
             return false;
         }
     }
+
+    public function get_connexion()
+    {
+        $email = filter_var(trim(htmlspecialchars($_POST['mail_connexion'], FILTER_VALIDATE_EMAIL)));
+        $password = filter_var(trim(htmlspecialchars($_POST['password_connexion'], FILTER_SANITIZE_STRING)));
+
+        if (!$email) {
+            // L'adresse e-mail n'est pas valide, renvoyer un message d'erreur
+            echo "<script>alert('L\'adresse e-mail n\'est pas valide');</script>";
+            return;
+        }
+
+        $r = $this->bd->prepare("SELECT * FROM user WHERE email=:email");
+        $r->bindParam(':email', $email);
+        $r->execute();
+        $user = $r->fetch(PDO::FETCH_OBJ);
+
+        // Vérifier si l'adresse e-mail existe dans la base de données
+        if (!$user) {
+            // L'adresse e-mail n'existe pas dans la base de données, renvoyer un message d'erreur
+            echo "<script>alert('Cette adresse e-mail n\'est pas enregistrée, veuillez vous inscrire !');</script>";
+            return;
+        }
+
+        // Vérifier si le mot de passe correspond à celui stocké dans la base de données
+        if (!password_verify($password, $user->password)) {
+            // Le mot de passe ne correspond pas à celui stocké dans la base de données, renvoyer un message d'erreur
+            echo "<script>alert('Le mot de passe est incorrect !');</script>";
+            return;
+        }
+
+        // Démarre la session pour stocker l'ID de l'utilisateur connecté
+        session_start();
+        $_SESSION['admin'] = $user->id;
+
+        return $user;
+    }
+
+
+    private function valid_input($data)
+	{
+		$data = trim($data);
+		$data = htmlspecialchars($data);
+		$data = stripcslashes($data);
+		return $data;
+	}
 }

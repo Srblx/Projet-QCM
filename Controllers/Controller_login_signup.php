@@ -63,45 +63,63 @@ class Controller_login_signup extends Controller
 
 	public function action_login_validate()
 	{
-		if (isset($_POST['submit_form_connexion'])) {
-			$email = filter_input(INPUT_POST, 'mail_connexion', FILTER_VALIDATE_EMAIL);
-			$password = filter_input(INPUT_POST, 'password_connexion', FILTER_SANITIZE_STRING);
-			
-
-			if (empty($email) || empty($password)) {
-				$this->render("connexion");
-				var_dump($email);
-				var_dump($password);
-				echo 'empty';
-				exit();
-			}
-
-			$email = $this->valid_input($email);
-			$password = $this->valid_input($password);
-
-
-			$m = Model::get_model();
-			$user = $m->get_connexion_utilisateur($email, $password);
-			if ($m->get_connexion_utilisateur($email, $password)) {
-				// L'utilisateur existe dans la base de données
-				// Vérifier si l'utilisateur est admin
-				$_SESSION['user'] = array(
-					'id' => $user['id'],
-					'nom' => $user['nom'],
-					'prenom' => $user['prenom'],
-					'mail' => $user['mail'],
-					'admin' => $user['admin']
-				);
-
-
-			}
-
-			$this->render("home");
-			// header("Location: ?controller=home&action=home");
-		}
 	
-		$this->render("home");
+        if (isset($_POST['submit_form_connexion'])) {
+            $m = Model::get_model();
+            $user = $m->get_connexion();
+
+            if ($user) {
+                $nom = $user->nom;
+                $prenom = $user->prenom;
+                $est_administrateur = $user->est_administrateur;
+                if (session_status() != PHP_SESSION_ACTIVE) {
+                    session_start();
+                }
+                $_SESSION['nom'] = $nom;
+                $_SESSION['prenom'] = $prenom;
+                $_SESSION['admin'] = $est_administrateur;
+				$_SESSION['login'] = true;
+                if ($_SESSION['admin'] === 1) {
+                    header('Location: 1_Admin/?controller=home&action=home');
+                } else {
+                    header('Location: 2_User/?controller=home&action=home');
+                    exit();
+                }
+                if (!$user) {
+                    header('Location: ?controller=home&action=home');
+                    exit();
+                }
+            }
+            $this->render("home");
+        }
 	}
+
+	public function action_logout()
+	{
+		// Démarre la mise en mémoire tampon
+		ob_start();
+
+		// Récupération des informations de cookie actuelles
+		$params = session_get_cookie_params();
+
+		// Expire le cookie en le réglant sur hier
+		setcookie(session_name(), '', strtotime('-1 day'), $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+
+		// Détruit toutes les variables d'une session
+		session_unset();
+
+		// Destruction de la session
+		session_destroy();
+
+		// Redirection vers la page d'accueil
+		header("Location: ?controller=home&action=home");
+
+		// Vide la sortie mise en mémoire tampon sans l'envoyer au navigateur
+		ob_end_clean();
+
+		// $this->render("home");
+	}
+	
 
 	public function valid_input($data)
 	{

@@ -22,13 +22,14 @@
 					Test
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Profil</a>
+					<a class="dropdown-item" href="?controller=profile&action=profile">Profil</a>
 					<a class="dropdown-item" href="../?controller=login_signup&action=logout" onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?');">Déconnexion</a>
 				</div>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="?controller=contact&action=contact">Contact</a>
 			</li>
+			
 		</ul>
 	</div>
 </nav>

@@ -1,139 +1,188 @@
-.body_crud {
-    display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-    .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background-color: #e4e4e4da;
-  color: rgb(0, 0, 0);
-  padding: 15px;
-  font-size: 16px;
-  border: solid 2px rgb(154, 0, 193);
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  margin: 20px;
-  font-weight: bold;
-  text-decoration: overline;
-  cursor: pointer;
-
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #00ffccad;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #ffffff;
-}
-
-
-/* ! CSS tableau */
-
-.tableau-donnees {
+/* Styles pour le formulaire de recherche d'utilisateur */
+/* .form_recherche_utilisateur { */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* margin: 20px; */
+/* } */
+  /*  */
+  /* .form_recherche_utilisateur input[type="submit"] { */
+    /* display: block; */
+    /* margin: 10px auto; */
+    /* padding: 10px 20px; */
+    /* background-color: #000000; */
+    /* color: #fff; */
+    /* border: solid 3px aquamarine; */
+    /* border-radius: 4px; */
+    /* cursor: pointer; */
+  /* } */
+  /*  */
+  /* Styles pour les sélecteurs et boutons de recherche */
+  /* .select_submit { */
+    /* display: inline-block; Modification de display: flex à display: inline-block */
+    /* vertical-align: middle; Ajout de vertical-align: middle pour aligner les éléments verticalement */
+    /* margin-bottom: 10px; */
+  /* } */
+/*   
+  .select_submit select {
+    margin-right: 10px;
+    padding: 8px;
+    background: #c4c4c4d4;
+    border: 3px solid #fff;
+    border-radius: 8px;
+  }
+  
+  .select_submit input[type="submit"] {
+    padding: 5px 10px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: solid 3px aquamarine;
+    border-radius: 4px;
+    cursor: pointer;
+  } */
+  
+  /* Styles pour le formulaire de recherche de question/réponse */
+  /* .form_recheche_question_reponse {
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9;
     margin: 20px;
   }
   
-  .tableau-donnees-afficher {
-    width: 100%;
-    /* max-width: 800px; */
-    background-color: white;
-    border-collapse: collapse;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .form_recheche_question_reponse input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: solid 3px aquamarine;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+   */
+  /* Styles pour le formulaire de recherche de résultats de quiz */
+  /* .form_recherche_resultat_quizz {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
   }
   
-  .tableau-donnees-afficher th,
-  .tableau-donnees-afficher td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+  .form_recherche_resultat_quizz input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: solid 3px aquamarine;
+    border-radius: 4px;
+    cursor: pointer;
   }
-  
-  .tableau-donnees-afficher th {
-    background-color: #f2f2f2;
+
+.form_swearch_user_name,
+.form_swearch_user_pseudo,
+.form_swearch_user_mail,
+.form_recherche_question_reponse,
+.form_swearch_question_reponse_difficulte,
+.form_swearch_question_reponse_time,
+.form_resultat_utilisateur,
+.form_swearch_resultat_utilisateur {
+    margin-left: 20px;
+}
+
+.submit_recherche_all_user,
+.submit_recherche_question_reponse,
+.submit_resultat_all_user {
+    margin-left: 20px;
+} */
+
+
+  /* Conteneur principal */
+  .form_recherche_utilisateur,
+  .form_recheche_question_reponse,
+  .form_recherche_resultat_quizz {
+    margin-bottom: 20px;
   }
-  
-  .tableau-donnees-afficher tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+
+  /* Titre des formulaires */
+  .form_title {
+    font-weight: bold;
+    margin-bottom: 10px;
   }
-  
-  .tableau-donnees-afficher tbody tr:hover {
-    background-color: #f5f5f5;
+
+  /* Styles des boutons */
+  .submit_recherche_all_user,
+  .submit_recherche_question_reponse,
+  .submit_recherche_difficulte,
+  .submit_question_reponse_time,
+  .submit_resultat_all_user {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
-  
-  .tableau-donnees-afficher tbody tr:focus {
-    outline: 2px solid #ddd;
+
+  .submit_recherche_all_user:hover,
+  .submit_recherche_question_reponse:hover,
+  .submit_recherche_difficulte:hover,
+  .submit_question_reponse_time:hover,
+  .submit_resultat_all_user:hover {
+    background-color: #45a049;
   }
-  
-  @media screen and (max-width: 600px) {
-    .tableau-donnees-afficher {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-    }
-  
-    .tableau-donnees-afficher thead,
-    .tableau-donnees-afficher tbody,
-    .tableau-donnees-afficher th,
-    .tableau-donnees-afficher td,
-    .tableau-donnees-afficher tr {
-      display: block;
-    }
-  
-    .tableau-donnees-afficher thead tr {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-    }
-  
-    .tableau-donnees-afficher tbody tr {
-      border: 1px solid #ddd;
-    }
-  
-    .tableau-donnees-afficher td {
-      border: none;
-      border-bottom: 1px solid #000000;
-      position: relative;
-      padding-left: 50%;
-    }
-  
-    .tableau-donnees-afficher td:before {
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      width: 45%;
-      padding-right: 10px;
-      white-space: nowrap;
-    }
-  
- 
+
+  /* Styles des sélecteurs */
+  .select_submit {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
   }
+
+  .select_submit select {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .select_submit input[type="submit"] {
+    display: block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .select_submit input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .td_form {
+    padding-left: 30px;
+    padding-right: 30px;
+    background: #4CAF50;
+}
+
+tr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 60px;
+    border: 2px solid black;
+    padding: 20px;
+}

@@ -19,14 +19,22 @@ class Controller_crud extends Controller {
     }
     
     
-    public function action_crud_utilisateur_name()
+    public function action_crud_utilisateur_recherche()
     {
         $m = Model::get_model();
         $data = ["utilisateur_name" => $m->get_all_utilisateur_name(), "position" => 1];
         $this->render("crud", $data);
     }
     
-    
+    public function action_crud_question_reponse_recherche()
+    {
+        $this->render("crud");
+    }
+
+    public function action_crud_resultat_utilisateur()
+    {
+        $this->render("crud");
+    }
 }
 
 

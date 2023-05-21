@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./Content/css/style.css">
     <link rel="stylesheet" href="./Content/css/style_choice.css">
     <link rel="stylesheet" href="./Content/css/style_nav.css">
+    <link rel="stylesheet" href="./Content/css/style_crud.css">
     <link rel="stylesheet" href="./Content/css/style_leaderboard.css">
     <link rel="stylesheet" href="./Content/css/style_question.css">
     <link rel="stylesheet" href="./Content/css/style_contact.css">
@@ -38,9 +39,11 @@
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
     require_once 'Utils/header.php';
+    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
+    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
 
     //* Tableau des contrôleurs disponibles
-    $controllers = ["home", "choice", "contact", "leaderboard", "profile", "question_correction"];
+    $controllers = ["home", "choice", "contact", "leaderboard", "profile", "question_correction", "crud" ];
 
     //* Nom du contrôleur par défaut
     $controller_default = "home";
@@ -73,8 +76,8 @@
 
     //* Inclure le fichier de pied de page
     require_once 'Utils/footer.php';
-    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
-    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
+    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
+    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
     ?>
 </body>
 

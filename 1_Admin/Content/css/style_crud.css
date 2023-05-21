@@ -1,0 +1,139 @@
+.body_crud {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #e4e4e4da;
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  font-size: 16px;
+  border: solid 2px rgb(154, 0, 193);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin: 20px;
+  font-weight: bold;
+  text-decoration: overline;
+  cursor: pointer;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #00ffccad;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ffffff;
+}
+
+
+/* ! CSS tableau */
+
+.tableau-donnees {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    margin: 20px;
+  }
+  
+  .tableau-donnees-afficher {
+    width: 100%;
+    /* max-width: 800px; */
+    background-color: white;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tableau-donnees-afficher th,
+  .tableau-donnees-afficher td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tableau-donnees-afficher th {
+    background-color: #f2f2f2;
+  }
+  
+  .tableau-donnees-afficher tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .tableau-donnees-afficher tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .tableau-donnees-afficher tbody tr:focus {
+    outline: 2px solid #ddd;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .tableau-donnees-afficher {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+    }
+  
+    .tableau-donnees-afficher thead,
+    .tableau-donnees-afficher tbody,
+    .tableau-donnees-afficher th,
+    .tableau-donnees-afficher td,
+    .tableau-donnees-afficher tr {
+      display: block;
+    }
+  
+    .tableau-donnees-afficher thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    .tableau-donnees-afficher tbody tr {
+      border: 1px solid #ddd;
+    }
+  
+    .tableau-donnees-afficher td {
+      border: none;
+      border-bottom: 1px solid #000000;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    .tableau-donnees-afficher td:before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+  
+ 
+  }

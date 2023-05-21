@@ -23,6 +23,9 @@
 				<a class="nav-link" href="?controller=contact&action=contact">Contact</a>
 			</li>
 			<li class="nav-item">
+				<a class="nav-link" href="?controller=crud&action=crud">C.R.U.D</a>
+			</li>
+			<li class="nav-item">
 			<a class="nav-link" href="../?controller=login_signup&action=logout" onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?');">Déconnexion</a>
 			</li>
 		</ul>

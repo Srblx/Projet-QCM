@@ -67,3 +67,39 @@
         </div>
     </div>
 </main>
+<div class="scroll-animation"></div>
+<style>
+    .scroll-animation {
+  width: 100%;
+  height: 2000px; /* Hauteur de votre contenu pour créer une barre de défilement */
+  overflow-y: scroll;
+}
+
+/* Style personnalisé pour la barre de défilement */
+.scroll-animation::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll-animation::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.scroll-animation::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+}
+</style>
+<script>
+    
+// Détection de l'événement de défilement de la barre
+document.querySelector('.scroll-animation').addEventListener('scroll', function() {
+  // Récupération de la valeur de défilement verticale
+  var scrollTop = this.scrollTop;
+
+  // Faites quelque chose avec la valeur de défilement, par exemple, animer un élément
+  var element = document.querySelector('.my-element');
+  element.style.transform = 'translateY(' + scrollTop + 'px)';
+});
+
+</script>
+

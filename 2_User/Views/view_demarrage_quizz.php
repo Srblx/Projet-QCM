@@ -33,8 +33,8 @@ switch ($id) {
             <p class="para_section_demarrage">Ce QCM comporte 20 questions, pour chaque question vous avez entre 30 et 60
                 secondes pour
                 répondre.</p>
-            <a href="?controller=question_correction&action=question"> <button type=" submit"
-                    class="submit_section_demarrage">Démarrer le Quizz</button></a>
+            <a href="?controller=question_correction&action=question&id=<?= $_GET['id'] ?>&niveau=<?= $_GET['niveau'] ?>">
+                <button type=" submit" class="submit_section_demarrage">Démarrer le Quizz</button></a>
         <?php } else { ?>
             <h3 id="error-id-theme">
                 <?= $Titre ?>

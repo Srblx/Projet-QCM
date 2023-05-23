@@ -12,12 +12,9 @@ Nom du site ByteMaster
 Alex, Ahmed : FAQ, Choix thèmes, Choix difficulté, Start Quizz, Contact
 Mathieu : Question, Leaderboard, Correction -->
 
-Choix du them => form --Mathieu
-Choix du niveau => form --Alex
-generer classement --Alex
-Generation du logo en fonction du choix utilisateur --Ahmed
+Alexis : profil utilisateur (ses resultats) / Crud
+Alex : Form choix du niveau, generer classement
+Ahmed : Generation du logo en fonction du choix utilisateur
+Mathieu : Form choix du theme
 generation et affichage question --
 genere correction des question --
-profil utilisateur (ses resultats) Alexis
-Crud --Alexis
-git branch 

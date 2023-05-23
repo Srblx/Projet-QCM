@@ -4,7 +4,7 @@
 }
 
 .nav-link {
-  font-weight: bold;
+  font-weight: bold !important;
   color: #ffffff !important;
 }
 

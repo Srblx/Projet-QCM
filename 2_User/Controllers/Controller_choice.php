@@ -22,4 +22,9 @@ class Controller_choice extends Controller
 	{
 		$this->render("choice_difficulty");
 	}
+
+	public function action_demarrage_quizz()
+	{
+		$this->render("demarrage_quizz");
+	}
 }

@@ -1,0 +1,10 @@
+#case_main_demarrage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#case_section_demarrage {
+    background-color: white;
+    width: 270px;
+}

@@ -102,3 +102,4 @@ document.querySelector('.scroll-animation').addEventListener('scroll', function(
 });
 
 </script>
+

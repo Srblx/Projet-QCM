@@ -8,5 +8,13 @@ class Controller_profile extends Controller
 		$this->action_home();
 	}
 
+	public function action_home()
+	{
+		$this->render("home");
+	}
 
+	public function action_profile()
+	{
+		$this->render("profile");
+	}
 }

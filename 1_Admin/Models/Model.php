@@ -32,4 +32,16 @@ class Model
         }
         return self::$instance;
     }
+
+    public function get_all_utilisateur_name()
+    {
+        // Préparer la requête SQL pour sélectionner tous les livres dans l'ordre alphabétique par prenom
+        $r = $this->bd->prepare("SELECT distinct nom FROM user;");
+
+        // Exécuter la requête
+        $r->execute();
+
+        // Récupérer tous les résultats sous forme d'un tableau d'objets
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
 }

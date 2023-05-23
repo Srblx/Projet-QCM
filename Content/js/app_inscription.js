@@ -84,3 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("home-btn-jouer").addEventListener("click", function() {
+      window.location.href = "?controller=login_signup&action=login";
+  });
+});

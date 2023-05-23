@@ -18,7 +18,7 @@
 					<a class="nav-link" href="?controller=leaderboard&action=leaderboard">Classement</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="?controller=home&action=about">A Propos</a>
+					<a class="nav-link" href="?controller=home&action=about">FAQ</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="?controller=contact&action=contact">Contact</a>

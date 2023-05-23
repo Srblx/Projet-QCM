@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : lun. 15 mai 2023 à 16:54
--- Version du serveur : 10.4.28-MariaDB
--- Version de PHP : 8.2.4
+-- Host: localhost
+-- Generation Time: May 23, 2023 at 03:16 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `qcm`
+-- Database: `qcm`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `question`
+-- Table structure for table `question`
 --
 
 CREATE TABLE `question` (
@@ -37,7 +37,7 @@ CREATE TABLE `question` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `question`
+-- Dumping data for table `question`
 --
 
 INSERT INTO `question` (`id`, `description`, `niveau`, `nb_points`, `tps_question`, `theme_id`) VALUES
@@ -576,7 +576,7 @@ INSERT INTO `question` (`id`, `description`, `niveau`, `nb_points`, `tps_questio
 -- --------------------------------------------------------
 
 --
--- Structure de la table `repondre`
+-- Table structure for table `repondre`
 --
 
 CREATE TABLE `repondre` (
@@ -584,16 +584,27 @@ CREATE TABLE `repondre` (
   `scores` int(11) DEFAULT NULL,
   `temps` time DEFAULT NULL,
   `date` date DEFAULT NULL,
-  `niveau` int(11) DEFAULT NULL,
+  `niveau` varchar(30) DEFAULT NULL,
   `valide` tinyint(1) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `theme_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Dumping data for table `repondre`
+--
+
+INSERT INTO `repondre` (`id`, `scores`, `temps`, `date`, `niveau`, `valide`, `user_id`, `theme_id`) VALUES
+(1, 20, '00:02:10', '2023-05-23', 'debutant', 1, 3, 3),
+(2, 15, '00:03:24', '2023-05-23', 'debutant', 1, 2, 4),
+(3, 10, '00:14:57', '2023-05-23', 'debutant', 1, 1, 2),
+(4, 5, '00:17:43', '2023-05-23', 'debutant', 1, 4, 1),
+(5, 15, '00:14:57', '2023-05-23', 'debutant', 1, 5, 4);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reponse`
+-- Table structure for table `reponse`
 --
 
 CREATE TABLE `reponse` (
@@ -604,7 +615,7 @@ CREATE TABLE `reponse` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `reponse`
+-- Dumping data for table `reponse`
 --
 
 INSERT INTO `reponse` (`id`, `description`, `question_id`, `Correct`) VALUES
@@ -2350,7 +2361,7 @@ INSERT INTO `reponse` (`id`, `description`, `question_id`, `Correct`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `theme`
+-- Table structure for table `theme`
 --
 
 CREATE TABLE `theme` (
@@ -2359,7 +2370,7 @@ CREATE TABLE `theme` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `theme`
+-- Dumping data for table `theme`
 --
 
 INSERT INTO `theme` (`id`, `nom_theme`) VALUES
@@ -2371,7 +2382,7 @@ INSERT INTO `theme` (`id`, `nom_theme`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -2385,29 +2396,30 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `nom`, `prenom`, `pseudo`, `email`, `password`, `admin`) VALUES
-(1, 'Soussignan', 'Mathieu', 'How-high', 'mathieu@mail.fr', 'a', 1),
-(2, 'Madani', 'Ahmed', 'AMD', 'ahmed@mail.fr', 'a', 1),
-(3, 'Rusescu', 'Alex', '13vlxx', 'alex@mail.fr', 'a', 1),
-(4, 'Serbelloni', 'Alexis', 'Bawata', 'alexis@mail.fr', 'a', 1),
-(5, 'John', 'Doe', 'JohnDoe', 'j@mail.fr', 'a', 0);
+(1, 'Soussignan', 'Mathieu', 'How-high', 'mathieu@mail.fr', '$2y$10$Jmles4QOAdyJg4zrTmIuDOMhznR8JxIy3jvlfwZEh/mAJVVy/aDRy', 1),
+(2, 'Madani', 'Ahmed', 'AMD', 'ahmed@mail.fr', '$2y$10$Jmles4QOAdyJg4zrTmIuDOMhznR8JxIy3jvlfwZEh/mAJVVy/aDRy', 1),
+(3, 'Rusescu', 'Alex', '13vlxx', 'alex@mail.fr', '$2y$10$Jmles4QOAdyJg4zrTmIuDOMhznR8JxIy3jvlfwZEh/mAJVVy/aDRy', 1),
+(4, 'Serbelloni', 'Alexis', 'Bawata', 'alexis@mail.fr', '$2y$10$Jmles4QOAdyJg4zrTmIuDOMhznR8JxIy3jvlfwZEh/mAJVVy/aDRy', 1),
+(5, 'John', 'Doe', 'JohnDoe', 'j@mail.fr', '$2y$10$Jmles4QOAdyJg4zrTmIuDOMhznR8JxIy3jvlfwZEh/mAJVVy/aDRy', 0),
+(6, 'test', 'test', 'test', 'test@test.com', '$2y$10$xXkmfyAp/7gx8iaDy9/JeeRU/7pfQo6svX64adZDsiZPysK.VDSHq', 1);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `question`
+-- Indexes for table `question`
 --
 ALTER TABLE `question`
   ADD PRIMARY KEY (`id`),
   ADD KEY `theme_id` (`theme_id`);
 
 --
--- Index pour la table `repondre`
+-- Indexes for table `repondre`
 --
 ALTER TABLE `repondre`
   ADD PRIMARY KEY (`id`),
@@ -2415,77 +2427,77 @@ ALTER TABLE `repondre`
   ADD KEY `theme_id` (`theme_id`);
 
 --
--- Index pour la table `reponse`
+-- Indexes for table `reponse`
 --
 ALTER TABLE `reponse`
   ADD PRIMARY KEY (`id`),
   ADD KEY `question_id` (`question_id`);
 
 --
--- Index pour la table `theme`
+-- Indexes for table `theme`
 --
 ALTER TABLE `theme`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `question`
+-- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=771;
 
 --
--- AUTO_INCREMENT pour la table `repondre`
+-- AUTO_INCREMENT for table `repondre`
 --
 ALTER TABLE `repondre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `reponse`
+-- AUTO_INCREMENT for table `reponse`
 --
 ALTER TABLE `reponse`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7584;
 
 --
--- AUTO_INCREMENT pour la table `theme`
+-- AUTO_INCREMENT for table `theme`
 --
 ALTER TABLE `theme`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `question`
+-- Constraints for table `question`
 --
 ALTER TABLE `question`
   ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`theme_id`) REFERENCES `theme` (`id`);
 
 --
--- Contraintes pour la table `repondre`
+-- Constraints for table `repondre`
 --
 ALTER TABLE `repondre`
   ADD CONSTRAINT `repondre_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `repondre_ibfk_2` FOREIGN KEY (`theme_id`) REFERENCES `theme` (`id`);
 
 --
--- Contraintes pour la table `reponse`
+-- Constraints for table `reponse`
 --
 ALTER TABLE `reponse`
   ADD CONSTRAINT `reponse_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`);

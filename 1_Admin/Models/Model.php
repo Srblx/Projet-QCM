@@ -44,4 +44,13 @@ class Model
         // Récupérer tous les résultats sous forme d'un tableau d'objets
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public function get_all_user()
+    {
+        
+            $r = $this->bd->prepare("SELECT * FROM user");
+            $r->execute();
+            return $r->fetchAll(PDO::FETCH_OBJ);
+        
+    }
 }

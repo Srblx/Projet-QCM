@@ -3,14 +3,14 @@
   <tr class="tr_crud">
     <td class="td_form">
       <div class="form_recherche_utilisateur">
-        <form action="controller=crud&action=crud_utilisateur_recherche" method="post" class="form_recherche_utilisateur">
-          <input type="submit" class="submit_recherche_all_user" value="Tous les Utilisateurs">
+        <form action="?controller=crud&action=crud_utilisateur_recherche" method="post" class="form_recherche_utilisateur">
+          <input type="submit" class="submit_recherche_all_user" value="Tous les Utilisateurs" name="submit_recherche_all_user">
         </form>
       </div>
     </td>
     <td class="td_form">
       <div class="select_submit">
-        <form action="controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_name">
+        <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_name">
           <select name="all_name_user" id="all_name_user">
             <option value="Par nom">Recherche par Nom</option>
             <?php foreach ($user_name_list as $unl) : ?>
@@ -23,7 +23,7 @@
     </td>
     <td class="td_form">
       <div class="select_submit">
-        <form action="controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_pseudo">
+        <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_pseudo">
           <select name="all_pseudo_user" id="all_pseudo_user">
             <option value="Par pseudo">Recherche par Pseudo</option>
             <?php foreach ($user_pseudo_list as $unl) : ?>
@@ -36,7 +36,7 @@
     </td>
     <td class="td_form">
       <div class="select_submit">
-        <form action="controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_mail">
+        <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_mail">
           <select name="all_mail_user" id="all_mail_user">
             <option value="Par mail">Recherche par Mail</option>
             <?php foreach ($user_mail_list as $unl) : ?>
@@ -51,14 +51,14 @@
   <tr class="tr_crud">
     <td class="td_form">
       <div class="form_recheche_question_reponse">
-        <form action="controller=crud&action=crud_question_reponse_recherche" method="post" class="form_recherche_question_reponse">
+        <form action="?controller=crud&action=crud_question_reponse_recherche" method="post" class="form_recherche_question_reponse">
           <input type="submit" class="submit_recherche_question_reponse" value="Toutes les Questions/Réponses">
         </form>
       </div>
     </td>
     <td class="td_form">
       <div class="select_submit">
-        <form action="controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_theme">
+        <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_theme">
           <select name="all_question_reponse" id="all_questions_reponses">
             <option value="Par thème">Recherche par Thèmes</option>
             <?php foreach ($question_reponse_theme_list as $utl) : ?>
@@ -71,7 +71,7 @@
     </td>
     <td class="td_form">
       <div class="select_submit">
-        <form action="controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_difficulte">
+        <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_difficulte">
           <select name="all_question_reponse_difficulte" id="all_question_reponse_difficulte">
             <option value="Par difficulté">Recherche par Difficulté</option>
             <?php foreach ($question_reponse_difficulte_list as $udl) : ?>
@@ -84,7 +84,7 @@
     </td>
     <td class="td_form">
       <div class="select_submit">
-        <form action="controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_time">
+        <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_time">
           <select name="all_question_reponse_time" id="all_question_reponse_time">
             <option value="Par temps">Recherche par Temps</option>
             <?php foreach ($question_reponse_time_list as $qrtl) : ?>
@@ -99,14 +99,14 @@
   <tr class="tr_crud">
     <td class="td_form">
       <div class="form_recherche_resultat_quizz">
-        <form action="controller=crud&action=crud_resultat_utilisateur" method="post" class="form_resultat_utilisateur">
+        <form action="?controller=crud&action=crud_resultat_utilisateur" method="post" class="form_resultat_utilisateur">
           <input type="submit" class="submit_resultat_all_user" value="Tous les Résultats">
         </form>
       </div>
     </td>
     <td class="td_form">
       <div class="select_submit">
-        <form action="controller=crud&action=crud_resultat_utilisateur" class="form_score_resultat">
+        <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_score_resultat">
           <select name="all_score_resultat" id="all_score_resultat">
             <option value="Par Score">Recherche par Score</option>
             <?php foreach ($user_score_resultat as $usr) : ?>
@@ -119,7 +119,7 @@
     </td>
     <td class="td_form">
       <div class="select_submit">
-        <form action="controller=crud&action=crud_resultat_utilisateur" class="form_resultat_utilisateur">
+        <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_resultat_utilisateur">
           <select name="all_user_resultat" id="all_user_resultat">
             <option value="Par nom">Recherche par Nom</option>
             <?php foreach ($user_resultat as $ur) : ?>
@@ -132,7 +132,7 @@
     </td>
     <td class="td_form">
       <div class="select_submit">
-        <form action="controller=crud&action=crud_resultat_utilisateur" class="form_swearch_resultat_utilisateur">
+        <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_swearch_resultat_utilisateur">
           <select name="all_mail_user" id="all__resultat_utilisateur">
             <option value="Par mail">Recherche par mail</option>
             <?php foreach ($user_date_resultat as $udr) : ?>

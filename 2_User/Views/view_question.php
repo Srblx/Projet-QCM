@@ -4,21 +4,10 @@
         <div id="quiz">
             <main>
                 <?php
-                if ($questions) {
-                    $counter = 0;
-                    foreach ($questions as $question) {
-                        $counter++;
-                        echo "<h3 class='titre_section_demarrage'>" . $question->question . "</h3>";
-                        echo "<ul>";
 
-                        // Autres instructions à l'intérieur de la boucle
-                
-                        if ($counter === 1) {
-                            break; // Arrête la boucle lorsque le compteur est égal à 1
-                        }
-                    }
-
-                }
+                // Afficher la valeur de la question
+                echo "<h3 class='titre_section_demarrage'>" . $questions[0]->question . "</h3>";
+                echo $questions[0]->question;
                 ?>
                 <form action="">
                     <?php $cpt = 1 ?>

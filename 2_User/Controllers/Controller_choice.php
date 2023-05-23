@@ -8,6 +8,11 @@ class Controller_choice extends Controller
 		$this->action_home();
 	}
 
+	public function action_home()
+	{
+		$this->render("home");
+	}
+
 	public function action_choice()
 	{
 		$this->render("choice");
@@ -17,5 +22,4 @@ class Controller_choice extends Controller
 	{
 		$this->render("choice_difficulty");
 	}
-
 }

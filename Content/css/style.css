@@ -20,6 +20,10 @@ a:active {
   font-weight: bold;
 }
 
+.img_logo_nav {
+  min-width: 25px;
+}
+
 /* .navbar-brand {
   width: 100%;
 } */
@@ -50,6 +54,7 @@ body {
 }
 
 #home-btn-jouer {
+  min-width: 300px;
   width: 43%;
   height: auto;
   padding-top: 2rem;
@@ -65,10 +70,34 @@ body {
     rgba(255, 255, 255, 0.5) 0%,
     rgb(255, 56, 172) 100%
   );
+  transition: all 0.1s;
+}
+
+#home-btn-jouer:hover {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#home-logo-img {
+  min-width: 250px;
+  min-height: 130px;
+  width: 30%;
+  height: 60%;
 }
 
 #home-span-jouer {
-  font-size: 3vw;
+  font-size: 4vh;
   color: rgb(0, 0, 0);
   font-weight: bold;
 }

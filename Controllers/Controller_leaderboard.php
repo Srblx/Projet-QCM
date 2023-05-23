@@ -8,14 +8,16 @@ class Controller_leaderboard extends Controller
 		$this->action_home();
 	}
 
-	public function aciton_home()
+	public function action_home()
 	{
 		$this->render('home');
 	}
 
 	public function action_leaderboard()
 	{
-		$this->render("leaderboard");
+		$m = Model::get_model();
+		$data = ["users" => $m->get_all_main_leaderboard()];
+		$this->render("leaderboard", $data);
 	}
-	
+
 }

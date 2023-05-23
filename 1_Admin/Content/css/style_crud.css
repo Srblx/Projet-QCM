@@ -36,7 +36,7 @@
    .submit_recherche_difficulte:hover,
    .submit_question_reponse_time:hover,
    .submit_resultat_all_user:hover {
-     background-color: #45a049;
+     background-color: #4144f9;
    }
  
    /* Styles des sélecteurs */
@@ -71,7 +71,7 @@
    }
  
    .select_submit input[type="submit"]:hover {
-     background-color: #45a049;
+     background-color: #4144f9;
    }
  
    /* Styles pour centrer les <tr> */

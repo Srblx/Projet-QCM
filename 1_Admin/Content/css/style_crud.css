@@ -193,7 +193,7 @@
      padding-right: 30px;
    }
  
-   tr {
+   .tr_crud {
      display: flex;
      justify-content: center;
      align-items: flex-start;
@@ -220,7 +220,7 @@
        padding-right: 10px;
      }
  
-     tr {
+     .tr_crud {
        flex-wrap: wrap; /* Permet le retour à la ligne des éléments dans les lignes */
        margin-top: 20px;
      }

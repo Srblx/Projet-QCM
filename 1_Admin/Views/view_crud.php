@@ -1,6 +1,6 @@
 <div class="table_container">
 <table>
-  <tr>
+  <tr class="tr_crud">
     <td class="td_form">
       <div class="form_recherche_utilisateur">
         <form action="controller=crud&action=crud_utilisateur_recherche" method="post" class="form_recherche_utilisateur">
@@ -48,7 +48,7 @@
       </div>
     </td>
   </tr>
-  <tr>
+  <tr class="tr_crud">
     <td class="td_form">
       <div class="form_recheche_question_reponse">
         <form action="controller=crud&action=crud_question_reponse_recherche" method="post" class="form_recherche_question_reponse">
@@ -96,7 +96,7 @@
       </div>
     </td>
   </tr>
-  <tr>
+  <tr class="tr_crud">
     <td class="td_form">
       <div class="form_recherche_resultat_quizz">
         <form action="controller=crud&action=crud_resultat_utilisateur" method="post" class="form_resultat_utilisateur">

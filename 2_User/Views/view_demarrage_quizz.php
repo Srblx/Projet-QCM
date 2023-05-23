@@ -30,7 +30,8 @@ switch ($id) {
                 <?= $_GET['niveau'] ?>
             </p>
             <img src="./Content/img/<?= $_GET['id'] ?>.png" alt="" class="img_section_demarrage" id="img_section_demarrage">
-            <p class="para_section_demarrage">Ce QCM comporte 20 questions, pour chaque question vous avez 45s pour
+            <p class="para_section_demarrage">Ce QCM comporte 20 questions, pour chaque question vous avez entre 30 et 60
+                secondes pour
                 répondre.</p>
             <button type="submit" class="submit_section_demarrage">Démarrer le Quizz</button>
         <?php } else { ?>

@@ -14,8 +14,8 @@ class Model
     { //* Fonction qui sert à faire le lien avec la BDD
 
 
-        $dsn = "mysql:host=localhost;dbname=qcm";   //* Coordonnées de la BDD
-        $login = "root";   //* Identifiant d'accès à la BDD
+        $dsn = "mysql:host=localhost;dbname=qcm"; //* Coordonnées de la BDD
+        $login = "root"; //* Identifiant d'accès à la BDD
         $mdp = ""; //* Mot de passe d'accès à la BDD
         $this->bd = new PDO($dsn, $login, $mdp);
         $this->bd->query("SET NAMES 'utf8'");
@@ -74,9 +74,9 @@ class Model
         $stmt->bindParam(':Mail', $Mail);
         $stmt->execute();
         $row = $stmt->fetch();
-      
 
-        if ($stmt->rowCount() > 0 ) {
+
+        if ($stmt->rowCount() > 0) {
 
             $requete2 = "UPDATE user SET password = :password  WHERE email = :mail";
             $stmt2 = $this->bd->prepare($requete2);
@@ -171,10 +171,23 @@ class Model
 
 
     private function valid_input($data)
-	{
-		$data = trim($data);
-		$data = htmlspecialchars($data);
-		$data = stripcslashes($data);
-		return $data;
-	}
+    {
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        $data = stripcslashes($data);
+        return $data;
+    }
+
+    //* Traitement du classement principal
+    public function get_all_main_leaderboard()
+    {
+        $r = $this->bd->prepare("SELECT user.id, user.pseudo, repondre.scores, repondre.temps, theme.id, theme.nom_theme, repondre.niveau
+        FROM repondre
+        INNER JOIN user ON repondre.user_id = user.id
+        INNER JOIN theme ON repondre.theme_id = theme.id
+        ORDER BY scores DESC");
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
 }

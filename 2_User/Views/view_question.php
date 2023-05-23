@@ -1,34 +1,72 @@
 <main>
-    <button type='button' onclick='location.reload()'>Reload</button> <!-- Bouton pour recharger la page -->
     <div class="container_question">
-        <h1 id="byte">Quiz ByteMaster</h1> <!-- Titre du quiz -->
+        <h1 id="byte">Quiz ByteMaster</h1>
         <div id="quiz">
-            <hr style="margin-bottom: 20px">
-            <p id="question"></p> <!-- Emplacement pour afficher la question -->
+            <main>
+                <?php
+                // Connexion à la base de données
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "qcm";
 
-            <div class="button-grp">
-                <button id="btn0"><span id="choice0"></span></button> <!-- Bouton de choix 1 -->
-                <button id="btn1"><span id="choice1"></span></button> <!-- Bouton de choix 2 -->
-                <button id="btn2"><span id="choice2"></span></button> <!-- Bouton de choix 3 -->
-                <button id="btn3"><span id="choice3"></span></button> <!-- Bouton de choix 4 -->
-            </div>
+                try {
+                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            <hr style="margin-top: 50px">
+                    // Récupération du nombre de questions déjà répondues
+                    $stmtCount = $conn->prepare("SELECT COUNT(*) AS answered FROM repondre");
+                    $stmtCount->execute();
+                    $answeredCount = $stmtCount->fetch(PDO::FETCH_ASSOC)['answered'];
 
-            <footer>
-                <p id="progress">Question x of y</p> <!-- Emplacement pour afficher la progression du quiz -->
-            </footer>
-            <!-- <button id="showCorrectionBtn" class="result-button" style="display: none;" onclick="redirectToCorrection()"></button> Bouton pour afficher la correction (caché par défaut) -->
+                    // Récupération de la question actuelle
+                    $stmt = $conn->prepare("SELECT q.id AS question_id, q.description AS question, r.id AS reponse_id, r.description AS reponse
+                            FROM (
+                                SELECT id, description
+                                FROM question
+                                ORDER BY RAND()
+                                LIMIT 20
+                            ) q
+                            JOIN reponse r ON q.id = r.question_id
+                            LIMIT 1");
+                    $stmt->execute();
+                    $question = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    if ($question) {
+                        echo "<h3 class='titre_section_demarrage'>" . $question['question'] . "</h3>";
+                        echo "<ul>";
+
+                        // Récupération des 4 choix de la question actuelle
+                        $choices = [];
+                        while ($question && $question['question_id'] === $question['question_id']) {
+                            $choices[] = $question['reponse'];
+                            $question = $stmt->fetch(PDO::FETCH_ASSOC);
+                        }
+
+                        // Mélange des choix
+                        shuffle($choices);
+
+                        // Affichage des choix
+                        echo "<form action='' method='POST' id='quizForm'>";
+                        foreach ($choices as $choice) {
+                            echo "<li>";
+                            echo "<input type='radio' name='reponse_id' value='" . $choice . "'> ";
+                            echo $choice;
+                            echo "</li>";
+                        }
+
+                        echo "</ul>";
+                        echo "<p>Question " . ($answeredCount + 1) . " sur 20</p>";
+                        echo "<button type='submit' name='submit'>Suivant</button>";
+                        echo "</form>";
+                    } else {
+                        echo "Aucune question trouvée.";
+                    }
+                } catch (PDOException $e) {
+                    echo "Erreur de connexion à la base de données : " . $e->getMessage();
+                }
+                $conn = null;
+                ?>
         </div>
     </div>
-
-    <script type="text/JavaScript" src="../Content/js/app.js" defer></script> <!-- Lien vers le fichier JavaScript -->
-    <script type="text/JavaScript">
-        function redirectToCorrection() {
-            window.location.replace("./view_correction.php"); // Redirection vers la page de correction
-        }
-            function redirectToLeaderboard() {
-            window.location.replace("./view_leaderboard.php");
-        }
-    </script>
 </main>

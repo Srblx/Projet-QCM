@@ -1,6 +1,6 @@
 SELECT theme_id, id FROM question WHERE theme_id = 2;
 
---requette pour voir les question sans reponse 
+--requête pour voir les question sans reponse 
 SELECT description 
 FROM question 
 where id NOT IN 

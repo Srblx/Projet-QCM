@@ -12,7 +12,7 @@ Nom du site ByteMaster
 Alex, Ahmed : FAQ, Choix thèmes, Choix difficulté, Start Quizz, Contact
 Mathieu : Question, Leaderboard, Correction -->
 
-Choix du them => form --Mathieu
+Choix du thème => form --Mathieu
 Choix du niveau => form --Alex
 generer classement --Alex
 Generation du logo en fonction du choix utilisateur --Ahmed

@@ -1,59 +1,43 @@
 <main id="leaderboard_main">
     <div class="leaderboard-container">
-        <h1 class="leaderboard-title">Résultat final</h1>
-        <h3 id="result-title">Vous avez obtenu X bonnes réponses</h3>
+        <h1 class="leaderboard-title">Classement global</h1>
 
         <div id="leaderboard">
 
             <table class="leaderboard-table">
-
-                <h2 class="leaderboard-title">Classement final</h2>
                 <hr>
                 <tr>
                     <th>TOP</th>
                     <th>SCORE</th>
-                    <th>TIME</th>
+                    <th>THEME</th>
+                    <th>NIVEAU</th>
+                    <th>TEMPS</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Score 1</td>
-                    <td>Time 1</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Score 2</td>
-                    <td>Time 2</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Score 3</td>
-                    <td>Time 3</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Score 4</td>
-                    <td>Time 4</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Score 5</td>
-                    <td>Time 5</td>
-                </tr>
-                <tr>
-                    <td>Your Rank</td>
-                    <td>Your Score</td>
-                    <td>Your Time</td>
-                </tr>
-            </table>
+                <?php $cpt = 1; ?>
+                <?php foreach ($users as $user): ?>
+                    <tr>
+                        <td>
+                            <?= "#" . $cpt . " " . $user->pseudo ?>
+                        </td>
+                        <td>
+                            <?= $user->scores ?>
+                        </td>
+                        <td>
+                            <?= $user->nom_theme ?>
+                        </td>
+                        <td>
+                            <?= ucfirst($user->niveau) ?>
+                        </td>
+                        <td>
+                            <?= $user->temps ?>
+                        </td>
+                    </tr>
+                    <?php $cpt++; ?>
+                <?php endforeach; ?>
 
-            <button id="view-correction-btn" class="result-button center-button" onclick="redirectToCorrection()">Voir la correction</button>
+            </table>
         </div>
     </div>
 
     <script type="text/JavaScript" src="../Content/js/app.js" defer></script>
-    <script type="text/JavaScript">
-        function redirectToCorrection() {
-            window.location.replace("./view_correction.php");
-        }
-    </script>
 </main>

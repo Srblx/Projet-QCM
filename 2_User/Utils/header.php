@@ -15,7 +15,7 @@
 				<a class="nav-link" href="?controller=leaderboard&action=leaderboard">Classement</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="?controller=home&action=about">FAQ</a>
+				<a class="nav-link" href="?controller=home&action=about">F.A.Q</a>
 			</li>
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,7 +29,7 @@
 			<li class="nav-item">
 				<a class="nav-link" href="?controller=contact&action=contact">Contact</a>
 			</li>
-			
+
 		</ul>
 	</div>
 </nav>

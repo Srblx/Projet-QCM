@@ -18,9 +18,9 @@
       <div class="select_submit">
         <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_name">
           <select name="all_name_user" id="all_name_user">
-            <option value="Par nom">Recherche par Nom</option>
-            <?php foreach ($all_information_bd as $aib) : ?>
-              <option value="<?= $aib->nom ?>"><?= $aib->nom ?></option>
+            <option value="Par nom">Par Nom</option>
+            <?php foreach ($all_user_name as $aun) : ?>
+              <option value="<?= $aun->nom ?>"><?= $aun->nom ?></option>
             <?php endforeach; ?>
           </select>
           <input type="submit" value="Lancer la recherche" name="submit_all_user_name">
@@ -31,9 +31,9 @@
       <div class="select_submit">
         <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_pseudo">
           <select name="all_pseudo_user" id="all_pseudo_user">
-            <option value="Par pseudo">Recherche par Pseudo</option>
-            <?php foreach ($all_information_bd as $aib) : ?>
-              <option value="<?= $aib->pseudo ?>"><?= $aib->pseudo ?></option>
+            <option value="Par pseudo">Par Pseudo</option>
+            <?php foreach ($all_user_pseudo as $aup) : ?>
+              <option value="<?= $aup->pseudo ?>"><?= $aup->pseudo ?></option>
             <?php endforeach; ?>
           </select>
           <input type="submit" value="Lancer la recherche">
@@ -44,9 +44,9 @@
       <div class="select_submit">
         <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_mail">
           <select name="all_mail_user" id="all_mail_user">
-            <option value="Par mail">Recherche par Mail</option>
-            <?php foreach ($all_information_bd as $aib) : ?>
-              <option value="<?= $aib->email ?>"><?= $aib->email ?></option>
+            <option value="Par mail">Par Mail</option>
+            <?php foreach ($all_user_mail as $aum) : ?>
+              <option value="<?= $aum->email ?>"><?= $aum->email ?></option>
             <?php endforeach; ?>
           </select>
           <input type="submit" value="Lancer la recherche" name="submit_recherche_mail_user">
@@ -140,7 +140,7 @@
       <div class="select_submit">
         <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_swearch_resultat_utilisateur">
           <select name="all_mail_user" id="all__resultat_utilisateur">
-            <option value="Par mail">Recherche par mail</option>
+            <option value="Par mail">Recherche par Mail</option>
             <?php foreach ($all_information_bd as $aib) : ?>
               <option value="<?= $aib->email ?>"><?= $aib->email ?></option>
             <?php endforeach; ?>

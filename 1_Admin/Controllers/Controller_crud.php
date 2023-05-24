@@ -15,9 +15,12 @@ class Controller_crud extends Controller {
 
     public function action_crud()
     {
-         $m = Model::get_model();
-        $data = ["all_theme" => $m->get_all_theme(),
-    "all_niveau" => $m->get_all_niveau()];
+    $m = Model::get_model();
+    $data = ["all_theme" => $m->get_all_theme(),
+        "all_niveau" => $m->get_all_niveau(),
+        "all_user_name" => $m->get_all_user_name(),
+        "all_user_pseudo" => $m->get_all_user_pseudo(),
+        "all_user_mail" => $m->get_all_user_mail()];
         $this->render("crud", $data);
         
         //  $m = Model::get_model();

@@ -34,15 +34,33 @@ class Model
 
     public function get_random_question()
     {
-        /* , q.question AS question, r.id AS reponse_id, r.reponse, r.correct AS correct */
         $id = $_GET['id'];
         $niveau = $_GET['niveau'];
         $r = $this->bd->prepare("
             SELECT id
-            FROM question WHERE theme_id = '$id' AND question.niveau = '$niveau'
+            FROM question WHERE theme_id = :id AND question.niveau = :niveau
             ORDER BY RAND()
             LIMIT 20
         ");
+        $r->bindParam(':id', $id, PDO::PARAM_INT);
+        $r->bindParam(':niveau', $niveau, PDO::PARAM_STR);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_une_question($id_question)
+    {
+        $r = $this->bd->prepare("SELECT * FROM question WHERE id = :id_question");
+        $r->bindParam(':id_question', $id_question, PDO::PARAM_INT);
+        $r->execute();
+        return $r->fetch(PDO::FETCH_OBJ);
+    }
+
+
+    public function get_les_responses($id_question)
+    {
+        $r = $this->bd->prepare("SELECT reponse, question_id, correct FROM reponse WHERE question_id = :id_question");
+        $r->bindParam(':id_question', $id_question, PDO::PARAM_INT);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }

@@ -2,8 +2,7 @@
   <?php
   echo "<pre>";
   // var_dump($all_information_bd); 
-  echo "</pre>";
-   
+  echo "</pre>"; 
    ?>
 <table>
   <tr class="tr_crud">
@@ -88,67 +87,67 @@
         </form>
       </div>
     </td>
-    <td class="td_form">
-      <div class="select_submit">
-        <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_time">
-          <select name="all_question_reponse_time" id="all_question_reponse_time">
-            <option value="Par temps">Par Temps</option>
-            <?php foreach ($all_information_bd as $aib) : ?>
-              <option value="<?= $aib->tps_question ?>"><?= $aib->tps_question ?></option>
-            <?php endforeach; ?>
-          </select>
-          <input type="submit" value="Lancer la recherche" name="submit_question_reponse_time">
-        </form>
-      </div>
-    </td>
-  </tr>
-  <tr class="tr_crud">
-    <td class="td_form">
-      <div class="form_recherche_resultat_quizz">
-        <form action="?controller=crud&action=crud_resultat_utilisateur" method="post" class="form_resultat_utilisateur">
-          <input type="submit" class="submit_resultat_all_user" value="Tous les Résultats">
-        </form>
-      </div>
-    </td>
-    <td class="td_form">
-      <div class="select_submit">
-        <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_score_resultat">
-          <select name="all_score_resultat" id="all_score_resultat">
-            <option value="Par Score">Recherche par Score</option>
-            <?php foreach ($all_information_bd as $aib) : ?>
-              <option value="<?= $aib->scores ?>"><?= $aib->scores ?></option>
-            <?php endforeach; ?>
-          </select>
-          <input type="submit" value="Lancer la recherche">
-        </form>
-      </div>
-    </td>
-    <td class="td_form">
-      <div class="select_submit">
-        <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_resultat_utilisateur">
-          <select name="all_user_resultat" id="all_user_resultat">
-            <option value="Par nom">Recherche par Nom</option>
-            <?php foreach ($all_information_bd as $aib) : ?>
-              <option value="<?= $aib->nom ?>"><?= $aib->nom ?></option>
-            <?php endforeach; ?>
-          </select>
-          <input type="submit" value="Lancer la recherche">
-        </form>
-      </div>
-    </td>
-    <td class="td_form">
-      <div class="select_submit">
-        <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_swearch_resultat_utilisateur">
-          <select name="all_mail_user" id="all__resultat_utilisateur">
-            <option value="Par mail">Recherche par Mail</option>
-            <?php foreach ($all_information_bd as $aib) : ?>
-              <option value="<?= $aib->email ?>"><?= $aib->email ?></option>
-            <?php endforeach; ?>
-          </select>
-          <input type="submit" value="Lancer la recherche">
-        </form>
-      </div>
-    </td>
-  </tr>
-</table>
+      <td class="td_form">
+        <div class="select_submit">
+          <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_time">
+            <select name="all_question_reponse_time" id="all_question_reponse_time">
+              <option value="Par temps">Recherche par Temps</option>
+              <?php foreach ($all_temps as $aib) : ?>
+                <option value="<?= $aib->tps_question ?>"><?= $aib->tps_question ?></option>
+              <?php endforeach; ?>
+            </select>
+            <input type="submit" value="Lancer la recherche" name="submit_question_reponse_time">
+          </form>
+        </div>
+      </td>
+    </tr>
+    <tr class="tr_crud">
+      <td class="td_form">
+        <div class="form_recherche_resultat_quizz">
+          <form action="?controller=crud&action=crud_resultat_utilisateur" method="post" class="form_resultat_utilisateur">
+            <input type="submit" class="submit_resultat_all_user" value="Tous les Résultats">
+          </form>
+        </div>
+      </td>
+      <td class="td_form">
+        <div class="select_submit">
+          <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_score_resultat">
+            <select name="all_score_resultat" id="all_score_resultat">
+              <option value="Par Score">Recherche par Score</option>
+              <?php foreach ($all_score as $aib) : ?>
+                <option value="<?= $aib->scores ?>"><?= $aib->scores ?></option>
+              <?php endforeach; ?>
+            </select>
+            <input type="submit" value="Lancer la recherche">
+          </form>
+        </div>
+      </td>
+      <td class="td_form">
+        <div class="select_submit">
+          <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_resultat_utilisateur">
+            <select name="all_user_resultat" id="all_user_resultat">
+              <option value="Par nom">Recherche par Nom</option>
+              <?php foreach ($all_noms as $aib) : ?>
+                <option value="<?= $aib->nom ?>"><?= $aib->nom ?></option>
+              <?php endforeach; ?>
+            </select>
+            <input type="submit" value="Lancer la recherche">
+          </form>
+        </div>
+      </td>
+      <td class="td_form">
+        <div class="select_submit">
+          <form action="?controller=crud&action=crud_resultat_utilisateur" class="form_swearch_resultat_utilisateur">
+            <select name="all_mail_user" id="all__resultat_utilisateur">
+              <option value="Par mail">Recherche par mail</option>
+              <?php foreach ($all_mails as $aib) : ?>
+                <option value="<?= $aib->email ?>"><?= $aib->email ?></option>
+              <?php endforeach; ?>
+            </select>
+            <input type="submit" value="Lancer la recherche">
+          </form>
+        </div>
+      </td>
+    </tr>
+  </table>
 </div>

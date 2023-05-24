@@ -62,8 +62,8 @@ class Model
     public function get_all_theme()
     {
         $query = "SELECT  nom_theme FROM theme";
-        
-        
+
+
         // $query = "SELECT 
         // distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores
         //  FROM user join theme 
@@ -87,8 +87,8 @@ class Model
     public function get_all_niveau()
     {
         $query = "SELECT DISTINCT niveau FROM question";
-        
-        
+
+
         // $query = "SELECT 
         // distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores
         //  FROM user join theme 
@@ -98,27 +98,63 @@ class Model
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    
+
+    ////////////////////// code en cours Mathieu ///////////////////////////
+
+    public function get_all_temps()
+    {
+        $query = "SELECT tps_question FROM question";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_score()
+    {
+        $query = "SELECT scores FROM repondre";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_noms()
+    {
+        $query = "SELECT nom FROM user";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_mail()
+    {
+        $query = "SELECT email FROM user";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    ///////////////// fin code Mathieu //////////////////////////////
+
     public function get_all_user()
     {
-            $r = $this->bd->prepare("SELECT * FROM user");
-            $r->execute();
-            return $r->fetchAll(PDO::FETCH_OBJ);
+        $r = $this->bd->prepare("SELECT * FROM user");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    
+
     public function get_all_question_reponse()
     {
-            $r = $this->bd->prepare("SELECT * FROM question q 
+        $r = $this->bd->prepare("SELECT * FROM question q 
             INNER JOIN reponse r WHERE q.id = r.question_id");
-            $r->execute();
-            return $r->fetchAll(PDO::FETCH_OBJ);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    
+
     public function get_all_result()
     {
-            $r = $this->bd->prepare("SELECT * FROM repondre");
-            $r->execute();
-            return $r->fetchAll(PDO::FETCH_OBJ);
+        $r = $this->bd->prepare("SELECT * FROM repondre");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
     }
     // public function get_all_user_name()
     // {

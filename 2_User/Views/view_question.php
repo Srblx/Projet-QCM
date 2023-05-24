@@ -1,3 +1,13 @@
+<?php
+$qst = 0;
+$id = $questions[$qst]->question_id;
+/* $_SESSION['id'] = $questions; */
+$_SESSION['id'] = $id;
+echo $_SESSION['id'];
+echo "<pre>";
+var_dump($questions);
+echo "</pre>";
+?>
 <main id="question_qcm_main">
     <div class="compteur_question_qcm">
         <p>Question

@@ -44,7 +44,7 @@ class Model
             LIMIT 20
         ) q
         JOIN reponse r ON q.id = r.question_id
-        LIMIT 4");
+        LIMIT 80");
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }

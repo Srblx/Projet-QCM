@@ -93,7 +93,7 @@
           <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_time">
             <select name="all_question_reponse_time" id="all_question_reponse_time">
               <option value="Par temps">Recherche par Temps</option>
-              <?php foreach ($all_information_bd as $aib) : ?>
+              <?php foreach ($all_temps as $aib) : ?>
                 <option value="<?= $aib->tps_question ?>"><?= $aib->tps_question ?></option>
               <?php endforeach; ?>
             </select>

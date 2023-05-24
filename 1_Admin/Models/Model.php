@@ -75,6 +75,14 @@ class Model
 
     ////////////////////// code en cours Mathieu ///////////////////////////
 
+    public function get_all_temps()
+    {
+        $query = "SELECT tps_question FROM question";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
     public function get_all_score()
     {
         $query = "SELECT scores FROM repondre";

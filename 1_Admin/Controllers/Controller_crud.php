@@ -18,7 +18,7 @@ class Controller_crud extends Controller
     {
         $m = Model::get_model();
         $data = [
-            "all_theme" => $m->get_all_theme(),
+            "all_temps" => $m->get_all_temps(), "all_theme" => $m->get_all_theme(),
             "all_niveau" => $m->get_all_niveau(), "all_score" => $m->get_all_score(),
             "all_noms" => $m->get_all_noms(), "all_mails" => $m->get_all_mail()
         ];

@@ -1,3 +1,4 @@
+s
 <?php
 
 require_once 'Controller.php';
@@ -27,7 +28,7 @@ class Controller_question_correction extends Controller
 
         //* Redirection vers la page d'accueil si le numéro de question dépasse 20
         if ($_GET['question'] > 20) {
-            $_SESSION['question'] = 0;
+            unset($_SESSION['question']);
             header("Location: ?controller=home&action=home");
             die;
         }

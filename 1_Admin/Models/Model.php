@@ -53,4 +53,21 @@ class Model
             return $r->fetchAll(PDO::FETCH_OBJ);
         
     }
+
+    public function get_random_question()
+    {
+        $id = $_GET['id'];
+        $niveau = $_GET['niveau'];
+        $r = $this->bd->prepare("SELECT DISTINCT q.id AS question_id, q.question AS question, r.id AS reponse_id, r.reponse, r.correct AS correct
+        FROM (
+            SELECT id, question
+            FROM question WHERE theme_id = '$id' AND question.niveau = '$niveau'
+            ORDER BY RAND()
+            LIMIT 20
+        ) q
+        JOIN reponse r ON q.id = r.question_id
+        LIMIT 4");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
 }

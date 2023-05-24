@@ -3,80 +3,89 @@ body {
             rgba(255, 129, 203, 1),
             rgba(255, 203, 234, 1),
             rgba(255, 154, 213, 1));
+    font-family: cursive;
     background-attachment: fixed;
     background-size: cover;
 }
 
 .container_question {
+
     width: 710px;
-    height: 570px;
-    margin: 20px auto;
+    min-height: 570px;
+    height: max-content;
+    margin: 25px auto;
+    margin-bottom: 5rem;
     background-color: #fff;
     padding: 10px 50px 50px 50px;
     border-radius: 50px;
     border: 2px solid #cbcbcb;
     box-shadow: 10px 15px 5px #cbcbcb;
+
 }
 
 #byte {
-    background: #FF9FD8;
-    color: #fff;
+    background: #ff9fd8;
+    color: black;
     margin-top: 20px;
     font-size: 60px;
     text-align: center;
     padding: 2px 0 13px 0;
     border-radius: 50px;
-}
-
-#question {
-    font-size: 30px;
-    color: #5a6772;
+    border: 2px solid black;
 }
 
 .button-grp {
     margin-top: 30px;
 }
 
-#btn0,
-#btn1,
-#btn2,
-#btn3 {
-    background: #FF9FD8;
-    width: 250px;
-    font-size: 20px;
-    border: 1px solid #FF9FD8;
-    border-radius: 50px;
-    margin: 10px 40px 10px 7.6px;
-    padding: 10px 10px;
-    color: #fff;
-}
-
-#btn0:hover,
-#btn1:hover,
-#btn2:hover,
-#btn3:hover {
-    cursor: pointer;
-    background: #2D85A4;
-}
-
-#btn0:focus,
-#btn1:focus,
-#btn2:focus,
-#btn3:focus {
-    outline: 0;
-}
-
-#progress {
-    color: #2b2b2b;
-    font-size: 18px;
-}
-
-#result_quiz {
-    background: #FF9FD8;
-    color: #fff;
-    margin-top: 45px;
-    font-size: 60px;
+.titre_section_demarrage {
     text-align: center;
-    padding: 2px 0 13px 0;
+}
+
+.reponses-qcm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.reponses-qcm label {
+    border: 2px solid black;
+    width: 100%;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #ff9fd8;
+    border-radius: 30px;
+    padding: 1rem;
+    user-select: none;
+}
+
+
+.qcm-question-valider {
+    display: flex;
+    justify-content: center;
+}
+
+button[type="submit"] {
+    background: #ff9fd8;
+    color: black;
+    margin-top: 60px;
+    font-size: 3rem;
+    text-align: center;
     border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+    justify-self: center;
+    border: 2px solid black;
+}
+
+button[type="submit"]:hover {
+    background: #009cf9;
+    color: white;
+}
+
+input {
+    display: none;
 }

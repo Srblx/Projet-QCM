@@ -1,5 +1,5 @@
 <?php if ($position == 1 ) : ?>
-	
+
 <table class='table'>
 	<thead>
 		<tr>
@@ -30,6 +30,39 @@
 	</tbody>
 </table> 
 <?php endif; ?>
+
+<?php if ($position == 2 ) : ?>
+	
+	<table class='table'>
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Pseudo</th>
+				<th>Mail</th>
+				<th>Roles</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php //var_dump($livres[0]);
+			?>
+			<?php foreach ($all_users as $al) : ?>
+				<tr>
+					<td class="td"> <?= $al->nom ?> </td>
+					<td class="td"> <?= $al->prenom ?> </td>
+					<td class="td"> <?= $al->pseudo ?> </td>
+					<td class="td"> <?= $al->email ?> </td>
+					<td class="td"> <?= $al->admin ?> </td>
+					
+					<td><a href="?controller=crud&action=update_user&id=<?= $al->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+					<td class='trash'><a href='?controller=user&action=delete_user&id=<?= $al->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre ?')"><i class='fa fa-trash'></i></a></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table> 
+	<?php endif; ?>
 
 <?php if ($position == 5) : ?>
 <table class='table'>

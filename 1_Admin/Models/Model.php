@@ -33,6 +33,32 @@ class Model
         return self::$instance;
     }
 
+    public function get_all_user_name()
+    {
+        $query = "SELECT nom FROM user";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_user_pseudo()
+    {
+        $query = "SELECT pseudo FROM user";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_user_mail()
+    {
+        $query = "SELECT email FROM user";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
+
     public function get_all_theme()
     {
         $query = "SELECT  nom_theme FROM theme";
@@ -130,12 +156,12 @@ class Model
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    public function get_all_user_name()
-    {
-        $r = $this->bd->prepare("SELECT * FROM user where ");
-        $r->execute();
-        return $r->fetchAll(PDO::FETCH_OBJ);
-    }
+    // public function get_all_user_name()
+    // {
+    //     $r = $this->bd->prepare("SELECT * FROM user where ");
+    //     $r->execute();
+    //     return $r->fetchAll(PDO::FETCH_OBJ);
+    // }
 
     public function get_random_question()
     {

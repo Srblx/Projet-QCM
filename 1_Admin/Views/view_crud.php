@@ -2,92 +2,91 @@
   <?php
   echo "<pre>";
   // var_dump($all_information_bd); 
-  echo "</pre>";
-
-  ?>
-  <table>
-    <tr class="tr_crud">
-      <td class="td_form">
-        <div class="form_recherche_utilisateur">
-          <form action="?controller=crud&action=crud_utilisateur_recherche" method="post" class="form_recherche_utilisateur">
-            <input type="submit" class="submit_recherche_all_user" value="Tous les Utilisateurs" name="submit_recherche_all_user">
-          </form>
-        </div>
-      </td>
-      <td class="td_form">
-        <div class="select_submit">
-          <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_name">
-            <select name="all_name_user" id="all_name_user">
-              <option value="Par nom">Recherche par Nom</option>
-              <?php foreach ($all_information_bd as $aib) : ?>
-                <option value="<?= $aib->nom ?>"><?= $aib->nom ?></option>
-              <?php endforeach; ?>
-            </select>
-            <input type="submit" value="Lancer la recherche" name="submit_all_user_name">
-          </form>
-        </div>
-      </td>
-      <td class="td_form">
-        <div class="select_submit">
-          <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_pseudo">
-            <select name="all_pseudo_user" id="all_pseudo_user">
-              <option value="Par pseudo">Recherche par Pseudo</option>
-              <?php foreach ($all_information_bd as $aib) : ?>
-                <option value="<?= $aib->pseudo ?>"><?= $aib->pseudo ?></option>
-              <?php endforeach; ?>
-            </select>
-            <input type="submit" value="Lancer la recherche">
-          </form>
-        </div>
-      </td>
-      <td class="td_form">
-        <div class="select_submit">
-          <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_mail">
-            <select name="all_mail_user" id="all_mail_user">
-              <option value="Par mail">Recherche par Mail</option>
-              <?php foreach ($all_information_bd as $aib) : ?>
-                <option value="<?= $aib->email ?>"><?= $aib->email ?></option>
-              <?php endforeach; ?>
-            </select>
-            <input type="submit" value="Lancer la recherche" name="submit_recherche_mail_user">
-          </form>
-        </div>
-      </td>
-    </tr>
-    <tr class="tr_crud">
-      <td class="td_form">
-        <div class="form_recheche_question_reponse">
-          <form action="?controller=crud&action=crud_question_reponse_recherche" method="post" class="form_recherche_question_reponse">
-            <input type="submit" class="submit_recherche_question_reponse" value="Toutes les Questions/Réponses">
-          </form>
-        </div>
-      </td>
-      <td class="td_form">
-        <div class="select_submit">
-          <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_theme">
-            <select name="all_question_reponse" id="all_questions_reponses">
-              <option value="Par thème">Recherche par Thèmes</option>
-              <?php foreach ($all_theme as $aib) : ?>
-                <option value="<?= $aib->nom_theme ?>"><?= $aib->nom_theme ?></option>
-              <?php endforeach; ?>
-            </select>
-            <input type="submit" value="Lancer la recherche" name="submit_recherche_theme">
-          </form>
-        </div>
-      </td>
-      <td class="td_form">
-        <div class="select_submit">
-          <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_difficulte">
-            <select name="all_question_reponse_difficulte" id="all_question_reponse_difficulte">
-              <option value="Par difficulté">Recherche par Difficulté</option>
-              <?php foreach ($all_niveau as $aib) : ?>
-                <option value="<?= $aib->niveau ?>"><?= $aib->niveau ?></option>
-              <?php endforeach; ?>
-            </select>
-            <input type="submit" value="Lancer la recherche" class="submit_recherche_difficulte">
-          </form>
-        </div>
-      </td>
+  echo "</pre>"; 
+   ?>
+<table>
+  <tr class="tr_crud">
+    <td class="td_form">
+      <div class="form_recherche_utilisateur">
+        <form action="?controller=crud&action=crud_utilisateur_recherche" method="post" class="form_recherche_utilisateur">
+          <input type="submit" class="submit_recherche_all_user" value="Tous les Utilisateurs" name="submit_recherche_all_user">
+        </form>
+      </div>
+    </td>
+    <td class="td_form">
+      <div class="select_submit">
+        <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_name">
+          <select name="all_name_user" id="all_name_user">
+            <option value="Par nom">Par Nom</option>
+            <?php foreach ($all_user_name as $aun) : ?>
+              <option value="<?= $aun->nom ?>"><?= $aun->nom ?></option>
+            <?php endforeach; ?>
+          </select>
+          <input type="submit" value="Lancer la recherche" name="submit_all_user_name">
+        </form>
+      </div>
+    </td>
+    <td class="td_form">
+      <div class="select_submit">
+        <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_pseudo">
+          <select name="all_pseudo_user" id="all_pseudo_user">
+            <option value="Par pseudo">Par Pseudo</option>
+            <?php foreach ($all_user_pseudo as $aup) : ?>
+              <option value="<?= $aup->pseudo ?>"><?= $aup->pseudo ?></option>
+            <?php endforeach; ?>
+          </select>
+          <input type="submit" value="Lancer la recherche">
+        </form>
+      </div>
+    </td>
+    <td class="td_form">
+      <div class="select_submit">
+        <form action="?controller=crud&action=crud_utilisateur_recherche" class="form_swearch_user_mail">
+          <select name="all_mail_user" id="all_mail_user">
+            <option value="Par mail">Par Mail</option>
+            <?php foreach ($all_user_mail as $aum) : ?>
+              <option value="<?= $aum->email ?>"><?= $aum->email ?></option>
+            <?php endforeach; ?>
+          </select>
+          <input type="submit" value="Lancer la recherche" name="submit_recherche_mail_user">
+        </form>
+      </div>
+    </td>
+  </tr>
+  <tr class="tr_crud">
+    <td class="td_form">
+      <div class="form_recheche_question_reponse">
+        <form action="?controller=crud&action=crud_question_reponse_recherche" method="post" class="form_recherche_question_reponse">
+          <input type="submit" class="submit_recherche_question_reponse" value="Toutes les Questions/Réponses">
+        </form>
+      </div>
+    </td>
+    <td class="td_form">
+      <div class="select_submit">
+        <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_theme">
+          <select name="all_question_reponse" id="all_questions_reponses">
+            <option value="Par thème">Par Thèmes</option>
+            <?php foreach ($all_theme as $aib) : ?>
+              <option value="<?= $aib->nom_theme ?>"><?= $aib->nom_theme ?></option>
+            <?php endforeach; ?>
+          </select>
+          <input type="submit" value="Lancer la recherche" name="submit_recherche_theme">
+        </form>
+      </div>
+    </td>
+    <td class="td_form">
+      <div class="select_submit">
+        <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_difficulte">
+          <select name="all_question_reponse_difficulte" id="all_question_reponse_difficulte">
+            <option value="Par difficulté">Par Difficulté</option>
+            <?php foreach ($all_niveau as $aib) : ?>
+              <option value="<?= $aib->niveau ?>"><?= $aib->niveau ?></option>
+            <?php endforeach; ?>
+          </select>
+          <input type="submit" value="Lancer la recherche" class="submit_recherche_difficulte">
+        </form>
+      </div>
+    </td>
       <td class="td_form">
         <div class="select_submit">
           <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_time">

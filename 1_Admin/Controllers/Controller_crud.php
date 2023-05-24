@@ -16,12 +16,16 @@ class Controller_crud extends Controller
 
     public function action_crud()
     {
-        $m = Model::get_model();
-        $data = [
-            "all_temps" => $m->get_all_temps(), "all_theme" => $m->get_all_theme(),
-            "all_niveau" => $m->get_all_niveau(), "all_score" => $m->get_all_score(),
-            "all_noms" => $m->get_all_noms(), "all_mails" => $m->get_all_mail()
-        ];
+
+    $m = Model::get_model();
+    $data = ["all_theme" => $m->get_all_theme(),
+        "all_niveau" => $m->get_all_niveau(),
+        "all_user_name" => $m->get_all_user_name(),
+        "all_user_pseudo" => $m->get_all_user_pseudo(),
+        "all_user_mail" => $m->get_all_user_mail(),
+         "all_temps" => $m->get_all_temps(),
+         "all_score" => $m->get_all_score(),
+         "all_noms" => $m->get_all_noms(), "all_mails" => $m->get_all_mail()];
         $this->render("crud", $data);
 
         //  $m = Model::get_model();
@@ -57,23 +61,3 @@ class Controller_crud extends Controller
         $this->render("crud_recherche", $data);
     }
 }
-
-
-
-
-
-
-
-// crud_utilisateur_pseudo
-// crud_utilisateur_mail
-// crud_utilisateur_all
-
-// question_reponse_theme
-// question_reponse_difficulty
-// question_reponse_time
-// question_reponse_all
-
-// crud_result_score
-// crud_result_time
-// crud_result_date
-// crud_result_all

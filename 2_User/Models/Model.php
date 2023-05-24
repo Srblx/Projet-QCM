@@ -41,9 +41,9 @@ class Model
         // $r = $this->bd->prepare("SELECT COUNT(*) AS answered FROM repondre");
         // $r->execute();
         // $question = $r->fetch(PDO::FETCH_ASSOC);
-        $r = $this->bd->prepare("SELECT DISTINCT q.id AS question_id, q.description AS question, r.id AS reponse_id, r.description, r.Correct AS reponse
+        $r = $this->bd->prepare("SELECT DISTINCT q.id AS question_id, q.question AS question, r.id AS reponse_id, r.reponse, r.correct AS correct
         FROM (
-            SELECT id, description
+            SELECT id, question
             FROM question WHERE theme_id = '$id' AND question.niveau = '$niveau'
             ORDER BY RAND()
             LIMIT 20

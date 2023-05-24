@@ -1,10 +1,8 @@
 body {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(255, 129, 203, 1),
-    rgba(255, 203, 234, 1),
-    rgba(255, 154, 213, 1)
-  );
+  background-image: linear-gradient(to bottom,
+      rgba(255, 129, 203, 1),
+      rgba(255, 203, 234, 1),
+      rgba(255, 154, 213, 1));
   font-family: cursive;
   background-attachment: fixed;
   background-size: cover;
@@ -27,12 +25,13 @@ body {
 
 #byte {
   background: #ff9fd8;
-  color: #fff;
+  color: black;
   margin-top: 20px;
   font-size: 60px;
   text-align: center;
   padding: 2px 0 13px 0;
   border-radius: 50px;
+  border: 2px solid black;
 }
 
 .button-grp {
@@ -46,22 +45,22 @@ body {
 .reponses-qcm {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
+  gap: 2rem 1rem;
   text-align: center;
   margin-top: 3rem;
 }
 
 .reponses-qcm label {
+  border: 2px solid black;
   width: 100%;
-}
-
-label {
   cursor: pointer;
   font-size: 20px;
   background-color: #ff9fd8;
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 1rem;
+  user-select: none;
 }
+
 
 .qcm-question-valider {
   display: flex;
@@ -70,7 +69,7 @@ label {
 
 button[type="submit"] {
   background: #ff9fd8;
-  color: #fff;
+  color: black;
   margin-top: 60px;
   font-size: 3rem;
   text-align: center;
@@ -79,8 +78,14 @@ button[type="submit"] {
   cursor: pointer;
   width: 250px;
   justify-self: center;
+  border: 2px solid black;
 }
 
 button[type="submit"]:hover {
-  background: #2d85a4;
+  background: #009cf9;
+  color: white;
+}
+
+input {
+  display: none;
 }

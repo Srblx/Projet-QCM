@@ -17,6 +17,8 @@ class Controller_question_correction extends Controller
 
 	public function action_question()
 	{
-		$this->render("question");
+		$m = Model::get_model();
+		$data = ["questions" => $m->get_random_question()];
+		$this->render("question", $data);
 	}
 }

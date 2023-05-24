@@ -9,8 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Index</title>
+
+    <!-- link js -->
+
+    <script src="./Content/js/script.js" defer></script>
+    <script src="./Content/js/question.js" defer></script>
+
     <!-- link css -->
-    <script src="./Content/js/app.js" defer></script>
     <link rel="stylesheet" href="./Content/css/style.css">
     <link rel="stylesheet" href="./Content/css/style_choice.css">
     <link rel="stylesheet" href="./Content/css/style_nav.css">
@@ -19,6 +24,8 @@
     <link rel="stylesheet" href="./Content/css/style_question.css">
     <link rel="stylesheet" href="./Content/css/style_contact.css">
     <link rel="stylesheet" href="./Content/css/style_about.css">
+    <link rel="stylesheet" href="./Content/css/style_demarrage_quizz.css">
+
 
     <!-- Link font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -41,8 +48,6 @@
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
     require_once 'Utils/header.php';
-    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
-    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
 
     //* Tableau des contrôleurs disponibles
     $controllers = ["home", "choice", "contact", "leaderboard", "profile", "question_correction", "crud"];
@@ -78,8 +83,8 @@
 
     //* Inclure le fichier de pied de page
     require_once 'Utils/footer.php';
-    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
-    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
+    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
+    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
     ?>
 </body>
 

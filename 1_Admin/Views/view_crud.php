@@ -66,7 +66,7 @@
       <div class="select_submit">
         <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_theme">
           <select name="all_question_reponse" id="all_questions_reponses">
-            <option value="Par thème">Recherche par Thèmes</option>
+            <option value="Par thème">Par Thèmes</option>
             <?php foreach ($all_theme as $aib) : ?>
               <option value="<?= $aib->nom_theme ?>"><?= $aib->nom_theme ?></option>
             <?php endforeach; ?>
@@ -79,7 +79,7 @@
       <div class="select_submit">
         <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_difficulte">
           <select name="all_question_reponse_difficulte" id="all_question_reponse_difficulte">
-            <option value="Par difficulté">Recherche par Difficulté</option>
+            <option value="Par difficulté">Par Difficulté</option>
             <?php foreach ($all_niveau as $aib) : ?>
               <option value="<?= $aib->niveau ?>"><?= $aib->niveau ?></option>
             <?php endforeach; ?>
@@ -92,7 +92,7 @@
       <div class="select_submit">
         <form action="?controller=crud&action=crud_question_reponse_recherche" class="form_swearch_question_reponse_time">
           <select name="all_question_reponse_time" id="all_question_reponse_time">
-            <option value="Par temps">Recherche par Temps</option>
+            <option value="Par temps">Par Temps</option>
             <?php foreach ($all_information_bd as $aib) : ?>
               <option value="<?= $aib->tps_question ?>"><?= $aib->tps_question ?></option>
             <?php endforeach; ?>

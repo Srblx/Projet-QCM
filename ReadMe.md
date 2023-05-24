@@ -15,10 +15,13 @@ Mathieu : Question, Leaderboard, Correction -->
 Alexis : profil utilisateur (ses resultats) / Crud
 Alex : Form choix du niveau, generer classement
 Ahmed : Generation du logo en fonction du choix utilisateur
-Mathieu : Form choix du theme
-Choix du thème => form --Mathieu
-Choix du niveau => form --Alex
+<!-- Mathieu : Form choix du theme -->
+<!-- Choix du thème => form --Mathieu -->
+<!-- Choix du niveau => form --Alex -->
 generer classement --Alex
 Generation du logo en fonction du choix utilisateur --Ahmed
 generation et affichage question --
 genere correction des question --
+
+
+changer le champ description dans la tabke reponse et question par question et reponse 

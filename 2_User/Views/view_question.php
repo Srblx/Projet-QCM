@@ -7,7 +7,6 @@
 
                 // Afficher la valeur de la question
                 echo "<h3 class='titre_section_demarrage'>" . $questions[0]->question . "</h3>";
-                echo $questions[0]->question;
                 ?>
                 <form action="">
                     <?php $cpt = 1 ?>

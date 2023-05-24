@@ -39,4 +39,23 @@ class Controller_question_correction extends Controller
         //* Rendu de la vue "question" avec les données
         $this->render("question", $data);
     }
+
+    public function action_une_question()
+    {
+        $cpt = $_SESSION['cpt'];
+        $liste_id = $_SESSION['liste_id'];
+
+        $id_question = $liste_id[$cpt]->id;
+
+        $m = Model::get_model();
+        $data = [
+            "question" => $m->get_une_question($id_question),
+            "reponses" => $m->get_les_responses($id_question)
+        ];
+        $cpt++;
+        $_SESSION['cpt'] = $cpt;
+        $this->render("question", $data);
+
+
+    }
 }

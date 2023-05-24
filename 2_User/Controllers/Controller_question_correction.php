@@ -28,6 +28,7 @@ class Controller_question_correction extends Controller
         //* Redirection vers la page d'accueil si le numéro de question dépasse 20
         if ($_GET['question'] > 20) {
             unset($_SESSION['question']);
+            $_SESSION['alert'] = "<script>alert('Quizz terminé')</script>";
             header("Location: ?controller=home&action=home");
             die;
         }

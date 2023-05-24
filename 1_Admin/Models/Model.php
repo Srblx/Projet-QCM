@@ -33,9 +33,16 @@ class Model
         return self::$instance;
     }
 
-    public function get_all_information()
+    public function get_all_theme()
     {
-        $query = "SELECT distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores FROM user join theme join question join repondre";
+        $query = "SELECT  nom_theme FROM theme";
+        
+        
+        // $query = "SELECT 
+        // distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores
+        //  FROM user join theme 
+        //  join question 
+        //  join repondre";
         $r = $this->bd->prepare($query);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
@@ -51,6 +58,22 @@ class Model
 
     }
 
+    public function get_all_niveau()
+    {
+        $query = "SELECT DISTINCT niveau FROM question";
+        
+        
+        // $query = "SELECT 
+        // distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores
+        //  FROM user join theme 
+        //  join question 
+        //  join repondre";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+
+    }
+    
     public function get_all_user()
     {
             $r = $this->bd->prepare("SELECT * FROM user");

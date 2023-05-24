@@ -1,4 +1,5 @@
 <?php if ($position == 1 ) : ?>
+	
 <table class='table'>
 	<thead>
 		<tr>
@@ -39,6 +40,7 @@
 			<th>Nombre de Points</th>
 			<th>Temps de reponse</th>
 			<th>Themes</th>
+			<th>Difficulté</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -56,6 +58,7 @@
 				<td class="td"> <?= $aqr->nb_points ?> </td>
 				<td class="td"> <?= $aqr->tps_question ?> </td>
 				<td class="td"> <?= $aqr->theme_id ?> </td>
+				<td class="td"> <?= $aqr->niveau ?> </td>
 				
 				<td><a href="?controller=crud&action=update_user&id=<?= $aqr->id ?>"><i class="fa-solid fa-pen"></i></a></td>
 				<td class='trash'><a href='?controller=user&action=delete_user&id=<?= $aqr->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre ?')"><i class='fa fa-trash'></i></a></td>

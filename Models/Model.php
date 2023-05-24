@@ -76,7 +76,7 @@ class Model
         $row = $stmt->fetch();
 
 
-        if ($stmt->rowCount() > 0) {
+        if ($stmt->rowCount() < 0) {
 
             $requete2 = "UPDATE user SET password = :password  WHERE email = :mail";
             $stmt2 = $this->bd->prepare($requete2);

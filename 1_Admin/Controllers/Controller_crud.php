@@ -16,24 +16,15 @@ class Controller_crud extends Controller {
     public function action_crud()
     {
          $m = Model::get_model();
-        $data = ["all_information_bd" => $m->get_all_information()];
+        $data = ["all_theme" => $m->get_all_theme(),
+    "all_niveau" => $m->get_all_niveau()];
         $this->render("crud", $data);
+        
+        //  $m = Model::get_model();
+        // $data = ["all_information_bd" => $m->get_all_information()];
+        // $this->render("crud", $data);
     }
     
-    
-    // public function action_crud_utilisateur_recherche()
-    // {
-    //     $m = Model::get_model();
-    //     $data = ["utilisateur_name" => $m->get_all_utilisateur_name(), "position" => 1];
-    //     $this->render("crud", $data);
-    // }
-    
-    // public function action_crud_question_reponse_recherche()
-    // {
-    //     $m = Model::get_model();
-    //     $data = ["all_information_bd" => $m->get_all_information()];
-    //     $this->render("crud");
-    // }
 
     public function action_crud_utilisateur_recherche()
     {
@@ -41,9 +32,7 @@ class Controller_crud extends Controller {
             $m = Model::get_model();
             $data = ["all_users" => $m->get_all_user(), "position" => 1];
             $this->render("crud_recherche", $data);
-        }
-
-        if($_POST['submit_all_user_name']) {
+        } else if ($_POST['submit_all_user_name']) {
             $m = Model::get_model();
             $data = ["all_user_name" => $m->get_all_user_name(), "position" => 2];
             $this->render("crud_recherche", $data);

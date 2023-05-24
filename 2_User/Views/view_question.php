@@ -9,7 +9,7 @@
                 ?>
                 <form action="">
                     <?php $cpt = 1 ?>
-                    <?php foreach ($questions as $question) : ?>
+                    <?php foreach ($questions as $question): ?>
                         <label for="qst<?= $cpt ?>"><?= $question->reponse ?></label>
                         <input type="checkbox" name="qst<?= $cpt ?>" id="qst<?= $cpt ?>"><br />
                         <?php $cpt++ ?>

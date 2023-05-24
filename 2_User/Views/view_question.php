@@ -8,6 +8,7 @@
             ?>
             <form action="">
                 <div class="reponses-qcm">
+
                     <?php $cpt = 1 ?>
                     <?php foreach ($questions as $question): ?>
                         <label for="qst<?= $cpt ?>"><?= substr(htmlspecialchars($question->reponse), 3) ?>

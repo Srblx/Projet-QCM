@@ -21,7 +21,6 @@ class Model
         $this->bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-
     //* get_model()
 
     public static function get_model()
@@ -37,13 +36,9 @@ class Model
     {
         $id = $_GET['id'];
         $niveau = $_GET['niveau'];
-        // Récupération du nombre de questions déjà répondues
-        // $r = $this->bd->prepare("SELECT COUNT(*) AS answered FROM repondre");
-        // $r->execute();
-        // $question = $r->fetch(PDO::FETCH_ASSOC);
-        $r = $this->bd->prepare("SELECT DISTINCT q.id AS question_id, q.description AS question, r.id AS reponse_id, r.description, r.Correct AS reponse
+        $r = $this->bd->prepare("SELECT DISTINCT q.id AS question_id, q.question AS question, r.id AS reponse_id, r.reponse, r.correct AS correct
         FROM (
-            SELECT id, description
+            SELECT id, question
             FROM question WHERE theme_id = '$id' AND question.niveau = '$niveau'
             ORDER BY RAND()
             LIMIT 20
@@ -52,7 +47,5 @@ class Model
         LIMIT 4");
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
-
     }
-
 }

@@ -19,8 +19,10 @@ class Controller_crud extends Controller
 
     $m = Model::get_model();
     $data = ["all_theme" => $m->get_all_theme(),
+        // * "all_user_bd" =>get_all_info_bd(), 
+        // ^ Voir model !!
         "all_niveau" => $m->get_all_niveau(),
-        "all_user_name" => $m->get_all_user_name(),
+        "all_user_name" => $m->get_all_user_names(),
         "all_user_pseudo" => $m->get_all_user_pseudo(),
         "all_user_mail" => $m->get_all_user_mail(),
          "all_temps" => $m->get_all_temps(),
@@ -33,19 +35,41 @@ class Controller_crud extends Controller
         // $this->render("crud", $data);
     }
 
-
     public function action_crud_utilisateur_recherche()
-    {
-        if ($_POST['submit_recherche_all_user']) {
-            $m = Model::get_model();
-            $data = ["all_users" => $m->get_all_user(), "position" => 1];
-            $this->render("crud_recherche", $data);
-        } else if ($_POST['submit_all_user_name']) {
-            $m = Model::get_model();
-            $data = ["all_user_name" => $m->get_all_user_name(), "position" => 2];
-            $this->render("crud_recherche", $data);
-        }
+{
+    $m = Model::get_model();
+
+    if ($_POST['submit_recherche_all_user']) {
+        $data = ["all_users" => $m->get_all_user(), "position" => 1];
+        $this->render("crud_recherche", $data);
+    } elseif ($_POST['submit_all_user_name']) {
+        $data = ["all_user_name" => $m->get_all_user_name(), "position" => 2];
+        $this->render("crud_recherche", $data);
+    } elseif ($_POST['submit_all_user_pseudo']) {
+        $data = ["all_user_pseudo" => $m->get_all_user_pseudo(), "position" => 3];
+        $this->render("crud_recherche", $data);
+    } elseif ($_POST['submit_recherche_mail_user']) {
+        $data = ["all_user_mail" => $m->get_all_user_mail(), "position" => 4];
+        $this->render("crud_recherche", $data);
+    } elseif ($_POST['submit_recherche_theme']) {
+        $data = ["all_question_reponse_theme" => $m->get_all_question_reponse_theme(), "position" => 5];
+        $this->render("crud_recherche", $data);
+    } elseif ($_POST['submit_recherche_difficulte']) {
+        $data = ["all_question_reponse_difficulte" => $m->get_all_question_reponse_difficulte(), "position" => 6];
+        $this->render("crud_recherche", $data);
+    } elseif ($_POST['submit_question_reponse_time']) {
+        $data = ["all_question_reponse_time" => $m->get_all_question_reponse_time(), "position" => 7];
+        $this->render("crud_recherche", $data);
+    } elseif ($_POST['submit_all_result_score']) {
+        $data = ["all_score_resultat" => $m->get_all_score_resultat(), "position" => 8];
+        $this->render("crud_recherche", $data);
+    } else {
+        // Cas où aucun bouton n'est soumis ou aucun cas ne correspond
+        $data = ["error_message" => "Erreur : Veuillez sélectionner une option de recherche.", "position" => 0];
+        $this->render("crud", $data);
+        // Gérer l'erreur ou le comportement par défaut ici
     }
+}
 
     public function action_crud_question_reponse_recherche()
     {

@@ -17,8 +17,25 @@ class Controller_question_correction extends Controller
 
     public function action_question()
     {
+        //* Stockage de la question actuelle dans la session
+        $_SESSION['question'] = $_GET['question'];
+
+        //* Incrémentation du numéro de question si le paramètre 'question' est défini
+        if (isset($_GET['question'])) {
+            $_SESSION['question'] = $_GET['question'] + 1;
+        }
+
+        //* Redirection vers la page d'accueil si le numéro de question dépasse 20
+        if ($_GET['question'] > 20) {
+            $_SESSION['question'] = 0;
+            header("Location: ?controller=home&action=home");
+            die;
+        }
+
         $m = Model::get_model();
         $data = ["questions" => $m->get_random_question()];
+
+        //* Rendu de la vue "question" avec les données
         $this->render("question", $data);
     }
 }

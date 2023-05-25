@@ -17,7 +17,7 @@ echo "</pre>"; */
             echo "<h3 class='titre_section_demarrage'>" . $question->question . "</h3>";
             ?>
 
-            <form method="post" action="?controller=question_correction&action=une_question">
+            <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=une_question">
                 <div class="reponses-qcm">
                     <?php $cpt = 1 ?>
                     <?php foreach ($reponses as $reponse): ?>

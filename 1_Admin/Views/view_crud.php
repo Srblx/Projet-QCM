@@ -30,7 +30,7 @@
     <td class="td_form">
       <div class="select_submit">
         <form action="?controller=crud&action=crud_utilisateur_recherche" method="post" class="form_swearch_user_pseudo">
-          <select name="all_pseudo_user" id="all_pseudo_user" name="all_user_pseudo">
+          <select  id="all_pseudo_user" name="all_user_pseudo">
             <option value="Par pseudo">Par Pseudo</option>
             <?php foreach ($all_user_pseudo as $aup) : ?>
               <option value="<?= $aup->pseudo ?>"><?= $aup->pseudo ?></option>
@@ -58,14 +58,14 @@
     <td class="td_form">
       <div class="form_recheche_question_reponse">
         <form action="?controller=crud&action=crud_question_reponse_recherche" method="post" class="form_recherche_question_reponse">
-          <input type="submit" class="submit_recherche_question_reponse" value="Toutes les Questions/Réponses">
+          <input type="submit" class="submit_recherche_question_reponse" value="Toutes les Questions/Réponses" name="all_question_reponse_recherche">
         </form>
       </div>
     </td>
     <td class="td_form">
       <div class="select_submit">
         <form action="?controller=crud&action=crud_question_reponse_recherche" method="post" class="form_swearch_question_reponse_theme">
-          <select name="all_question_reponse" id="all_questions_reponses">
+          <select name="all_question_reponse_theme" id="all_questions_reponses">
             <option value="Par thème">Par Thèmes</option>
             <?php foreach ($all_theme as $aib) : ?>
               <option value="<?= $aib->nom_theme ?>"><?= $aib->nom_theme ?></option>

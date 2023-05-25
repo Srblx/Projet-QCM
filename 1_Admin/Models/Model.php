@@ -144,7 +144,7 @@ class Model
     {
         $name = $_POST["all_name_user"];
 
-        $query = "SELECT nom FROM user WHERE nom = :name";
+        $query = "SELECT * FROM user WHERE nom = :name";
         $r = $this->bd->prepare($query);
         $r->bindParam(':name', $name);
         $r->execute();
@@ -154,7 +154,7 @@ class Model
     public function get_all_user_pseudo_affiche()
     {
         $pseudo = $_POST["all_user_pseudo"];
-        $query = "SELECT pseudo FROM user WHERE pseudo = :pseudo";
+        $query = "SELECT * FROM user WHERE pseudo = :pseudo";
         $r = $this->bd->prepare($query);
         $r->bindParam(':pseudo', $pseudo);
         $r->execute();
@@ -165,14 +165,14 @@ class Model
     {
         $email = $_POST["all_mail_user"];
 
-        $query = "SELECT email FROM user WHERE email = :email";
+        $query = "SELECT * FROM user WHERE email = :email";
         $r = $this->bd->prepare($query);
         $r->bindParam(":email", $email);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function get_all_question_reponse()
+    public function get_all_question_reponse_recherche()
     {
         $r = $this->bd->prepare("SELECT * FROM question q 
             INNER JOIN reponse r WHERE q.id = r.question_id");
@@ -180,9 +180,38 @@ class Model
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
+    
+    public function get_all_question_reponse_recherche_theme()
+    {
+        $theme = $_POST["all_question_reponse_theme"];
+
+        $r = $this->bd->prepare("SELECT * FROM question q
+        INNER JOIN reponse r ON q.id = r.question_id
+        INNER JOIN theme t ON t.id = q.theme_id
+        WHERE nom_theme = :theme");
+        $r->bindParam(":theme", $theme);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+ 
+
     public function get_all_result()
     {
         $r = $this->bd->prepare("SELECT * FROM repondre");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
+
+    public function get_all_question_reponse_difficulte()
+    {
+        $niveau = $_POST["all_question_reponse_difficulte"];
+
+        $r = $this->bd->prepare("SELECT * FROM question q 
+        INNER JOIN reponse r ON q.id = r.question_id
+        WHERE niveau = :niveau;");
+        $r->bindParam(":niveau", $niveau);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }

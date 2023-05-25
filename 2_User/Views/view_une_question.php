@@ -1,7 +1,12 @@
+<?php
+// echo "<pre>";
+// var_dump($_SESSION['data']);
+// echo "</pre>";
+?>
 <main id="question_qcm_main">
     <div class="compteur_question_qcm">
         <p>Question
-            <?= $_GET['question'] ?>/20
+            <?= $_SESSION['cpt'] ?>/20
         </p>
     </div>
     <div class="container_question">
@@ -9,24 +14,24 @@
         <div id="quiz">
             <?php
             // Afficher la valeur de la question
-            echo "<h3 class='titre_section_demarrage'>" . $questions[0]->question . "</h3>";
+            echo "<h3 class='titre_section_demarrage'>" . $question->question . "</h3>";
             ?>
 
-            <form method="post"
-                action="?controller=question_correction&action=question&id=<?= $_GET['id'] ?>&niveau=<?= $_GET['niveau'] ?>&question=<?= $_SESSION['question'] ?>">
+            <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=une_question">
                 <div class="reponses-qcm">
                     <?php $cpt = 1 ?>
-                    <?php foreach ($questions as $question): ?>
-                        <label for="qst<?= $cpt ?>"><?= substr(htmlspecialchars($question->reponse), 3) ?>
+                    <?php foreach ($reponses as $reponse): ?>
+                        <label for="qst<?= $cpt ?>"><?= substr(htmlspecialchars($reponse->reponse), 3) ?>
                             <input type="checkbox" name="qst<?= $cpt ?>" id="qst<?= $cpt ?>">
                         </label>
                         <?php $cpt++ ?>
                     <?php endforeach; ?>
                 </div>
                 <div class="qcm-question-valider">
-                    <button type="submit">Valider</button>
+                    <input type="submit" name="submit" value="Valider" id="valider_qcm_question">
                 </div>
             </form>
+            <?php echo $_POST['submit'] ?>
         </div>
     </div>
 </main>

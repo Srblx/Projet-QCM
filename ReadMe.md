@@ -22,6 +22,3 @@ generer classement --Alex
 Generation du logo en fonction du choix utilisateur --Ahmed
 generation et affichage question --
 genere correction des question --
-
-
-changer le champ description dans la tabke reponse et question par question et reponse 

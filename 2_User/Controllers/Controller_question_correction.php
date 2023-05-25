@@ -52,10 +52,10 @@ class Controller_question_correction extends Controller
             "question" => $m->get_une_question($id_question),
             "reponses" => $m->get_les_responses($id_question)
         ];
+
         $cpt++;
         $_SESSION['cpt'] = $cpt;
         $this->render("une_question", $data);
-
-
     }
+
 }

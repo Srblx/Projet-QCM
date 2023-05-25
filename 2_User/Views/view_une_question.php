@@ -1,7 +1,7 @@
 <?php
-/* echo "<pre>";
-var_dump($data);
-echo "</pre>"; */
+// echo "<pre>";
+// var_dump($_SESSION['data']);
+// echo "</pre>";
 ?>
 <main id="question_qcm_main">
     <div class="compteur_question_qcm">
@@ -28,10 +28,10 @@ echo "</pre>"; */
                     <?php endforeach; ?>
                 </div>
                 <div class="qcm-question-valider">
-                    <button type="submit">Valider</button>
+                    <input type="submit" name="submit" value="Valider" id="valider_qcm_question">
                 </div>
             </form>
+            <?php echo $_POST['submit'] ?>
         </div>
     </div>
-
 </main>

@@ -33,26 +33,135 @@ class Model
         return self::$instance;
     }
 
-    public function get_all_utilisateur_name()
+    public function get_all_user_name()
     {
-        // Préparer la requête SQL pour sélectionner tous les livres dans l'ordre alphabétique par prenom
-        $r = $this->bd->prepare("SELECT distinct nom FROM user;");
-
-        // Exécuter la requête
+        $query = "SELECT nom FROM user";
+        $r = $this->bd->prepare($query);
         $r->execute();
-
-        // Récupérer tous les résultats sous forme d'un tableau d'objets
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function get_all_user_pseudo()
+    {
+        $query = "SELECT pseudo FROM user";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_user_mail()
+    {
+        $query = "SELECT email FROM user";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
+
+    public function get_all_theme()
+    {
+        $query = "SELECT  nom_theme FROM theme";
+
+
+        // $query = "SELECT 
+        // distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores
+        //  FROM user join theme 
+        //  join question 
+        //  join repondre";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+
+        //! Deuxieme version avec inner join 
+        // $r = $this->bd->prepare("SELECT  u.nom, u.pseudo, u.email, t.nom_theme, q.niveau, q.tps_question, r.scores
+        // FROM user u
+        // INNER JOIN repondre r ON u.id = r.user_id
+        // INNER JOIN theme t ON r.theme_id = t.id
+        // INNER JOIN question q ON r.theme_id = q.theme_id");
+        // $r->execute();
+        // return $r->fetchAll(PDO::FETCH_OBJ);
+
+    }
+
+    public function get_all_niveau()
+    {
+        $query = "SELECT DISTINCT niveau FROM question";
+
+
+        // $query = "SELECT 
+        // distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores
+        //  FROM user join theme 
+        //  join question 
+        //  join repondre";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    ////////////////////// code en cours Mathieu ///////////////////////////
+
+    public function get_all_temps()
+    {
+        $query = "SELECT tps_question FROM question";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_score()
+    {
+        $query = "SELECT scores FROM repondre";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_noms()
+    {
+        $query = "SELECT nom FROM user";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_mail()
+    {
+        $query = "SELECT email FROM user";
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    ///////////////// fin code Mathieu //////////////////////////////
+
     public function get_all_user()
     {
-        
-            $r = $this->bd->prepare("SELECT * FROM user");
-            $r->execute();
-            return $r->fetchAll(PDO::FETCH_OBJ);
-        
+        $r = $this->bd->prepare("SELECT * FROM user");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public function get_all_question_reponse()
+    {
+        $r = $this->bd->prepare("SELECT * FROM question q 
+            INNER JOIN reponse r WHERE q.id = r.question_id");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_result()
+    {
+        $r = $this->bd->prepare("SELECT * FROM repondre");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+    // public function get_all_user_name()
+    // {
+    //     $r = $this->bd->prepare("SELECT * FROM user where ");
+    //     $r->execute();
+    //     return $r->fetchAll(PDO::FETCH_OBJ);
+    // }
 
     public function get_random_question()
     {

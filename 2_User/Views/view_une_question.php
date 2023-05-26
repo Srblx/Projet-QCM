@@ -17,21 +17,24 @@
             echo "<h3 class='titre_section_demarrage'>" . $question->question . "</h3>";
             ?>
 
-            <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=une_question">
+            <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=question_suivante">
                 <div class="reponses-qcm">
                     <?php $cpt = 1 ?>
                     <?php foreach ($reponses as $reponse): ?>
                         <label for="qst<?= $cpt ?>"><?= substr(htmlspecialchars($reponse->reponse), 3) ?>
-                            <input type="checkbox" name="qst<?= $cpt ?>" id="qst<?= $cpt ?>">
+                            <input type="checkbox" name="qst<?= $cpt ?>" id="qst<?= $cpt ?>" value="<?php $reponse->correct ?>">
                         </label>
                         <?php $cpt++ ?>
                     <?php endforeach; ?>
                 </div>
                 <div class="qcm-question-valider">
-                    <input type="submit" name="submit" value="Valider" id="valider_qcm_question">
+                    <input type="submit" name="submit_question" value="Valider" id="valider_qcm_question">
                 </div>
             </form>
-            <?php echo $_POST['submit'] ?>
+            <?php 
+            $reponseUtilisateur = $_SESSION["reponseUtilisateur"];
+            echo $reponseUtilisateur;  ?>
+            
         </div>
     </div>
 </main>

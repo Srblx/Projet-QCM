@@ -32,8 +32,30 @@ class Model
         }
         return self::$instance;
     }
-
-    public function get_all_user_name()
+    
+    public function get_all_user() 
+    {
+        $query = ("SELECT * FROM user;");
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+    // ^ Requete fonctionnelle mais mais renvoie toute les données pour chaque thèmes, et niveau 
+    // * Vue avec Lionel en attente
+    // $query = "SELECT 
+    // distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores
+    //  FROM user join theme 
+    //  join question 
+    //  join repondre";
+    //! Deuxieme version avec inner join 
+    // $r = $this->bd->prepare("SELECT  u.nom, u.pseudo, u.email, t.nom_theme, q.niveau, q.tps_question, r.scores
+    // FROM user u
+    // INNER JOIN repondre r ON u.id = r.user_id
+    // INNER JOIN theme t ON r.theme_id = t.id
+    // INNER JOIN question q ON r.theme_id = q.theme_id");
+    // $r->execute();
+    // return $r->fetchAll(PDO::FETCH_OBJ);
+    public function get_all_user_names()
     {
         $query = "SELECT nom FROM user";
         $r = $this->bd->prepare($query);
@@ -57,37 +79,19 @@ class Model
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
-
-
     public function get_all_theme()
     {
         $query = "SELECT  nom_theme FROM theme";
 
-
-        // $query = "SELECT 
-        // distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores
-        //  FROM user join theme 
-        //  join question 
-        //  join repondre";
         $r = $this->bd->prepare($query);
         $r->execute();
-        return $r->fetchAll(PDO::FETCH_OBJ);
-
-        //! Deuxieme version avec inner join 
-        // $r = $this->bd->prepare("SELECT  u.nom, u.pseudo, u.email, t.nom_theme, q.niveau, q.tps_question, r.scores
-        // FROM user u
-        // INNER JOIN repondre r ON u.id = r.user_id
-        // INNER JOIN theme t ON r.theme_id = t.id
-        // INNER JOIN question q ON r.theme_id = q.theme_id");
-        // $r->execute();
-        // return $r->fetchAll(PDO::FETCH_OBJ);
-
+        return $r->fetchAll(PDO::FETCH_OBJ);        
     }
-
+    
+    
     public function get_all_niveau()
     {
         $query = "SELECT DISTINCT niveau FROM question";
-
 
         // $query = "SELECT 
         // distinct user.nom, user.pseudo, user.email, theme.nom_theme, question.niveau, question.tps_question, repondre.scores
@@ -133,16 +137,42 @@ class Model
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
-    ///////////////// fin code Mathieu //////////////////////////////
+    //! ////////////// fin code Mathieu //////////////////////////////
 
-    public function get_all_user()
+
+        public function get_all_user_name_affiche()
     {
-        $r = $this->bd->prepare("SELECT * FROM user");
+        $name = $_POST["all_name_user"];
+
+        $query = "SELECT * FROM user WHERE nom = :name";
+        $r = $this->bd->prepare($query);
+        $r->bindParam(':name', $name);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function get_all_question_reponse()
+    public function get_all_user_pseudo_affiche()
+    {
+        $pseudo = $_POST["all_user_pseudo"];
+        $query = "SELECT * FROM user WHERE pseudo = :pseudo";
+        $r = $this->bd->prepare($query);
+        $r->bindParam(':pseudo', $pseudo);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+    
+    public function get_all_user_mail_affiche()
+    {
+        $email = $_POST["all_mail_user"];
+
+        $query = "SELECT * FROM user WHERE email = :email";
+        $r = $this->bd->prepare($query);
+        $r->bindParam(":email", $email);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_question_reponse_recherche()
     {
         $r = $this->bd->prepare("SELECT * FROM question q 
             INNER JOIN reponse r WHERE q.id = r.question_id");
@@ -150,9 +180,38 @@ class Model
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
+    
+    public function get_all_question_reponse_recherche_theme()
+    {
+        $theme = $_POST["all_question_reponse_theme"];
+
+        $r = $this->bd->prepare("SELECT * FROM question q
+        INNER JOIN reponse r ON q.id = r.question_id
+        INNER JOIN theme t ON t.id = q.theme_id
+        WHERE nom_theme = :theme");
+        $r->bindParam(":theme", $theme);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+ 
+
     public function get_all_result()
     {
         $r = $this->bd->prepare("SELECT * FROM repondre");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
+
+    public function get_all_question_reponse_difficulte()
+    {
+        $niveau = $_POST["all_question_reponse_difficulte"];
+
+        $r = $this->bd->prepare("SELECT * FROM question q 
+        INNER JOIN reponse r ON q.id = r.question_id
+        WHERE niveau = :niveau;");
+        $r->bindParam(":niveau", $niveau);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }

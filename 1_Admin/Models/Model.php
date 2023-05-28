@@ -103,7 +103,7 @@ class Model
 
     public function get_all_temps()
     {
-        $query = "SELECT tps_question FROM question";
+        $query = "SELECT DISTINCT tps_question FROM question";
         $r = $this->bd->prepare($query);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);

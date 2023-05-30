@@ -64,7 +64,7 @@ class Controller_question_correction extends Controller
         $reponseUtilisateur = "";
         if (!empty($_POST["submit_question"])) {
             // ^ Traitement de la question precedente 
-            if (isset($_POST["qst1"])){
+            if (isset($_POST["qst1"])) {
                 $reponseUtilisateur .= "1";
             } else {
                 $reponseUtilisateur .= "0";
@@ -90,7 +90,7 @@ class Controller_question_correction extends Controller
             // ^ Incrémentation du timer
             $_SESSION['timer'];
             $_SESSION['timer'] = $_SESSION['timer'] + (45 - intval($_POST["timer_value"]));
-            
+
             $cpt = $_SESSION['cpt'];
             $cpt++;
             if ($cpt < 20) {
@@ -126,5 +126,4 @@ class Controller_question_correction extends Controller
             $this->render("une_question", $data);
         }
     }
-
 }

@@ -27,10 +27,9 @@
             <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=question_suivante">
                 <div class="reponses-qcm">
                     <?php $cpt = 1 ?>
-                    <?php foreach ($reponses as $reponse): ?>
+                    <?php foreach ($reponses as $reponse) : ?>
                         <label for="qst<?= $cpt ?>"><?= substr(htmlspecialchars($reponse->reponse), 3) ?>
-                            <input type="checkbox" name="qst<?= $cpt ?>" id="qst<?= $cpt ?>"
-                                value="<?php $reponse->correct ?>">
+                            <input type="checkbox" name="qst<?= $cpt ?>" id="qst<?= $cpt ?>" value="<?= $reponse->correct ?>">
                         </label>
                         <?php $cpt++ ?>
                     <?php endforeach; ?>

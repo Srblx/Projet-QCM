@@ -98,13 +98,31 @@ class Controller_crud extends Controller
             $data = ["all_question_reponse_difficulte" => $m->get_all_question_reponse_difficulte(), "position" => 7];
             $this->render("crud_recherche", $data);
         } 
+        elseif (isset($_POST["submit_question_reponse_time"])) {
+            $data = ["all_question_reponse_time" => $m->get_all_question_reponse_time(), "position" => 8];
+            $this->render("crud_recherche", $data);
+        }
         }
     
 
     public function action_crud_resultat_utilisateur()
     {
         $m = Model::get_model();
-        $data = ["all_score" => $m->get_all_result(), "position" => 9];
+        if (isset($_POST["submit_all_result"])) {
+        $data = ["all_scores" => $m->get_all_result(), "position" => 9];
         $this->render("crud_recherche", $data);
+        } 
+        elseif (isset($_POST["submit_all_result_score"])) {
+            $data = ["all_scores" => $m->get_all_result_score(), "position" => 10];
+            $this->render("crud_recherche", $data); 
+        }
+        elseif (isset($_POST["submit_all_result_name"])){
+            $data = ["all_resultat_nom" => $m->get_all_score_nom(), "position" => 11];
+            $this->render("crud_recherche", $data);
+        }
+        elseif (isset($_POST["submit_all_result_mail"])) {
+            $data = ["all_resultat_mail" => $m->get_all_score_mail(), "position" => 12];
+            $this->render("crud_recherche", $data);
+        }
     }
 }

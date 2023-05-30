@@ -88,3 +88,8 @@ button[type="submit"]:hover {
 input[type="checkbox"] {
   display: none;
 }
+
+.infos_question_qcm {
+  display: flex;
+  justify-content: space-around;
+}

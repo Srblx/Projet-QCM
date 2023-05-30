@@ -32,5 +32,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
+    // Fonction pour mettre à jour le timer
+    function updateTimer() {
+      const timerElement = document.getElementById("question-qcm-timer");
+      let timerValue = parseInt(timerElement.textContent);
+
+      if (timerValue > 0) {
+        timerValue--;
+        timerElement.textContent = timerValue;
+      } else {
+        // Le timer est arrivé à 0, soumettre le formulaire
+        clearInterval(timerInterval);
+        document.getElementById("form_qcm_jouer").submit();
+      }
+
+      // Mettre à jour la valeur du champ caché avec le timer actuel
+      const timerValueInput = document.getElementById("timer-value");
+      timerValueInput.value = timerValue;
+    }
+
+    // Démarrer le timer
+    const timerInterval = setInterval(updateTimer, 1000);
   }
 });

@@ -11,8 +11,8 @@
             </p>
         </div>
         <div class="timer">
-            <p>
-                0:45s
+            <p id="question-qcm-timer">
+                45
             </p>
         </div>
     </div>
@@ -37,11 +37,14 @@
                 </div>
                 <div class="qcm-question-valider">
                     <input type="submit" name="submit_question" value="Valider" id="valider_qcm_question">
+                    <input type="hidden" id="timer-value" name="timer_value" value="">
                 </div>
             </form>
             <?php
             $reponseUtilisateur = $_SESSION["reponseUtilisateur"];
-            echo $reponseUtilisateur; ?>
+            echo $reponseUtilisateur . "<br/>";
+            echo $_SESSION['timer']
+                ?>
 
         </div>
     </div>

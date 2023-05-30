@@ -4,8 +4,8 @@
 </main>
 
 <?php
-if ($_SESSION['alert']) {
-  echo $_SESSION['alert'];
-  unset($_SESSION['alert']);
+if (isset($_SESSION['timer'])) {
+  unset($_SESSION['timer']);
 }
+
 ?>

@@ -13,4 +13,4 @@ Nom du site ByteMaster
 // effectivement il s'agit de deux projet bien distinct maais si lié 
 // je vais vous les presenter pas la suite 
 
-// un utilise ceci l'autre utilise la meme methode mais sous cette forme
+// un utilise ceci l'autre utilise la meme methode mais sous cette forme 

@@ -126,7 +126,7 @@
       <td class="td_form">
         <div class="select_submit">
           <form action="?controller=crud&action=crud_resultat_utilisateur" method="post" class="form_resultat_utilisateur">
-            <select name="all_user_resultat" id="all_user_resultat">
+            <select name="all_user_resultat_nom" id="all_user_resultat_nom">
               <option value="Par nom">Recherche par Nom</option>
               <?php foreach ($all_noms as $aib) : ?>
                 <option value="<?= $aib->nom ?>"><?= $aib->nom ?></option>

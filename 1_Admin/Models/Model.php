@@ -195,23 +195,75 @@ class Model
     }
  
 
-    public function get_all_result()
-    {
-        $r = $this->bd->prepare("SELECT * FROM repondre");
-        $r->execute();
-        return $r->fetchAll(PDO::FETCH_OBJ);
-    }
-
-
-
+    
+    
+    
     public function get_all_question_reponse_difficulte()
     {
         $niveau = $_POST["all_question_reponse_difficulte"];
-
+        
         $r = $this->bd->prepare("SELECT * FROM question q 
         INNER JOIN reponse r ON q.id = r.question_id
         WHERE niveau = :niveau;");
         $r->bindParam(":niveau", $niveau);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+    
+    public function get_all_question_reponse_time()
+    {
+        $temps = $_POST["all_question_reponse_time"];
+        
+        $r = $this->bd->prepare("SELECT * FROM question q 
+        INNER JOIN reponse r ON q.id = r.question_id
+        WHERE tps_question = :temps;");
+        $r->bindParam(":temps", $temps);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+    
+    
+    public function get_all_result()
+    {
+        $r = $this->bd->prepare("SELECT * FROM repondre r
+        INNER JOIN user u ON u.id = r.user_id 
+        INNER JOIN theme t ON t.id = r.theme_id");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+   
+    public function get_all_result_score()
+    {
+        $score = $_POST["all_score_resultat"];
+        $r = $this->bd->prepare("SELECT * FROM repondre r
+        INNER JOIN user u ON u.id = r.user_id 
+        INNER JOIN theme t ON t.id = r.theme_id 
+        WHERE scores = :scores");
+        $r->bindParam(":scores", $score);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+    
+    public function get_all_score_nom()
+    {
+        $nom_score = $_POST["all_user_resultat_nom"];
+        $r = $this->bd->prepare("SELECT * FROM repondre r
+        INNER JOIN user u ON u.id = r.user_id 
+        INNER JOIN theme t ON t.id = r.theme_id 
+        WHERE nom = :nom");
+        $r->bindParam(":nom", $nom_score);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+    
+    public function get_all_score_mail()
+    {
+        $mail_score = $_POST["all_mail_user"];
+        $r = $this->bd->prepare("SELECT * FROM repondre r
+        INNER JOIN user u ON u.id = r.user_id 
+        INNER JOIN theme t ON t.id = r.theme_id 
+        WHERE email = :email");
+        $r->bindParam(":email", $mail_score);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }

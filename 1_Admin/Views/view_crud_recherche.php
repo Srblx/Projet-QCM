@@ -1,6 +1,6 @@
+<a href="?controller=crud&action=crud" class="link_back_up_crud">Effectuer une nouvelle recherche</a>
 
 <?php if ($position == 1 ) :  ?>
-
 <table class='table'>
 	<thead>
 		<tr>
@@ -68,8 +68,11 @@
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>Thème</th>
-				<th>Description</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Pseudo</th>
+				<th>Mail</th>
+				<th>Roles</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -96,8 +99,11 @@
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>Niveau</th>
-				<th>Description</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Pseudo</th>
+				<th>Mail</th>
+				<th>Roles</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -176,10 +182,14 @@ function getReponsesForQuestion($all_question_reponse, $question)
     <table class='table'>
         <thead>
             <tr>
-                <th>Temps</th>
-                <th>Description</th>
-                <th></th>
-                <th></th>
+			<th>Question</th>
+			<th>Réponse</th>
+			<th>Nombre de Points</th>
+			<th>Temps de réponse</th>
+			<th>Thèmes</th>
+			<th>Difficulté</th>
+			<th></th>
+			<th></th>
             </tr>
         </thead>
         <tbody>
@@ -225,10 +235,14 @@ function getReponsesForQuestion($all_question_reponse, $question)
     <table class='table'>
         <thead>
             <tr>
-                <th>Score</th>
-                <th>Description</th>
-                <th></th>
-                <th></th>
+			<th>Question</th>
+			<th>Réponse</th>
+			<th>Nombre de Points</th>
+			<th>Temps de réponse</th>
+			<th>Thèmes</th>
+			<th>Difficulté</th>
+			<th></th>
+			<th></th>
             </tr>
         </thead>
         <tbody>
@@ -275,13 +289,14 @@ function getReponsesForQuestion($all_question_reponse, $question)
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>Theme</th>
-				<th>Niveau</th>
-				<th>Temps</th>
-				<th>Score</th>
-				<th>Question</th>
-				<th></th>
-				<th></th>
+			<th>Question</th>
+			<th>Réponse</th>
+			<th>Nombre de Points</th>
+			<th>Temps de réponse</th>
+			<th>Thèmes</th>
+			<th>Difficulté</th>
+			<th></th>
+			<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -329,10 +344,13 @@ function getReponsesForQuestion($all_question_reponse, $question)
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>Utilisateur</th>
-				<th>Quizz</th>
-				<th>Date</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Email</th>
 				<th>Score</th>
+				<th>Date</th>
+				<th>Niveau</th>
+				<th>Temps</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -361,10 +379,13 @@ function getReponsesForQuestion($all_question_reponse, $question)
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>Utilisateur</th>
-				<th>Quizz</th>
-				<th>Date</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Email</th>
 				<th>Score</th>
+				<th>Date</th>
+				<th>Niveau</th>
+				<th>Temps</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -393,10 +414,13 @@ function getReponsesForQuestion($all_question_reponse, $question)
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>Utilisateur</th>
-				<th>Quizz</th>
-				<th>Date</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Email</th>
 				<th>Score</th>
+				<th>Date</th>
+				<th>Niveau</th>
+				<th>Temps</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -426,10 +450,13 @@ function getReponsesForQuestion($all_question_reponse, $question)
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>Utilisateur</th>
-				<th>Quizz</th>
-				<th>Date</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Email</th>
 				<th>Score</th>
+				<th>Date</th>
+				<th>Niveau</th>
+				<th>Temps</th>
 				<th></th>
 				<th></th>
 			</tr>

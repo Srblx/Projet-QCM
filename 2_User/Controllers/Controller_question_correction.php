@@ -86,7 +86,7 @@ class Controller_question_correction extends Controller
             }
             $_SESSION['reponseUtilisateur'] = $reponseUtilisateur;
             // ^ creer un tableau est stocker les element 1 par 1 
-            // ?ensuite faire la coparaison pour la correction 
+            // ?ensuite faire la comparaison pour la correction 
             
             $cpt = $_SESSION['cpt'];
             $cpt++;

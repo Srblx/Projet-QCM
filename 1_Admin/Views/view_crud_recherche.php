@@ -1,6 +1,5 @@
 
-<?php if ($position == 1 ) : 
-	echo "Position :" . $position; ?>
+<?php if ($position == 1 ) :  ?>
 
 <table class='table'>
 	<thead>
@@ -15,8 +14,6 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php //var_dump($livres[0]);
-		?>
 		<?php foreach ($all_users as $al) : ?>
 			<tr>
 				<td class="td"> <?= $al->nom ?> </td>
@@ -31,11 +28,10 @@
 		<?php endforeach; ?>
 	</tbody>
 </table> 
-<?php var_dump($data); ?>
+
 <?php endif; ?>
 
-<?php if ($position == 2 ) : 
-	echo "Position :" . $position; ?>
+<?php if ($position == 2 ) :  ?>
 	
 	<table class='table'>
 		<thead>
@@ -50,8 +46,6 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php //var_dump($livres[0]);
-			?>
 			<?php foreach ($all_user_name as $aun) : ?>
 				<tr>
 					<td class="td"> <?= $aun->nom ?> </td>
@@ -66,12 +60,10 @@
 			<?php endforeach; ?>
 		</tbody>
 	</table> 
-	<?php var_dump($data); ?>
 	<?php endif; ?>
 
 	
-<?php if ($position == 3) : 
-	echo "Position :" . $position; ?>
+<?php if ($position == 3) :  ?>
 
 	<table class='table'>
 		<thead>
@@ -97,11 +89,9 @@
 			<?php endforeach; ?>
 		</tbody>
 	</table>
-	<?php var_dump($data); ?>
 	<?php endif; ?>
 	
-	<?php if ($position == 4) :
-		echo "Position :" . $position;  ?>
+	<?php if ($position == 4) : ?>
 	
 	<table class='table'>
 		<thead>
@@ -127,11 +117,9 @@
 			<?php endforeach; ?>
 		</tbody>
 	</table>
-	<?php var_dump($data); ?>
 	<?php endif; ?>
 
-<?php if ($position == 5) : 
-	echo "Position :" . $position; ?>
+<?php if ($position == 5) :  ?>
 <table class='table'>
 	<thead>
 		<tr>
@@ -167,7 +155,6 @@
 		<?php endforeach; ?>
 	</tbody>
 </table>
-<?php var_dump($data); ?>
 <?php endif; ?>
 
 <?php
@@ -185,71 +172,105 @@ function getReponsesForQuestion($all_question_reponse, $question)
 
 
 
+<?php if ($position == 6) : ?>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Temps</th>
+                <th>Description</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $previous_question = ""; // Variable pour stocker la question précédente
+            foreach ($all_question_reponse_theme as $aqrt) :
+                if ($aqrt->question !== $previous_question) { // Vérifie si la question est différente de la question précédente
+                    $previous_question = $aqrt->question; // Met à jour la question précédente
+            ?>
+                <tr>
+                    <td class="td" rowspan="4"> <?= $aqrt->question ?> </td> <!-- Utilise rowspan pour afficher la question une seule fois -->
+                    <td class="td"> <?= htmlspecialchars($aqrt->reponse) ?> </td>
+                    <td class="td"> <?= $aqrt->nb_points ?> </td>
+                    <td class="td"> <?= $aqrt->tps_question ?> </td>
+                    <td class="td"> <?= $aqrt->theme_id ?> </td>
+                    <td class="td"> <?= $aqrt->niveau ?> </td>
+                    
+                    <td><a href="?controller=crud&action=update_temps&id=<?= $aqrt->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+                    <td class='trash'><a href='?controller=crud&action=delete_temps&id=<?= $aqrt->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce temps ?')"><i class='fa fa-trash'></i></a></td>
+                </tr>
+            <?php
+                } else { // Si la question est la même que la question précédente, affiche uniquement les réponses
+            ?>
+                <tr>
+                    <td class="td"> <?= htmlspecialchars($aqrt->reponse) ?> </td>
+                    <td class="td"> <?= $aqrt->nb_points ?> </td>
+                    <td class="td"> <?= $aqrt->tps_question ?> </td>
+                    <td class="td"> <?= $aqrt->theme_id ?> </td>
+                    <td class="td"> <?= $aqrt->niveau ?> </td>
+                    
+                    <td><a href="?controller=crud&action=update_temps&id=<?= $aqrt->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+                    <td class='trash'><a href='?controller=crud&action=delete_temps&id=<?= $aqrt->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce temps ?')"><i class='fa fa-trash'></i></a></td>
+                </tr>
+            <?php
+                }
+            endforeach;
+            ?>
+        </tbody>
+    </table>
+<?php endif; ?>
+
+<?php if ($position == 7) :  ?>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Score</th>
+                <th>Description</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $previous_question = ""; // Variable pour stocker la question précédente
+            foreach ($all_question_reponse_difficulte as $aqrd) :
+                if ($aqrd->question !== $previous_question) { // Vérifie si la question est différente de la question précédente
+                    $previous_question = $aqrd->question; // Met à jour la question précédente
+            ?>
+                <tr>
+                    <td class="td" rowspan="4"> <?= $aqrd->question ?> </td> <!-- Utilise rowspan pour afficher la question une seule fois -->
+                    <td class="td"> <?= htmlspecialchars($aqrd->reponse) ?> </td>
+                    <td class="td"> <?= $aqrd->nb_points ?> </td>
+                    <td class="td"> <?= $aqrd->tps_question ?> </td>
+                    <td class="td"> <?= $aqrd->theme_id ?> </td>
+                    <td class="td"> <?= $aqrd->niveau ?> </td>
+                    
+                    <td><a href="?controller=crud&action=update_score&id=<?= $aqrd->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+                    <td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $aqrd->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce score ?')"><i class='fa fa-trash'></i></a></td>
+                </tr>
+            <?php
+                } else { // Si la question est la même que la question précédente, affiche uniquement les réponses
+            ?>
+                <tr>
+                    <td class="td"> <?= htmlspecialchars($aqrd->reponse) ?> </td>
+                    <td class="td"> <?= $aqrd->nb_points ?> </td>
+                    <td class="td"> <?= $aqrd->tps_question ?> </td>
+                    <td class="td"> <?= $aqrd->theme_id ?> </td>
+                    <td class="td"> <?= $aqrd->niveau ?> </td>
+                    
+                    <td><a href="?controller=crud&action=update_score&id=<?= $aqrd->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+                    <td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $aqrd->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce score ?')"><i class='fa fa-trash'></i></a></td>
+                </tr>
+            <?php
+                }
+            endforeach;
+            ?>
+        </tbody>
+    </table>
+<?php endif; ?>
 	
-	<?php if ($position == 6) :  
-		echo "Position :" . $position; ?>
-	
-	<table class='table'>
-		<thead>
-			<tr>
-				<th>Temps</th>
-				<th>Description</th>
-				<th></th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php foreach ($all_question_reponse_theme as $aqrt) : ?>
-				<tr>
-				<td class="td"> <?= $aqrt->question ?> </td>
-				<td class="td"> <?= htmlspecialchars($aqrt->reponse) ?> </td>
-				<td class="td"> <?= $aqrt->nb_points ?> </td>
-				<td class="td"> <?= $aqrt->tps_question ?> </td>
-				<td class="td"> <?= $aqrt->theme_id ?> </td>
-				<td class="td"> <?= $aqrt->niveau ?> </td>
-					
-					<td><a href="?controller=crud&action=update_temps&id=<?= $aqrt->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-					<td class='trash'><a href='?controller=crud&action=delete_temps&id=<?= $aqrt->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce temps ?')"><i class='fa fa-trash'></i></a></td>
-				</tr>
-			<?php endforeach; ?>
-		</tbody>
-	</table>
-	<?php var_dump($data); ?>
-	<?php endif; ?>
-	
-	<?php if ($position == 7) : 
-		echo "Position :" . $position; ?>
-	
-	<table class='table'>
-		<thead>
-			<tr>
-				<th>Score</th>
-				<th>Description</th>
-				<th></th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php foreach ($all_question_reponse_difficulte as $aqrd) : ?>
-				<tr>
-				<td class="td"> <?= $aqrd->question ?> </td>
-				<td class="td"> <?= htmlspecialchars($aqrd->reponse) ?> </td>
-				<td class="td"> <?= $aqrd->nb_points ?> </td>
-				<td class="td"> <?= $aqrd->tps_question ?> </td>
-				<td class="td"> <?= $aqrd->theme_id ?> </td>
-				<td class="td"> <?= $aqrd->niveau ?> </td>
-					
-					<td><a href="?controller=crud&action=update_score&id=<?= $aqrd->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-					<td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $aqrd->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce score ?')"><i class='fa fa-trash'></i></a></td>
-				</tr>
-			<?php endforeach; ?>
-		</tbody>
-	</table>
-	<?php var_dump($data); ?>
-	<?php endif; ?>
-	
-	<?php if ($position == 8) : 
-		echo "Position :" . $position; ?>
+	<?php if ($position == 8) : ?>
 	
 	<table class='table'>
 		<thead>
@@ -264,25 +285,47 @@ function getReponsesForQuestion($all_question_reponse, $question)
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($all_score_resultat as $asr) : ?>
-				<tr>
-					<td class="td"><?= $asr->theme_id ?></td>
-					<td class="td"><?= $asr->niveau_id ?></td>
-					<td class="td"><?= $asr->temps_id ?></td>
-					<td class="td"><?= $asr->score_id ?></td>
-					<td class="td"><?= $asr->question ?></td>
-					
-					<td><a href="?controller=crud&action=update_quizz&id=<?= $asr->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-					<td class='trash'><a href='?controller=crud&action=delete_quizz&id=<?= $asr->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce quizz ?')"><i class='fa fa-trash'></i></a></td>
-				</tr>
-			<?php endforeach; ?>
+		<?php 
+            $previous_question = ""; // Variable pour stocker la question précédente
+            foreach ($all_question_reponse_time as $aqrd) :
+                if ($aqrd->question !== $previous_question) { // Vérifie si la question est différente de la question précédente
+                    $previous_question = $aqrd->question; // Met à jour la question précédente
+            ?>
+                <tr>
+                    <td class="td" rowspan="4"> <?= $aqrd->question ?> </td> <!-- Utilise rowspan pour afficher la question une seule fois -->
+                    <td class="td"> <?= htmlspecialchars($aqrd->reponse) ?> </td>
+                    <td class="td"> <?= $aqrd->nb_points ?> </td>
+                    <td class="td"> <?= $aqrd->tps_question ?> </td>
+                    <td class="td"> <?= $aqrd->theme_id ?> </td>
+                    <td class="td"> <?= $aqrd->niveau ?> </td>
+                    
+                    <td><a href="?controller=crud&action=update_score&id=<?= $aqrd->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+                    <td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $aqrd->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce score ?')"><i class='fa fa-trash'></i></a></td>
+                </tr>
+            <?php
+                } else { // Si la question est la même que la question précédente, affiche uniquement les réponses
+            ?>
+                <tr>
+                    <td class="td"> <?= htmlspecialchars($aqrd->reponse) ?> </td>
+                    <td class="td"> <?= $aqrd->nb_points ?> </td>
+                    <td class="td"> <?= $aqrd->tps_question ?> </td>
+                    <td class="td"> <?= $aqrd->theme_id ?> </td>
+                    <td class="td"> <?= $aqrd->niveau ?> </td>
+                    
+                    <td><a href="?controller=crud&action=update_score&id=<?= $aqrd->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+                    <td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $aqrd->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce score ?')"><i class='fa fa-trash'></i></a></td>
+                </tr>
+            <?php
+                }
+            endforeach;
+            ?>
 		</tbody>
 	</table>
-	<?php var_dump($data); ?>
+
 	<?php endif; ?>
 	
-	<?php // if ($position == 9) : ?>
-<!-- 	
+	<?php  if ($position == 9) : ?>
+	
 	<table class='table'>
 		<thead>
 			<tr>
@@ -294,19 +337,119 @@ function getReponsesForQuestion($all_question_reponse, $question)
 				<th></th>
 			</tr>
 		</thead>
-		<tbody> -->
-			<?php // foreach ($all_scores as $score) : ?>
-				<!-- <tr>
-					<td class="td"><?= $score->utilisateur_id ?></td>
-					<td class="td"><?= $score->quizz_id ?></td>
+		<tbody>
+			<?php  foreach ($all_scores as $score) : ?>
+				 <tr>
+					<td class="td"><?= $score->nom ?></td>
+					<td class="td"><?= $score->prenom ?></td>
+					<td class="td"><?= $score->email ?></td>
+					<td class="td"><?= $score->scores ?></td>
 					<td class="td"><?= $score->date ?></td>
-					<td class="td"><?= $score->score ?></td>
+					<td class="td"><?= $score->niveau ?></td>
+					<td class="td"><?= $score->temps ?></td>
 					
 					<td><a href="?controller=crud&action=update_score&id=<?= $score->id ?>"><i class="fa-solid fa-pen"></i></a></td>
 					<td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $score->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce quizz ?')"><i class='fa fa-trash'></i></a></td>
-				</tr> -->
-			<?php//endforeach; ?>
-		<!-- </tbody>
-	</table> -->
-	<?php // endif; ?>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php  endif; ?>
+	
+	<?php  if ($position == 10) : ?>
+	
+	<table class='table'>
+		<thead>
+			<tr>
+				<th>Utilisateur</th>
+				<th>Quizz</th>
+				<th>Date</th>
+				<th>Score</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php  foreach ($all_scores as $score) : ?>
+				 <tr>
+					<td class="td"><?= $score->nom ?></td>
+					<td class="td"><?= $score->prenom ?></td>
+					<td class="td"><?= $score->email ?></td>
+					<td class="td"><?= $score->scores ?></td>
+					<td class="td"><?= $score->date ?></td>
+					<td class="td"><?= $score->niveau ?></td>
+					<td class="td"><?= $score->temps ?></td>
+					
+					<td><a href="?controller=crud&action=update_score&id=<?= $score->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+					<td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $score->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce quizz ?')"><i class='fa fa-trash'></i></a></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php  endif; ?>
+	
+	<?php  if ($position == 11) : ?>
+	
+	<table class='table'>
+		<thead>
+			<tr>
+				<th>Utilisateur</th>
+				<th>Quizz</th>
+				<th>Date</th>
+				<th>Score</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php  foreach ($all_resultat_nom as $aurn) : ?>
+				 <tr>
+					<td class="td"><?= $aurn->nom ?></td>
+					<td class="td"><?= $aurn->prenom ?></td>
+					<td class="td"><?= $aurn->email ?></td>
+					<td class="td"><?= $aurn->scores ?></td>
+					<td class="td"><?= $aurn->date ?></td>
+					<td class="td"><?= $aurn->niveau ?></td>
+					<td class="td"><?= $aurn->temps ?></td>
+					
+					<td><a href="?controller=crud&action=update_score&id=<?= $aurn->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+					<td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $aurn->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce quizz ?')"><i class='fa fa-trash'></i></a></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php  endif; ?>
+	
 
+	<?php  if ($position == 12) : ?>
+	
+	<table class='table'>
+		<thead>
+			<tr>
+				<th>Utilisateur</th>
+				<th>Quizz</th>
+				<th>Date</th>
+				<th>Score</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php  foreach ($all_resultat_mail as $aurm ) : ?>
+				 <tr>
+					<td class="td"><?= $aurm->nom ?></td>
+					<td class="td"><?= $aurm->prenom ?></td>
+					<td class="td"><?= $aurm->email ?></td>
+					<td class="td"><?= $aurm->scores ?></td>
+					<td class="td"><?= $aurm->date ?></td>
+					<td class="td"><?= $aurm->niveau ?></td>
+					<td class="td"><?= $aurm->temps ?></td>
+					
+					<td><a href="?controller=crud&action=update_score&id=<?= $aurm->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+					<td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $aurm->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce quizz ?')"><i class='fa fa-trash'></i></a></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+
+	<?php  endif; ?>

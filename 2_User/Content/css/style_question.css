@@ -90,6 +90,6 @@ input[type="checkbox"] {
 }
 
 .infos_question_qcm {
-  display: flex;
-  justify-content: space-around;
+  display: flex !important;
+  justify-content: space-around !important;
 }

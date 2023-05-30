@@ -64,4 +64,12 @@ class Model
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
+
+    // public function insert_repondre($id_question, $reponseUtilisateur)
+    // {
+    //     $r = $this->bd->prepare("INSERT INTO repondre (question_id, reponse_utilisateur) VALUES (:id_question, :reponse_utilisateur)");
+    //     $r->bindParam(':id_question', $id_question, PDO::PARAM_INT);
+    //     $r->bindParam(':reponse_utilisateur', $reponseUtilisateur, PDO::PARAM_STR);
+    //     $r->execute();
+    // }
 }

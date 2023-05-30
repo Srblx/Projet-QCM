@@ -63,8 +63,8 @@ class Controller_question_correction extends Controller
 
         $reponseUtilisateur = "";
         if (!empty($_POST["submit_question"])) {
-            //  Traitement de la question precedente 
-            if (isset($_POST["qst1"])) {
+            // ^ Traitement de la question precedente 
+            if (isset($_POST["qst1"])){
                 $reponseUtilisateur .= "1";
             } else {
                 $reponseUtilisateur .= "0";
@@ -87,11 +87,10 @@ class Controller_question_correction extends Controller
             $_SESSION['reponseUtilisateur'] = $reponseUtilisateur;
             // ^ creer un tableau est stocker les element 1 par 1 
             // ?ensuite faire la coparaison pour la correction 
-
             // ^ Incrémentation du timer
             $_SESSION['timer'];
             $_SESSION['timer'] = $_SESSION['timer'] + (45 - intval($_POST["timer_value"]));
-
+            
             $cpt = $_SESSION['cpt'];
             $cpt++;
             if ($cpt < 20) {

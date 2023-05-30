@@ -43,8 +43,10 @@
             <?php
             $reponseUtilisateur = $_SESSION["reponseUtilisateur"];
             echo $reponseUtilisateur . "<br/>";
-            echo $_SESSION['timer']
-                ?>
+            if (isset($_SESSION['timer'])) {
+                echo $_SESSION['timer'];
+            }
+            ?>
 
         </div>
     </div>

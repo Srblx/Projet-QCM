@@ -125,4 +125,43 @@ class Controller_crud extends Controller
             $this->render("crud_recherche", $data);
         }
     }
+
+    public function action_update_score()
+    {
+        if (isset($_SESSION['login']) && $_SESSION['admin'] == 1) {
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $m = Model::get_model();
+                $data = ["update_score" => $m->get_update_score($id)];
+                $this->render("crud_update", $data);
+            } else if (isset($_POST['submit'])) {
+                $m = Model::get_model();
+                $m->get_update_score_bdd();
+                $data = ["score" => $m->get_update_score_bdd()];
+                $this->render("crud_update", $data);
+            } else {
+                header('Location: ?controller=crud&action=crud_update');
+            }
+        }
+    }
+
+    public function action_delete_score()
+    {
+        if (isset($_SESSION['login']) && $_SESSION['admin'] == 1) {
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $m = Model::get_model();
+                $m->get_delete_score($id);
+                $data = ["all_theme" => $m->get_all_theme(),
+                "all_niveau" => $m->get_all_niveau(),
+                "all_user_name" => $m->get_all_user_names(),
+                "all_user_pseudo" => $m->get_all_user_pseudo(),
+                "all_user_mail" => $m->get_all_user_mail(),
+                 "all_temps" => $m->get_all_temps(),
+                 "all_score" => $m->get_all_score(),
+                 "all_noms" => $m->get_all_noms(), "all_mails" => $m->get_all_mail()];
+                $this->render("crud", $data);
+            }
+        }
+    }
 }

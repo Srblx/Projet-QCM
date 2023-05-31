@@ -13,10 +13,7 @@ class Model
     private function __construct()
     {  //* Fonction qui sert à faire le lien avec la BDD
 
-        $dsn = "mysql:host=localhost;dbname=qcm";   //* Coordonnées de la BDD
-        $login = "root";   //* Identifiant d'accès à la BDD
-        $mdp = ""; //* Mot de passe d'accès à la BDD
-        $this->bd = new PDO($dsn, $login, $mdp);
+        $this->bd = new PDO(DSN, LOGIN, MDP);
         $this->bd->query("SET NAMES 'utf8'");
         $this->bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
@@ -273,6 +270,51 @@ class Model
     //     $r->execute();
     //     return $r->fetchAll(PDO::FETCH_OBJ);
     // }
+
+
+    // ! UPDATE
+    public function get_update_score($id)
+    {
+        $r = $this->bd->prepare("SELECT * FROM user u
+        INNER JOIN repondre r ON u.id = r.user_id WHERE u.id = :id");
+        $r->bindParam(':id', $id);
+        $r->execute();
+
+        return $r->fetch();
+    }
+
+    public function get_update_score_bdd()
+    {
+        // Récupérer les données du formulaire
+        $id = $this->valid_input($_POST['hidden']);
+        $nom = $this->valid_input($_POST['name']);
+        $prenom = $this->valid_input($_POST['lastname']);
+        $mail = $this->valid_input($_POST['mail']);
+        $score = $this->valid_input($_POST['score']);
+        $date = $this->valid_input($_POST['date']);
+        $niveau = $this->valid_input($_POST['niveau']);
+        $temps = $this->valid_input($_POST['time']);
+
+        $r = $this->bd->prepare("UPDATE repondre r
+        SET nom = :nom, prenom = :prenom, email = :mail, scores = :scores, date = :date, niveau = :niveau, temps = :temps
+        WHERE user_id = :id;");
+        $r->bindParam(':nom', $nom);
+        $r->bindParam(':prenom', $prenom);
+        $r->bindParam(':mail', $mail);
+        $r->bindParam(':scores', $score);
+        $r->bindParam(':id', $id);
+        $r->bindParam(':date', $date);
+        $r->bindParam(':niveau', $niveau);
+        $r->bindParam(':temps', $temps);
+        $r->execute();
+    }
+
+    public function get_delete_score($id)
+    {
+        $r = $this->bd->prepare("DELETE FROM repondre WHERE id = :id");
+        $r->bindParam(':id', $id);
+        $r->execute();
+    }
 
     public function get_random_question()
     {

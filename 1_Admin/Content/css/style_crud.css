@@ -128,3 +128,22 @@
      }
    }
 
+.aucune_donne {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+  text-decoration: underline;
+  padding: 50px;
+}
+
+.link_back_up_crud {
+  background: white;
+  padding: 10px;
+ 
+  font-weight: bold;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+}

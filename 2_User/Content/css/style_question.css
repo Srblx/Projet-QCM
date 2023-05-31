@@ -11,7 +11,8 @@ body {
 }
 
 .container_question {
-  width: 710px;
+  min-width: 710px;
+  width: min-content;
   min-height: 570px;
   height: max-content;
   margin: 25px auto;

@@ -38,6 +38,4 @@
             </table>
         </div>
     </div>
-
-    <script type="text/JavaScript" src="../Content/js/app.js" defer></script>
 </main>

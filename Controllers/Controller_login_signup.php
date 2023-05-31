@@ -69,6 +69,7 @@ class Controller_login_signup extends Controller
             $user = $m->get_connexion();
 
             if ($user) {
+				$id = $user->id;
                 $nom = $user->nom;
                 $prenom = $user->prenom;
                 $pseudo = $user->pseudo;
@@ -78,6 +79,7 @@ class Controller_login_signup extends Controller
                     session_start();
                 }
 				// session_start();
+				$_SESSION['id'] = $id;
                 $_SESSION['nom'] = $nom;
                 $_SESSION['prenom'] = $prenom;
 				$_SESSION['pseudo'] = $pseudo;

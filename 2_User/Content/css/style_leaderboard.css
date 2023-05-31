@@ -66,3 +66,8 @@
 .result-button:hover {
     background-color: #2D85A4;
 }
+
+.result_leaderbord_user {
+    background-color: rgb(40, 156, 245);
+    font-weight: bold;
+}

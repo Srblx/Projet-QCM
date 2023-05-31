@@ -96,7 +96,6 @@ class Controller_question_correction extends Controller
             if ($cpt < 20) {
                 $_SESSION['cpt'] = $cpt;
                 $liste_id = $_SESSION['liste_id'];
-
                 $id_question = $liste_id[$cpt]->id;
 
                 $m = Model::get_model();
@@ -107,23 +106,26 @@ class Controller_question_correction extends Controller
 
                 $this->render("une_question", $data);
             } else {
+                // Récupération de la valeur stockée en session
+                $time = $_SESSION['timer'];
+
+                // Conversion en minutes et secondes
+                $minutes = floor($time / 60); // Récupère la partie entière des minutes
+                $secondes = $time % 60; // Récupère le reste, qui représente les secondes
+
                 // requete pour inserer dans la table repondre
+                $scores = 5;
+                $temps =  $minutes . $secondes;
+                $niveau = 2;
+                $user_id = $_SESSION['id'];
+                $theme_id = 1;
+
+                $m = Model::get_model();
+                $m->get_insert_repondre($scores, $temps, $niveau, $user_id, $theme_id);
+
                 unset($_SESSION['timer']);
-                $this->render("leaderboard");
+                header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");
             }
-        } else {
-            $cpt = $_SESSION['cpt'];
-            $liste_id = $_SESSION['liste_id'];
-
-            $id_question = $liste_id[$cpt]->id;
-
-            $m = Model::get_model();
-            $data = [
-                "question" => $m->get_une_question($id_question),
-                "reponses" => $m->get_les_responses($id_question)
-            ];
-
-            $this->render("une_question", $data);
         }
     }
 }

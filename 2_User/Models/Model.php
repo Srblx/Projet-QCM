@@ -100,7 +100,7 @@ class Model
             INNER JOIN theme ON repondre.theme_id = theme.id
             ORDER BY repondre.id DESC
             LIMIT 1");
-            $r->execute();
+        $r->execute();
 
         return $r->fetch(PDO::FETCH_OBJ);
     }

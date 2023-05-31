@@ -85,7 +85,8 @@ class Model
         FROM repondre
         INNER JOIN user ON repondre.user_id = user.id
         INNER JOIN theme ON repondre.theme_id = theme.id
-        ORDER BY scores DESC");
+        ORDER BY scores DESC
+        LIMIT 10");
         $r->execute();
 
         return $r->fetchAll(PDO::FETCH_OBJ);

@@ -7,7 +7,7 @@
     <div class="infos_question_qcm">
         <div class="compteur_question_qcm">
             <p>Question
-                <?= $_SESSION['cpt'] ?>/20
+                <?= $_SESSION['cpt']+1?>/20
             </p>
         </div>
         <div class="timer">
@@ -26,13 +26,22 @@
 
             <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=question_suivante">
                 <div class="reponses-qcm">
-                    <?php $cpt = 1 ?>
+                    <?php $cptReponse = 1 ?>
+                 <?php $ReponseDB ="";?>
+
                     <?php foreach ($reponses as $reponse) : ?>
-                        <label for="qst<?= $cpt ?>"><?= substr(htmlspecialchars($reponse->reponse), 3) ?>
-                            <input type="checkbox" name="qst<?= $cpt ?>" id="qst<?= $cpt ?>" value="<?= $reponse->correct ?>">
+                        <label for="qst<?= $cptReponse ?>"><?= substr(htmlspecialchars($reponse->reponse), 3) ?>
+                            <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>" value="<?= $reponse->correct ?>">
+                             <?php $ReponseDB .=$reponse->correct;?>
                         </label>
-                        <?php $cpt++ ?>
+                        <?php $cptReponse++ ?>
                     <?php endforeach; ?>
+                    <?php echo $ReponseDB; ?>
+                    <?php $cpt = $_SESSION['cpt']; ?>
+                    <?php $ListeReponseDB = $_SESSION['ListeReponseDB']; ?>
+                  <?php  $ListeReponseDB[$cpt] = $ReponseDB;
+                    $_SESSION['ListeReponseDB']= $ListeReponseDB; ?>
+
                 </div>
                 <div class="qcm-question-valider">
                     <input type="submit" name="submit_question" value="Valider" id="valider_qcm_question">
@@ -40,13 +49,22 @@
                 </div>
             </form>
             <?php
-            $reponseUtilisateur = $_SESSION["reponseUtilisateur"];
-            echo $reponseUtilisateur . "<br/>";
-            if (isset($_SESSION['timer'])) {
-                echo $_SESSION['timer'];
-            }
-            ?>
+            // $reponseUtilisateur = $_SESSION["reponseUtilisateur"];
+            // echo $reponseUtilisateur . "<br/>";
+            // if (isset($_SESSION['timer'])) {
+            //     echo $_SESSION['timer'];
+            // }
+             ?>
+            <!-- <br> -->
+             <!-- <span> -->
+             <?php //foreach ($reponses as $reponse){
+            //    $_SESSION['correctionReponse'] = $reponse->correct;
+            //    echo $_SESSION['correctionReponse'];
+            // }
 
+            echo "<br> score : " . $_SESSION['score'];
+            ?>
+            </span>
         </div>
     </div>
 </main>

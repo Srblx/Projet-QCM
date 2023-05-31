@@ -7,6 +7,4 @@
 if (isset($_SESSION['timer'])) {
   unset($_SESSION['timer']);
 }
-
-var_dump($_SESSION);
 ?>

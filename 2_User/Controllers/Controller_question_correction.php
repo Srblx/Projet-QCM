@@ -17,22 +17,6 @@ class Controller_question_correction extends Controller
 
     public function action_question()
     {
-        //* Stockage de la question actuelle dans la session
-        // $_SESSION['question'] = $_GET['question'];
-
-        //* Incrémentation du numéro de question si le paramètre 'question' est défini
-        // if (isset($_GET['question'])) {
-        //    $_SESSION['question'] = $_GET['question'] + 1;
-        //}
-
-        //* Redirection vers la page d'accueil si le numéro de question dépasse 20
-        //if ($_GET['question'] > 20) {
-        //    unset($_SESSION['question']);
-        //    $_SESSION['alert'] = "<script>alert('Quizz terminé')</script>";
-        //    header("Location: ?controller=home&action=home");
-        //    die;
-        //}
-
         $m = Model::get_model();
         $data = ["questions" => $m->get_random_question()];
 
@@ -44,6 +28,8 @@ class Controller_question_correction extends Controller
     {
         $cpt = $_SESSION['cpt'];
         $liste_id = $_SESSION['liste_id'];
+        $score = 0;
+        $_SESSION['score'] = $score;
 
         $id_question = $liste_id[$cpt]->id;
 
@@ -53,8 +39,8 @@ class Controller_question_correction extends Controller
             "reponses" => $m->get_les_responses($id_question)
         ];
 
-        $cpt++;
-        $_SESSION['cpt'] = $cpt;
+        // $cpt++;
+        // $_SESSION['cpt'] = $cpt;
         $this->render("une_question", $data);
     }
 
@@ -84,20 +70,39 @@ class Controller_question_correction extends Controller
             } else {
                 $reponseUtilisateur .= "0";
             }
-            $_SESSION['reponseUtilisateur'] = $reponseUtilisateur;
+            $ListeReponseUser =  $_SESSION['ListeReponseUser'];
+            $cpt = $_SESSION['cpt'];
+            $ListeReponseUser[$cpt] = $reponseUtilisateur;
+            $_SESSION['ListeReponseUser'] = $ListeReponseUser;
             // ^ creer un tableau est stocker les element 1 par 1 
             // ?ensuite faire la coparaison pour la correction 
             // ^ Incrémentation du timer
             $_SESSION['timer'];
             $_SESSION['timer'] = $_SESSION['timer'] + (45 - intval($_POST["timer_value"]));
 
-            $cpt = $_SESSION['cpt'];
-            $cpt++;
-            if ($cpt < 20) {
-                $_SESSION['cpt'] = $cpt;
+
+            $m = Model::get_model();
+            if ($cpt < 19) {
                 $liste_id = $_SESSION['liste_id'];
                 $id_question = $liste_id[$cpt]->id;
+                $LreponseUser = $_SESSION['ListeReponseUser'];
+                $reponseUser = $LreponseUser[$cpt];
+                $LreponseDB = $_SESSION['ListeReponseDB'];
+                $reponseDB = $LreponseDB[$cpt];
+                echo $reponseDB . " " . $reponseUser;
 
+                if ($reponseDB == $reponseUser) {
+                    $score = $_SESSION['score'];
+                    echo "OK : ". $score;
+                    $score++;
+                    $_SESSION['score']= $score;   
+                }
+                $cpt = $_SESSION['cpt'];
+                $cpt++;
+                $liste_id = $_SESSION['liste_id'];
+                $id_question = $liste_id[$cpt]->id;
+                $_SESSION['cpt'] = $cpt;
+                $score =  $_SESSION['score'];
                 $m = Model::get_model();
                 $data = [
                     "question" => $m->get_une_question($id_question),
@@ -114,14 +119,14 @@ class Controller_question_correction extends Controller
                 $secondes = $time % 60; // Récupère le reste, qui représente les secondes
 
                 // requete pour inserer dans la table repondre
-                $scores = 5;
+                $score = $_SESSION['score'];
                 $temps =  $minutes . $secondes;
-                $niveau = 2;
+                $niveau = 1;
                 $user_id = $_SESSION['id'];
                 $theme_id = 1;
 
                 $m = Model::get_model();
-                $m->get_insert_repondre($scores, $temps, $niveau, $user_id, $theme_id);
+                $m->get_insert_repondre($score, $temps, $niveau, $user_id, $theme_id);
 
                 unset($_SESSION['timer']);
                 header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");

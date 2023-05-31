@@ -15,10 +15,24 @@ Mathieu : Question, Leaderboard, Correction -->
 Alexis : profil utilisateur (ses resultats) / Crud
 Alex : Form choix du niveau, generer classement
 Ahmed : Generation du logo en fonction du choix utilisateur
+
 <!-- Mathieu : Form choix du theme -->
 <!-- Choix du thème => form --Mathieu -->
 <!-- Choix du niveau => form --Alex -->
+
 generer classement --Alex
 Generation du logo en fonction du choix utilisateur --Ahmed
 generation et affichage question --
 genere correction des question --
+
+            <span>
+            <?php foreach ($reponses as $reponse): ?>
+                <?= $reponse->correct?>
+                <?php endforeach; ?>
+
+                <?= count($reponses);
+                echo '<pre>';
+                var_dump($reponses);
+                echo '</pre>';
+                ?>
+            </span>

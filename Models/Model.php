@@ -13,11 +13,7 @@ class Model
     private function __construct()
     { //* Fonction qui sert à faire le lien avec la BDD
 
-
-        $dsn = "mysql:host=localhost;dbname=qcm"; //* Coordonnées de la BDD
-        $login = "root"; //* Identifiant d'accès à la BDD
-        $mdp = ""; //* Mot de passe d'accès à la BDD
-        $this->bd = new PDO($dsn, $login, $mdp);
+        $this->bd = new PDO(DSN, LOGIN, MDP);
         $this->bd->query("SET NAMES 'utf8'");
         $this->bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }

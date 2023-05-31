@@ -1,5 +1,7 @@
 <?php
 
+require_once('config.php');
+
 class Model
 { //* Début de la Classe
 

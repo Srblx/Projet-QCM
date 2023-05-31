@@ -1,7 +1,7 @@
 <main>
     <div class="leaderboard-container">
         <h1 class="leaderboard-title">Résultat final</h1>
-        <h3 id="result-title">Vous avez obtenu X bonnes réponses</h3>
+        <h3 id="result-title">Vous avez obtenu <?= $quizz_user->scores ?> bonnes réponses</h3>
 
         <div id="leaderboard">
 

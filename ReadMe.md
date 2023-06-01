@@ -24,17 +24,3 @@ generer classement --Alex
 Generation du logo en fonction du choix utilisateur --Ahmed
 generation et affichage question --
 genere correction des question --
-
-            <span>
-            <?php foreach ($reponses as $reponse): ?>
-                <?= $reponse->correct?>
-                <?php endforeach; ?>
-
-                <?= count($reponses);
-                echo '<pre>';
-                var_dump($reponses);
-                echo '</pre>';
-                ?>
-            </span>
-
-<!-- Alexis t'as réussi ?? -->

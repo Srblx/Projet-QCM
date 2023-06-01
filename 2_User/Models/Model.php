@@ -3,19 +3,16 @@
 require_once("../config.php");
 
 class Model
-{ //* Début de la Classe
-
+{
     private $bd;
-
     private static $instance = null;
 
     /*
      * Constructeur créant l'objet PDO et l'affectant à $bd
      */
     private function __construct()
-    { //* Fonction qui sert à faire le lien avec la BDD
-
-
+    {
+        // Établissement de la connexion PDO à la base de données
         $this->bd = new PDO(DSN, LOGIN, MDP);
         $this->bd->query("SET NAMES 'utf8'");
         $this->bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -25,7 +22,7 @@ class Model
 
     public static function get_model()
     {
-        //* Fonction qui sert à créer une instance de Model pour l'appeler dans chaque Controller (équivalent de $connex)
+        // Méthode pour créer une instance unique du modèle
         if (is_null(self::$instance)) {
             self::$instance = new Model();
         }
@@ -34,6 +31,7 @@ class Model
 
     public function get_random_question()
     {
+        // Récupère une liste de questions aléatoires en fonction de l'ID du thème et du niveau
         $id = $_GET['id'];
         $niveau = $_GET['niveau'];
         $r = $this->bd->prepare("
@@ -50,15 +48,16 @@ class Model
 
     public function get_une_question($id_question)
     {
+        // Récupère une seule question en fonction de son ID
         $r = $this->bd->prepare("SELECT * FROM question WHERE id = :id_question");
         $r->bindParam(':id_question', $id_question, PDO::PARAM_INT);
         $r->execute();
         return $r->fetch(PDO::FETCH_OBJ);
     }
 
-
     public function get_les_responses($id_question)
     {
+        // Récupère les réponses associées à une question en fonction de son ID
         $r = $this->bd->prepare("SELECT reponse, question_id, correct FROM reponse WHERE question_id = :id_question");
         $r->bindParam(':id_question', $id_question, PDO::PARAM_INT);
         $r->execute();
@@ -67,6 +66,7 @@ class Model
 
     public function get_insert_repondre($scores, $temps, $niveau, $user_id, $theme_id)
     {
+        // Insère les résultats de l'utilisateur dans la table "repondre"
         $r = $this->bd->prepare("INSERT INTO repondre (scores, temps, niveau, valide, user_id, theme_id) VALUES (:scores, :temps, :niveau, 1, :user_id, :theme_id)");
         $r->bindParam(':scores', $scores, PDO::PARAM_INT);
         $r->bindParam(':temps', $temps, PDO::PARAM_STR);
@@ -74,13 +74,11 @@ class Model
         $r->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $r->bindParam(':theme_id', $theme_id, PDO::PARAM_INT);
         $r->execute();
-        return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
-
-    //* Traitement du classement principal
     public function get_all_main_leaderboard()
     {
+        // Récupère les résultats des meilleurs utilisateurs dans le classement principal
         $r = $this->bd->prepare("SELECT user.id, user.pseudo, repondre.scores, repondre.temps, theme.id, theme.nom_theme, repondre.niveau
         FROM repondre
         INNER JOIN user ON repondre.user_id = user.id
@@ -88,12 +86,12 @@ class Model
         ORDER BY scores DESC
         LIMIT 10");
         $r->execute();
-
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function get_all_result_quizz_user()
     {
+        // Récupère les résultats du dernier utilisateur ayant passé le quiz
         $r = $this->bd->prepare("SELECT user.id, user.pseudo, repondre.scores, repondre.temps, theme.id, theme.nom_theme, repondre.niveau
             FROM repondre
             INNER JOIN user ON repondre.user_id = user.id
@@ -101,7 +99,7 @@ class Model
             ORDER BY repondre.id DESC
             LIMIT 1");
         $r->execute();
-
+      
         return $r->fetch(PDO::FETCH_OBJ);
     }
 }

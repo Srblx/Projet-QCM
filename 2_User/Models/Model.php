@@ -102,4 +102,3 @@ class Model
         return $r->fetch(PDO::FETCH_OBJ);
     }
 }
-

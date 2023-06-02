@@ -1,46 +1,54 @@
-<!DOCTYPE html>
-<html lang="fr">
+<main id="question_qcm_main">
+    <div class="infos_question_qcm">
+        <div class="compteur_question_qcm">
+            <p>Question
+                <?= $_SESSION['cpt']+1?>/20
+            </p>
+        </div>
+       
 
-<head>
-    <meta charset="UTF-8">
-    <title>Correction</title>
-    <link rel="stylesheet" href="../Content/css/style.css">
-</head>
-
-<body>
-    <div class="container">
-        <h1>Correction</h1>
-        <div id="correction"></div>
     </div>
+    <div class="container_question">
+        <h1 id="byte">Quizz ByteMaster</h1>
+        <div id="quiz">
+            <?php
+            // Afficher la valeur de la question
+            echo "<h3 class='titre_section_demarrage'>" . $question->question . "</h3>";
+            ?>
 
-    <script type="text/JavaScript" src="../Content/js/app.js"></script>
-    <script type="text/JavaScript">
+            <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=correction">
+                <div class="reponses-qcm">
+                    <?php $cptReponse = 1 ?>
+                 <?php $ReponseDB ="";?>
 
-        function showCorrection() {
-        var correctionDiv = document.getElementById('correction');
-        var correctionHTML = "<h1>Correction</h1>";
-        correctionHTML += "<ul>";
-        
-        for (var i = 0; i < quiz.questions.length; i++) {
-            var question = quiz.questions[i];
-            var userAnswer = quiz.userAnswers[i];
-            var correctAnswer = question.answer;
-            var isCorrect = userAnswer === correctAnswer;
-            var listItem = "<li>";
-            listItem += "<p><strong>Question: </strong>" + question.text + "</p>";
-            listItem += "<p><strong>Your Answer: </strong>" + userAnswer + "</p>";
-            listItem += "<p><strong>Correct Answer: </strong>" + correctAnswer + "</p>";
-            listItem += "<p><strong>Result: </strong>" + (isCorrect ? "Correct" : "Incorrect") + "</p>";
-            listItem += "</li>";
-            
-            correctionHTML += listItem;
-        }
-        
-        correctionHTML += "</ul>";
-        correctionDiv.innerHTML = correctionHTML;
-        correctionDiv.style.display = "block";
-    }
-    </script>
-</body>
+                    <?php foreach ($reponses as $reponse) : ?>
+                        <label for="qst<?= $cptReponse ?>"><?= substr(htmlspecialchars($reponse->reponse), 3) ?>
+                            <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>" value="<?= $reponse->correct ?>">
+                             <?php $ReponseDB .=$reponse->correct;?>
+                        </label>
+                        <?php $cptReponse++ ?>
+                    <?php endforeach; ?>
+                    <?php 
+                  
+                  echo '<pre>';
+                //   print_r($_SESSION["liste_id"]);
+                  echo '<br>';
+                  echo 'reponse db : ';
+                  print_r($_SESSION['ListeReponseDB']);
+                  echo '<br>';
+                  echo 'reponse user : ';
+                  print_r($_SESSION['ListeReponseUser']);
+                  echo '</pre>';
+                     ?>
+                    <?php $cpt = $_SESSION['cpt']; ?>
+                    <?php $ListeReponseDB = $_SESSION['ListeReponseDB']; ?>
+                  <?php  $ListeReponseDB[$cpt] = $ReponseDB;
+                    $_SESSION['ListeReponseDB']= $ListeReponseDB; ?>
 
-</html>
+                </div>
+                <div class="qcm-question-valider">
+                    <input type="submit" name="submit_question" value="Suivant" id="valider_qcm_question">
+                //! faire une decrementation des question pour la correction 
+                </div>
+            </form>
+                    </main>

@@ -43,7 +43,8 @@
                     <td><?=$quizz_user->temps ?></td>
                     </tr>
             </table>
-            <button id="view-correction-btn" class="result-button center-button">Voir la correction</button>
+            <a href="?controller=question_correction&action=correction" id="view-correction-btn" class="result-button center-button">Voir la correction</a>
+           <?php echo "compteur final : " . $_SESSION['cpt'] . "<br>"; ?>
         </div>
     </div>
 </main>

@@ -82,7 +82,7 @@ class Controller_question_correction extends Controller
 
 
             $m = Model::get_model();
-            if ($cpt < 19) {
+            if ($cpt < 4) {
                 $liste_id = $_SESSION['liste_id'];
                 $id_question = $liste_id[$cpt]->id;
                 $LreponseUser = $_SESSION['ListeReponseUser'];
@@ -111,6 +111,21 @@ class Controller_question_correction extends Controller
 
                 $this->render("une_question", $data);
             } else {
+                $liste_id = $_SESSION['liste_id'];
+                $id_question = $liste_id[$cpt]->id;
+                $LreponseUser = $_SESSION['ListeReponseUser'];
+                $reponseUser = $LreponseUser[$cpt];
+                $LreponseDB = $_SESSION['ListeReponseDB'];
+                $reponseDB = $LreponseDB[$cpt];
+
+                if ($reponseDB == $reponseUser) {
+                    $score = $_SESSION['score'];
+                    $score++;
+                    echo "OK : ". $score;
+                    $_SESSION['score'] = $score;   
+                }
+                                
+                $cpt = $_SESSION['cpt'];
                 // Récupération de la valeur stockée en session
                 $time = $_SESSION['timer'];
 
@@ -124,7 +139,18 @@ class Controller_question_correction extends Controller
                 $niveau = 1;
                 $user_id = $_SESSION['id'];
                 $theme_id = 1;
-
+                
+                
+                // echo "compteur final : " . $cpt . "<br>";
+                // echo '<pre>';
+                // // print_r($_SESSION["liste_id"]);
+                // echo '<br>';
+                // echo 'reponse db : ';
+                // print_r($_SESSION['ListeReponseDB']);
+                // echo '<br>';
+                // echo 'reponse user : ';
+                // print_r($_SESSION['ListeReponseUser']);
+                // echo '</pre>';
                 $m = Model::get_model();
                 $m->get_insert_repondre($score, $temps, $niveau, $user_id, $theme_id);
 
@@ -132,5 +158,35 @@ class Controller_question_correction extends Controller
                 header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");
             }
         }
+    }
+
+    public function action_correction()
+    {
+        // $reponseUtilisateur = "" ;
+
+        $ListeReponseUser =  $_SESSION['ListeReponseUser'];
+        $cpt = $_SESSION['cpt'];
+        // $cpt++;
+        // $ListeReponseUser[$cpt] = $reponseUtilisateur;
+        // $_SESSION['ListeReponseUser'] = $ListeReponseUser;
+        // // ^ creer un tableau est stocker les element 1 par 1 
+        // ?ensuite faire la coparaison pour la correction 
+        // ^ Incrémentation du timer
+        $_SESSION['timer'];
+  
+
+        $liste_id = $_SESSION['liste_id'];
+        $id_question = $liste_id[$cpt]->id;
+        $LreponseUser = $_SESSION['ListeReponseUser'];
+        $reponseUser = $LreponseUser[$cpt];
+        $LreponseDB = $_SESSION['ListeReponseDB'];
+        $reponseDB = $LreponseDB[$cpt];
+
+        $m = Model::get_model();
+        $data = [
+            "question" => $m->get_une_question($id_question),
+            "reponses" => $m->get_les_responses($id_question)
+        ];
+        $this->render("correction", $data);
     }
 }

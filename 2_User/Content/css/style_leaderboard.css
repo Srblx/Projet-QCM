@@ -28,6 +28,7 @@
     border-spacing: 0;
     border: 10px solid transparent;
     border-spacing: 0 10px;
+    margin-bottom: 20px;
     /* Ajout de l'espacement vertical entre les lignes */
 }
 

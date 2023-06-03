@@ -162,31 +162,18 @@ class Controller_question_correction extends Controller
 
     public function action_correction()
     {
-        // $reponseUtilisateur = "" ;
-
-        $ListeReponseUser =  $_SESSION['ListeReponseUser'];
         $cpt = $_SESSION['cpt'];
-        // $cpt++;
-        // $ListeReponseUser[$cpt] = $reponseUtilisateur;
-        // $_SESSION['ListeReponseUser'] = $ListeReponseUser;
-        // // ^ creer un tableau est stocker les element 1 par 1 
-        // ?ensuite faire la coparaison pour la correction 
-        // ^ Incrémentation du timer
-        $_SESSION['timer'];
-  
-
         $liste_id = $_SESSION['liste_id'];
-        $id_question = $liste_id[$cpt]->id;
-        $LreponseUser = $_SESSION['ListeReponseUser'];
-        $reponseUser = $LreponseUser[$cpt];
-        $LreponseDB = $_SESSION['ListeReponseDB'];
-        $reponseDB = $LreponseDB[$cpt];
+        $id_question = $liste_id[$cpt - 1]->id; // Récupérer l'ID de la dernière question répondue
+        $reponseUser = $_SESSION['ListeReponseUser'][$cpt - 1]; // Récupérer la réponse de l'utilisateur pour cette question
 
         $m = Model::get_model();
         $data = [
             "question" => $m->get_une_question($id_question),
-            "reponses" => $m->get_les_responses($id_question)
+            "reponses" => $m->get_les_responses($id_question),
+            "reponseUser" => $reponseUser
         ];
+
         $this->render("correction", $data);
     }
 }

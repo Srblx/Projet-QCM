@@ -1,4 +1,3 @@
-
 <?php 
 
 define("DSN", "mysql:host=localhost;dbname=qcm");

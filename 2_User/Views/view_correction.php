@@ -1,15 +1,13 @@
 <main id="question_qcm_main">
     <div class="infos_question_qcm">
         <div class="compteur_question_qcm">
-            <p>Question <?= $_SESSION['cpt']+1?>/20</p>
+            <p>Question <?= $_SESSION['cpt']+1 ?>/20</p>
         </div>
     </div>
     <div class="container_question">
         <h1 id="byte">Quizz ByteMaster</h1>
         <div id="quiz">
-            <?php
-            echo "<h3 class='titre_section_demarrage'>" . $question->question . "</h3>";
-            ?>
+            <?php echo "<h3 class='titre_section_demarrage'>" . $question->question . "</h3>"; ?>
 
             <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=question_suivante">
                 <div class="reponses-qcm">
@@ -25,11 +23,21 @@
                             $isCorrect = $isChecked && $reponse->correct == '1';
                         }
                         ?>
-                        <label for="qst<?= $cptReponse ?>"><?= substr(htmlspecialchars($reponse->reponse), 3) ?></label>
-                        <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>" value="<?= $reponse->correct ?>" disabled <?php if ($isChecked) echo "checked" ?>>
-                        <span class="reponse <?= $isCorrect ? "correct" : "incorrect" ?>">
-                            <?= $reponse->reponse ?>
-                        </span>
+                        <label for="qst<?= $cptReponse ?>">
+                            <?= substr(htmlspecialchars($reponse->reponse), 3) ?>
+                            <?php if ($isCorrect) : ?>
+                                <!-- Si la réponse est correcte -->
+                                <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>" value="<?= $reponse->correct ?>" disabled checked>
+                                <span class="checkmark correct"></span>
+                            <?php elseif ($isChecked) : ?>
+                                <!-- Si la réponse est incorrecte -->
+                                <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>" value="<?= $reponse->correct ?>" disabled checked>
+                                <span class="checkmark incorrect"></span>
+                            <?php else : ?>
+                                <!-- Si la réponse n'a pas été sélectionnée -->
+                                <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>" value="<?= $reponse->correct ?>" disabled>
+                            <?php endif; ?>
+                        </label>
                         <?php $cptReponse++ ?>
                     <?php endforeach; ?>
                 </div>

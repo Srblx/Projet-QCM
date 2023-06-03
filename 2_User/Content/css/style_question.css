@@ -95,10 +95,42 @@ input[type="checkbox"] {
   justify-content: space-around !important;
 }
 
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.correct .checkmark::after {
+  display: block;
+}
+
+.incorrect .checkmark::after {
+  display: none;
+}
+
 .correct {
-  color: green;
+  background-color: #c2e8c2;
+  border-color: green;
 }
 
 .incorrect {
-  color: red;
+  background-color: #f9caca;
+  border-color: red;
 }

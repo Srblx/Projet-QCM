@@ -31,12 +31,12 @@
                                 <!-- Si la réponse est correcte -->
                                 <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>"
                                     value="<?= $reponse->correct ?>" disabled checked>
-                                <span class="checkmark correct"></span>
+                                <span class="checkmark correct"><i class="fa-solid fa-check" style="color: #26c038"></i></span>
                             <?php elseif ($isChecked): ?>
                                 <!-- Si la réponse est incorrecte -->
                                 <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>"
                                     value="<?= $reponse->correct ?>" disabled checked>
-                                <span class="checkmark incorrect"></span>
+                                <span class="checkmark incorrect"><i class="fa-solid fa-x" style="color: #ff0000;"></i></span>
                             <?php else: ?>
                                 <!-- Si la réponse n'a pas été sélectionnée -->
                                 <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>"

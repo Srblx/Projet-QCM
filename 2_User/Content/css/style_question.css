@@ -97,74 +97,14 @@ input[type="checkbox"] {
 /* /////////////// Correction /////////////////// */
 
 .checkmark.correct {
-  background-color: #13ee13;
+  width: 25px;
+  height: 25px;
   position: relative;
 }
 
 .checkmark.incorrect {
-  background-color: #e91212;
   position: relative;
   display: inline-block;
-  width: 10px;
-  height: 10px;
-}
-
-.correct::after {
-  content: "";
-  position: absolute;
-  display: block;
-  left: 6px;
-  top: 2px;
-  width: 6px;
-  height: 12px;
-  border: solid #3ee624;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-.incorrect::after {
-  content: "";
-  position: absolute;
-  display: none;
-  left: 6px;
-  top: 2px;
-  width: 6px;
-  height: 12px;
-  border: solid #f61717;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-/* input[type="checkbox"] {
-  display: none;
-} */
-
-.correct input[type="checkbox"]::before,
-.incorrect input[type="checkbox"]::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #999;
-}
-
-.correct input[type="checkbox"]:checked::before,
-.incorrect input[type="checkbox"]:checked::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #999;
-}
-
-.correct input[type="checkbox"]::before {
-  background-color: #c2e8c2;
-}
-
-.incorrect input[type="checkbox"]::before {
-  background-color: #f9caca;
+  width: 25px;
+  height: 25px;
 }

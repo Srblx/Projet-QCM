@@ -1,6 +1,7 @@
-<main id="leaderboard_main">
+<main>
     <div class="leaderboard-container">
-        <h1 class="leaderboard-title">Classement global</h1>
+        <h1 class="leaderboard-title">Résultat final</h1>
+        <h3 id="result-title">Vous avez obtenu <?= $quizz_user->scores ?> bonnes réponses</h3>
 
         <div id="leaderboard">
 
@@ -34,8 +35,16 @@
                     </tr>
                     <?php $cpt++; ?>
                 <?php endforeach; ?>
-
+                    <tr class="result_leaderbord_user">
+                    <td><?=$quizz_user->pseudo ?></td>
+                    <td><?=$quizz_user->scores ?></td>
+                    <td><?=$quizz_user->nom_theme ?></td>
+                    <td><?=$quizz_user->niveau ?></td>
+                    <td><?=$quizz_user->temps ?></td>
+                    </tr>
             </table>
+            <a href="?controller=question_correction&action=correction" id="view-correction-btn" class="result-button center-button">Voir la correction</a>
+           <?php echo "compteur final : " . $_SESSION['cpt'] . "<br>"; ?>
         </div>
     </div>
 </main>

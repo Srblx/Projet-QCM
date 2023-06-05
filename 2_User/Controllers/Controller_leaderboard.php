@@ -17,7 +17,9 @@ class Controller_leaderboard extends Controller
 
 	public function action_leaderboard()
 	{
-		$this->render("leaderboard");
+		$m = Model::get_model();
+		$data = ["users" => $m->get_all_main_leaderboard()];
+		$this->render("leaderboard", $data);
 	}
 
 	public function action_leaderboard_fin_quizz()
@@ -25,6 +27,6 @@ class Controller_leaderboard extends Controller
 		$m = Model::get_model();
 		$data = ["users" => $m->get_all_main_leaderboard(),
 		"quizz_user" => $m->get_all_result_quizz_user()];
-		$this->render("leaderboard", $data);
+		$this->render("leaderboard_user", $data);
 	}
 }

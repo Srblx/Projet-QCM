@@ -32,7 +32,7 @@ class Model
     public function get_random_question()
     {
         // Récupère une liste de questions aléatoires en fonction de l'ID du thème et du niveau
-        $id = $_GET['id'];
+        $id = $_GET['theme'];
         $niveau = $_GET['niveau'];
         $r = $this->bd->prepare("
             SELECT id
@@ -70,7 +70,7 @@ class Model
         $r = $this->bd->prepare("INSERT INTO repondre (scores, temps, niveau, valide, user_id, theme_id) VALUES (:scores, :temps, :niveau, 1, :user_id, :theme_id)");
         $r->bindParam(':scores', $scores, PDO::PARAM_INT);
         $r->bindParam(':temps', $temps, PDO::PARAM_STR);
-        $r->bindParam(':niveau', $niveau, PDO::PARAM_INT);
+        $r->bindParam(':niveau', $niveau, PDO::PARAM_STR);
         $r->bindParam(':user_id', $user_id, PDO::PARAM_INT);
         $r->bindParam(':theme_id', $theme_id, PDO::PARAM_INT);
         $r->execute();
@@ -84,7 +84,26 @@ class Model
         INNER JOIN user ON repondre.user_id = user.id
         INNER JOIN theme ON repondre.theme_id = theme.id
         ORDER BY scores DESC
-        LIMIT 10");
+        ");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+    public function get_all_user_leaderboard()
+    {
+        $theme = $_SESSION['theme'];
+        $niveau = $_SESSION['niveau'];
+        // Récupère les résultats des meilleurs utilisateurs dans le classement principal
+        $r = $this->bd->prepare("SELECT user.id, user.pseudo, repondre.scores, repondre.temps, theme.id, theme.nom_theme, repondre.niveau
+            FROM repondre
+            INNER JOIN user ON repondre.user_id = user.id
+            INNER JOIN theme ON repondre.theme_id = theme.id
+            WHERE repondre.theme_id = :theme
+            AND repondre.niveau = :niveau
+            ORDER BY scores DESC
+            LIMIT 10");
+
+        $r->bindParam(':theme', $theme);
+        $r->bindParam(':niveau', $niveau);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }

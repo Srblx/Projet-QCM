@@ -70,7 +70,7 @@ class Controller_question_correction extends Controller
             } else {
                 $reponseUtilisateur .= "0";
             }
-            $ListeReponseUser =  $_SESSION['ListeReponseUser'];
+            $ListeReponseUser = $_SESSION['ListeReponseUser'];
             $cpt = $_SESSION['cpt'];
             $ListeReponseUser[$cpt] = $reponseUtilisateur;
             $_SESSION['ListeReponseUser'] = $ListeReponseUser;
@@ -93,16 +93,16 @@ class Controller_question_correction extends Controller
 
                 if ($reponseDB == $reponseUser) {
                     $score = $_SESSION['score'];
-                    echo "OK : ". $score;
+                    echo "OK : " . $score;
                     $score++;
-                    $_SESSION['score']= $score;   
+                    $_SESSION['score'] = $score;
                 }
                 $cpt = $_SESSION['cpt'];
                 $cpt++;
                 $liste_id = $_SESSION['liste_id'];
                 $id_question = $liste_id[$cpt]->id;
                 $_SESSION['cpt'] = $cpt;
-                $score =  $_SESSION['score'];
+                $score = $_SESSION['score'];
                 $m = Model::get_model();
                 $data = [
                     "question" => $m->get_une_question($id_question),
@@ -121,10 +121,10 @@ class Controller_question_correction extends Controller
                 if ($reponseDB == $reponseUser) {
                     $score = $_SESSION['score'];
                     $score++;
-                    echo "OK : ". $score;
-                    $_SESSION['score'] = $score;   
+                    echo "OK : " . $score;
+                    $_SESSION['score'] = $score;
                 }
-                                
+
                 $cpt = $_SESSION['cpt'];
                 // Récupération de la valeur stockée en session
                 $time = $_SESSION['timer'];
@@ -135,12 +135,12 @@ class Controller_question_correction extends Controller
 
                 // requete pour inserer dans la table repondre
                 $score = $_SESSION['score'];
-                $temps =  $minutes . $secondes;
+                $temps = $minutes . $secondes;
                 $niveau = 1;
                 $user_id = $_SESSION['id'];
                 $theme_id = 1;
-                
-                
+
+
                 // echo "compteur final : " . $cpt . "<br>";
                 // echo '<pre>';
                 // // print_r($_SESSION["liste_id"]);
@@ -164,10 +164,10 @@ class Controller_question_correction extends Controller
     {
         $cpt = $_SESSION['cpt'];
         $liste_id = $_SESSION['liste_id'];
-        
-        if ($cpt > 0) {
-            $id_question = $liste_id[($cpt - 1) + 1]->id; // Récupérer l'ID de la dernière question répondue
-            $reponseUser = $_SESSION['ListeReponseUser'][($cpt - 1) + 1]; // Récupérer la réponse de l'utilisateur pour cette question
+
+        if ($cpt > -1) {
+            $id_question = $liste_id[$cpt]->id; // Récupérer l'ID de la dernière question répondue
+            $reponseUser = $_SESSION['ListeReponseUser'][$cpt]; // Récupérer la réponse de l'utilisateur pour cette question
             $_SESSION['cpt']--;
 
             $m = Model::get_model();

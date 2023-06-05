@@ -1,6 +1,6 @@
 <?php
-$id = $_GET['id'];
-switch ($id) {
+$theme = $_GET['theme'];
+switch ($theme) {
     case 1:
         $Titre = 'HTML';
         break;
@@ -17,24 +17,29 @@ switch ($id) {
         $Titre = 'Aucun thème trouvé';
         break;
 }
+
+$_SESSION['theme'] = $_GET['theme'];
+$_SESSION['niveau'] = $_GET['niveau'];
 ?>
 
 <main class="case_main_demarrage">
     <section class="case_section_demarrage">
         <!-- la condition correspond à ce qu'on trouve dans l'url, et selon l'url, on affiche le contenu qui correspond au thème, ainsi qu'au niveau choisi -->
-        <?php if ($_GET['id'] <= 4 && $_GET['id'] != 0) { ?>
+        <?php if ($_GET['theme'] <= 4 && $_GET['theme'] != 0) { ?>
             <h3 class="titre_section_demarrage">
                 <?= $Titre ?>
             </h3>
             <p>Niveau
                 <?= $_GET['niveau'] ?>
             </p>
-            <img src="./Content/img/<?= $_GET['id'] ?>.png" alt="" class="img_section_demarrage" id="img_section_demarrage">
+            <img src="./Content/img/<?= $_GET['theme'] ?>.png" alt="" class="img_section_demarrage"
+                id="img_section_demarrage">
             <p class="para_section_demarrage">Ce QCM comporte 20 questions, pour chaque question vous avez 45
                 secondes pour
                 répondre.</p>
-            <a href="?controller=question_correction&action=question&id=<?= $_GET['id'] ?>&niveau=<?= $_GET['niveau'] ?>">
-                <button type=" submit" class="submit_section_demarrage">Démarrer le Quizz</button></a>
+            <a
+                href="?controller=question_correction&action=question&theme=<?= $_GET['theme'] ?>&niveau=<?= $_GET['niveau'] ?>">
+                <button class="submit_section_demarrage">Démarrer le Quizz</button></a>
         <?php } else { ?>
             <h3 id="error-id-theme">
                 <?= $Titre ?>

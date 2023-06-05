@@ -1,13 +1,15 @@
 <?php
 // echo "<pre>";
 // var_dump($_SESSION['data']);
+/* echo $_SESSION['theme'];
+echo $_SESSION['niveau']; */
 // echo "</pre>";
 ?>
 <main id="question_qcm_main">
     <div class="infos_question_qcm">
         <div class="compteur_question_qcm">
             <p>Question
-                <?= $_SESSION['cpt']+1?>/20
+                <?= $_SESSION['cpt'] + 1 ?>/20
             </p>
         </div>
         <div class="timer">
@@ -27,20 +29,21 @@
             <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=question_suivante">
                 <div class="reponses-qcm">
                     <?php $cptReponse = 1 ?>
-                 <?php $ReponseDB ="";?>
+                    <?php $ReponseDB = ""; ?>
 
-                    <?php foreach ($reponses as $reponse) : ?>
+                    <?php foreach ($reponses as $reponse): ?>
                         <label for="qst<?= $cptReponse ?>"><?= substr(htmlspecialchars($reponse->reponse), 3) ?>
-                            <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>" value="<?= $reponse->correct ?>">
-                             <?php $ReponseDB .=$reponse->correct;?>
+                            <input type="checkbox" name="qst<?= $cptReponse ?>" id="qst<?= $cptReponse ?>"
+                                value="<?= $reponse->correct ?>">
+                            <?php $ReponseDB .= $reponse->correct; ?>
                         </label>
                         <?php $cptReponse++ ?>
                     <?php endforeach; ?>
                     <?php echo $ReponseDB; ?>
                     <?php $cpt = $_SESSION['cpt']; ?>
                     <?php $ListeReponseDB = $_SESSION['ListeReponseDB']; ?>
-                  <?php  $ListeReponseDB[$cpt] = $ReponseDB;
-                    $_SESSION['ListeReponseDB']= $ListeReponseDB; ?>
+                    <?php $ListeReponseDB[$cpt] = $ReponseDB;
+                    $_SESSION['ListeReponseDB'] = $ListeReponseDB; ?>
 
                 </div>
                 <div class="qcm-question-valider">
@@ -48,11 +51,11 @@
                     <input type="hidden" id="timer-value" name="timer_value" value="">
                 </div>
             </form>
-            <?php 
+            <?php
             echo "<pre>" . "<br>" . "listeReponseUser :";
             var_dump($_SESSION['ListeReponseUser']);
             echo "<br>" . "listeReponseBD :";
-            var_dump($_SESSION['ListeReponseDB']); 
+            var_dump($_SESSION['ListeReponseDB']);
             echo "</pre>";
             ?>
             <?php
@@ -61,14 +64,14 @@
             // if (isset($_SESSION['timer'])) {
             //     echo $_SESSION['timer'];
             // }
-             ?>
+            ?>
             <!-- <br> -->
-             <!-- <span> -->
-             <?php //foreach ($reponses as $reponse){
+            <!-- <span> -->
+            <?php //foreach ($reponses as $reponse){
             //    $_SESSION['correctionReponse'] = $reponse->correct;
             //    echo $_SESSION['correctionReponse'];
             // }
-
+            
             echo "<br> score : " . $_SESSION['score'];
             ?>
             </span>

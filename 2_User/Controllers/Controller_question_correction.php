@@ -82,7 +82,7 @@ class Controller_question_correction extends Controller
 
 
             $m = Model::get_model();
-            if ($cpt < 4) {
+            if ($cpt < 19) {
                 $liste_id = $_SESSION['liste_id'];
                 $id_question = $liste_id[$cpt]->id;
                 $LreponseUser = $_SESSION['ListeReponseUser'];
@@ -136,21 +136,10 @@ class Controller_question_correction extends Controller
                 // requete pour inserer dans la table repondre
                 $score = $_SESSION['score'];
                 $temps = $minutes . $secondes;
-                $niveau = 1;
+                $niveau = $_SESSION['niveau'];
                 $user_id = $_SESSION['id'];
-                $theme_id = 1;
+                $theme_id = $_SESSION['theme'];
 
-
-                // echo "compteur final : " . $cpt . "<br>";
-                // echo '<pre>';
-                // // print_r($_SESSION["liste_id"]);
-                // echo '<br>';
-                // echo 'reponse db : ';
-                // print_r($_SESSION['ListeReponseDB']);
-                // echo '<br>';
-                // echo 'reponse user : ';
-                // print_r($_SESSION['ListeReponseUser']);
-                // echo '</pre>';
                 $m = Model::get_model();
                 $m->get_insert_repondre($score, $temps, $niveau, $user_id, $theme_id);
 
@@ -179,7 +168,7 @@ class Controller_question_correction extends Controller
 
             $this->render("correction", $data);
         } else {
-            header("Location: ?controller=leaderboard&action=leaderboard");
+            header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");
         }
     }
 }

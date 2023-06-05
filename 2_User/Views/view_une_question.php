@@ -48,6 +48,13 @@
                     <input type="hidden" id="timer-value" name="timer_value" value="">
                 </div>
             </form>
+            <?php 
+            echo "<pre>" . "<br>" . "listeReponseUser :";
+            var_dump($_SESSION['ListeReponseUser']);
+            echo "<br>" . "listeReponseBD :";
+            var_dump($_SESSION['ListeReponseDB']); 
+            echo "</pre>";
+            ?>
             <?php
             // $reponseUtilisateur = $_SESSION["reponseUtilisateur"];
             // echo $reponseUtilisateur . "<br/>";

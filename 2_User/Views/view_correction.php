@@ -1,4 +1,4 @@
-<main id="question_qcm_main">
+<main id="correction_qcm_main">
     <div class="infos_question_qcm">
         <div class="compteur_question_qcm">
             <p>Question <?= $_SESSION['cpt']+1 ?>/20</p>
@@ -9,7 +9,7 @@
         <div id="quiz">
             <?php echo "<h3 class='titre_section_demarrage'>" . $question->question . "</h3>"; ?>
 
-            <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=question_suivante">
+            <form id="form_qcm_jouer" method="post" action="?controller=question_correction&action=correction">
                 <div class="reponses-qcm">
                     <?php $cptReponse = 1 ?>
                     <?php $ReponseDB = ""; ?>
@@ -46,6 +46,13 @@
                     <input type="hidden" id="timer-value" name="timer_value" value="">
                 </div>
             </form>
+            <?php 
+            echo "<pre>" . "<br>" . "listeReponseUser :";
+            var_dump($_SESSION['ListeReponseUser']);
+            echo "<br>" . "listeReponseBD :";
+            var_dump($_SESSION['ListeReponseDB']); 
+            echo "</pre>";
+            ?>
         </div>
     </div>
 </main>

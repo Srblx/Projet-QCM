@@ -19,5 +19,4 @@ class Controller_leaderboard extends Controller
 		$data = ["users" => $m->get_all_main_leaderboard()];
 		$this->render("leaderboard", $data);
 	}
-
 }

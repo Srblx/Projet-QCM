@@ -22,8 +22,8 @@
 				<td class="td"> <?= $al->email ?> </td>
 				<td class="td"> <?= $al->admin ?> </td>
 				
-				<td><a href="?controller=crud&action=update_user&id=<?= $al->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-				<td class='trash'><a href='?controller=user&action=delete_user&id=<?= $al->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre ?')"><i class='fa fa-trash'></i></a></td>
+				<td><a href="?controller=crud&action=crud_update_user&id=<?= $al->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+				<td class='trash'><a href='?controller=user&action=delete_user&id=<?= $al->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ceci ?')"><i class='fa fa-trash'></i></a></td>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>
@@ -54,8 +54,8 @@
 					<td class="td"> <?= $aun->email ?> </td>
 					<td class="td"> <?= $aun->admin ?> </td>
 					
-					<td><a href="?controller=crud&action=update_user&id=<?= $aun->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-					<td class='trash'><a href='?controller=user&action=delete_user&id=<?= $aun->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre ?')"><i class='fa fa-trash'></i></a></td>
+					<td><a href="?controller=crud&action=crud_update_user&id=<?= $aun->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+					<td class='trash'><a href='?controller=user&action=delete_user&id=<?= $aun->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ceci ?')"><i class='fa fa-trash'></i></a></td>
 				</tr>
 			<?php endforeach; ?>
 		</tbody>
@@ -86,7 +86,7 @@
 				<td class="td"> <?= $aup->email ?> </td>
 				<td class="td"> <?= $aup->admin ?> </td>
 					
-					<td><a href="?controller=crud&action=update_theme&id=<?= $aup->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+					<td><a href="?controller=crud&action=crud_update_user&id=<?= $aup->id ?>"><i class="fa-solid fa-pen"></i></a></td>
 					<td class='trash'><a href='?controller=crud&action=delete_theme&id=<?= $aup->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce thème ?')"><i class='fa fa-trash'></i></a></td>
 				</tr>
 			<?php endforeach; ?>
@@ -117,7 +117,7 @@
 				<td class="td"> <?= $aum->email ?> </td>
 				<td class="td"> <?= $aum->admin ?> </td>
 					
-					<td><a href="?controller=crud&action=update_niveau&id=<?= $aum->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+					<td><a href="?controller=crud&action=crud_update_user&id=<?= $aum->id ?>"><i class="fa-solid fa-pen"></i></a></td>
 					<td class='trash'><a href='?controller=crud&action=delete_niveau&id=<?= $aum->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce niveau ?')"><i class='fa fa-trash'></i></a></td>
 				</tr>
 			<?php endforeach; ?>
@@ -155,7 +155,7 @@
 				<td class="td"> <?= $aqrt->niveau ?> </td>
 				
 				<td><a href="?controller=crud&action=update_user&id=<?= $aqrt->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-				<td class='trash'><a href='?controller=user&action=delete_user&id=<?= $aqrt->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre ?')"><i class='fa fa-trash'></i></a></td>
+				<td class='trash'><a href='?controller=user&action=delete_user&id=<?= $aqrt->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce ci?')"><i class='fa fa-trash'></i></a></td>
 			</tr>
 			<?php $previousQuestion = $aqrt->question; ?>
 		<?php endforeach; ?>
@@ -344,29 +344,22 @@ function getReponsesForQuestion($all_question_reponse, $question)
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>Nom</th>
-				<th>Prénom</th>
-				<th>Email</th>
-				<th>Score</th>
-				<th>Date</th>
-				<th>Niveau</th>
-				<th>Temps</th>
-				<th></th>
+				<th>pseudo</th>
+				<th>scores</th>
+				<th>nom_theme</th>
+				<th>niveau</th>
+				<th>temps</th>
 				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php  foreach ($all_scores as $score) : ?>
 				 <tr>
-					<td class="td"><?= $score->nom ?></td>
-					<td class="td"><?= $score->prenom ?></td>
-					<td class="td"><?= $score->email ?></td>
+					<td class="td"><?= $score->pseudo ?></td>
 					<td class="td"><?= $score->scores ?></td>
-					<td class="td"><?= $score->date ?></td>
+					<td class="td"><?= $score->nom_theme ?></td>
 					<td class="td"><?= $score->niveau ?></td>
 					<td class="td"><?= $score->temps ?></td>
-					
-					<td><a href="?controller=crud&action=update_score&id=<?= $score->id ?>"><i class="fa-solid fa-pen"></i></a></td>
 					<td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $score->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce quizz ?')"><i class='fa fa-trash'></i></a></td>
 				</tr>
 			<?php endforeach; ?>
@@ -379,9 +372,7 @@ function getReponsesForQuestion($all_question_reponse, $question)
 	<table class='table'>
 		<thead>
 			<tr>
-				<th>Nom</th>
-				<th>Prénom</th>
-				<th>Email</th>
+				<th>Pseudo</th>
 				<th>Score</th>
 				<th>Date</th>
 				<th>Niveau</th>
@@ -393,15 +384,12 @@ function getReponsesForQuestion($all_question_reponse, $question)
 		<tbody>
 			<?php  foreach ($all_scores as $score) : ?>
 				 <tr>
-					<td class="td"><?= $score->nom ?></td>
-					<td class="td"><?= $score->prenom ?></td>
-					<td class="td"><?= $score->email ?></td>
+					<td class="td"><?= $score->pseudo ?></td>
 					<td class="td"><?= $score->scores ?></td>
 					<td class="td"><?= $score->date ?></td>
 					<td class="td"><?= $score->niveau ?></td>
 					<td class="td"><?= $score->temps ?></td>
 					
-					<td><a href="?controller=crud&action=update_score&id=<?= $score->id ?>"><i class="fa-solid fa-pen"></i></a></td>
 					<td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $score->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce quizz ?')"><i class='fa fa-trash'></i></a></td>
 				</tr>
 			<?php endforeach; ?>
@@ -422,7 +410,6 @@ function getReponsesForQuestion($all_question_reponse, $question)
 				<th>Niveau</th>
 				<th>Temps</th>
 				<th></th>
-				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -436,7 +423,6 @@ function getReponsesForQuestion($all_question_reponse, $question)
 					<td class="td"><?= $aurn->niveau ?></td>
 					<td class="td"><?= $aurn->temps ?></td>
 					
-					<td><a href="?controller=crud&action=update_score&id=<?= $aurn->id ?>"><i class="fa-solid fa-pen"></i></a></td>
 					<td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $aurn->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce quizz ?')"><i class='fa fa-trash'></i></a></td>
 				</tr>
 			<?php endforeach; ?>
@@ -458,7 +444,6 @@ function getReponsesForQuestion($all_question_reponse, $question)
 				<th>Niveau</th>
 				<th>Temps</th>
 				<th></th>
-				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -472,7 +457,6 @@ function getReponsesForQuestion($all_question_reponse, $question)
 					<td class="td"><?= $aurm->niveau ?></td>
 					<td class="td"><?= $aurm->temps ?></td>
 					
-					<td><a href="?controller=crud&action=update_score&id=<?= $aurm->id ?>"><i class="fa-solid fa-pen"></i></a></td>
 					<td class='trash'><a href='?controller=crud&action=delete_score&id=<?= $aurm->id ?>' style='color: red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce quizz ?')"><i class='fa fa-trash'></i></a></td>
 				</tr>
 			<?php endforeach; ?>

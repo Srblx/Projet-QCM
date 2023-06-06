@@ -427,6 +427,7 @@ class Model
         $r->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
         $r->bindParam(':email', $email, PDO::PARAM_STR);
         $r->execute();
+    }
 
     public function valid_input($data)
     {
@@ -446,4 +447,3 @@ class Model
 
     }
 }
-

@@ -35,6 +35,7 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
     <link rel="stylesheet" href="./Content/css/style_contact.css">
     <link rel="stylesheet" href="./Content/css/style_about.css">
     <link rel="stylesheet" href="./Content/css/style_demarrage_quizz.css">
+    <link rel="stylesheet" href="./Content/css/style_profile.css">
 
 
     <!-- Link font awesome -->

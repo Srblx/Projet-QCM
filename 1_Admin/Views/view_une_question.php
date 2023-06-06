@@ -58,7 +58,7 @@ echo $_SESSION['niveau']; */
             // var_dump($_SESSION['ListeReponseDB']);
             // echo "</pre>";
             ?>
-            <?php             
+            <?php
             // echo "<br> score : " . $_SESSION['score'];
             ?>
             </span>

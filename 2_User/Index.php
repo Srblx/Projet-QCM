@@ -9,9 +9,7 @@ if (!isset($_SESSION['login'])) {
 if (isset($_SESSION['login']) && $_SESSION['admin'] == 1) {
     header("Location: ../1_Admin/?controller=home&action=home");
 }
-
-var_dump($_SESSION)
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 

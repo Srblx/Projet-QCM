@@ -1,6 +1,17 @@
-<?php if (session_status() != PHP_SESSION_ACTIVE) {
+<?php
+if (session_status() != PHP_SESSION_ACTIVE) {
     session_start();
-} ?>
+}
+if (!isset($_SESSION['login'])) {
+    header("Location: ../?controller=home&action=home");
+}
+
+if (isset($_SESSION['login']) && $_SESSION['admin'] == 1) {
+    header("Location: ../1_Admin/?controller=home&action=home");
+}
+
+var_dump($_SESSION)
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 

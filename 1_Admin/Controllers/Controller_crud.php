@@ -126,6 +126,44 @@ class Controller_crud extends Controller
         }
     }
 
+    public function action_crud_update_user()
+    {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $m = Model::get_model();
+            $user = $m->get_user_by_id($id);
+
+            if ($user) {
+                $data = ["user" => $user];
+                $this->render("crud_update_user", $data);
+            } else {
+                // Utilisateur non trouvé, rediriger vers la page de recherche
+                header("Location: ?controller=crud&action=crud");
+            }
+        } else {
+            // Identifiant d'utilisateur non spécifié, rediriger vers la page de recherche
+            header("Location: ?controller=crud&action=crud");
+        }
+    }
+
+    public function action_crud_confirm_update_user()
+    {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $nom = $_POST['nom'];
+            $prenom = $_POST['prenom'];
+            $pseudo = $_POST['pseudo'];
+            $email = $_POST['email'];
+            
+            $m = Model::get_model();
+            $m->get_crud_confirm_update_user($id, $nom, $prenom, $pseudo, $email);
+        }
+        
+        $this->action_crud();
+    }
+
+    // --------------- Fin CRUD -------------- //
+
     public function action_update_score()
     {
         if (isset($_SESSION['login']) && $_SESSION['admin'] == 1) {

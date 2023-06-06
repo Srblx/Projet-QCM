@@ -67,7 +67,7 @@ body {
     justify-content: center;
   }
   
-  input[type="submit"] {
+  #valider_qcm_question {
     background: #ff9fd8;
     color: black;
     margin-top: 60px;
@@ -81,7 +81,7 @@ body {
     border: 2px solid black;
   }
   
-  button[type="submit"]:hover {
+ #valider_qcm_question:hover {
     background: #009cf9;
     color: white;
   }

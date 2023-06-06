@@ -34,7 +34,7 @@ class Controller_login_signup extends Controller
 			$Mail = filter_input(INPUT_POST, 'input_mail', FILTER_VALIDATE_EMAIL);
 			$Password = filter_input(INPUT_POST, 'input_password', FILTER_UNSAFE_RAW);
 			$Password_confirm = filter_input(INPUT_POST, 'input_cPassword', FILTER_UNSAFE_RAW);
-			
+
 
 			$Nom = $this->valid_input($Nom);
 			$Prenom = $this->valid_input($Prenom);
@@ -43,7 +43,7 @@ class Controller_login_signup extends Controller
 			$Password = $this->valid_input($Password);
 			$Password_confirm = $this->valid_input($Password_confirm);
 
-			
+
 			// Hash de mot de passe
 			$hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
 
@@ -61,42 +61,42 @@ class Controller_login_signup extends Controller
 
 	public function action_login_validate()
 	{
-	
-        if (isset($_POST['submit_form_connexion'])) {
-            $m = Model::get_model();
-            $user = $m->get_connexion();
 
-            if ($user) {
+		if (isset($_POST['submit_form_connexion'])) {
+			$m = Model::get_model();
+			$user = $m->get_connexion();
+
+			if ($user) {
 				$id = $user->id;
-                $nom = $user->nom;
-                $prenom = $user->prenom;
-                $pseudo = $user->pseudo;
-                $mail = $user->mail;
-                $est_administrateur = $user->admin;
-                if (session_status() != PHP_SESSION_ACTIVE) {
-                    session_start();
-                }
+				$nom = $user->nom;
+				$prenom = $user->prenom;
+				$pseudo = $user->pseudo;
+				$mail = $user->email;
+				$est_administrateur = $user->admin;
+				if (session_status() != PHP_SESSION_ACTIVE) {
+					session_start();
+				}
 				// session_start();
 				$_SESSION['id'] = $id;
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
+				$_SESSION['nom'] = $nom;
+				$_SESSION['prenom'] = $prenom;
 				$_SESSION['pseudo'] = $pseudo;
 				$_SESSION['mail'] = $mail;
-                $_SESSION['admin'] = $est_administrateur;
+				$_SESSION['admin'] = $est_administrateur;
 				$_SESSION['login'] = true;
-                if ($_SESSION['admin'] === 1) {
-                    header('Location: 1_Admin/?controller=home&action=home');
-                } else {
-                    header('Location: 2_User/?controller=home&action=home');
-                    exit();
-                }
-                if (!$user) {
-                    header('Location: ?controller=home&action=home');
-                    exit();
-                }
-            }
-            $this->render("home");
-        }
+				if ($_SESSION['admin'] === 1) {
+					header('Location: 1_Admin/?controller=home&action=home');
+				} else {
+					header('Location: 2_User/?controller=home&action=home');
+					exit();
+				}
+				if (!$user) {
+					header('Location: ?controller=home&action=home');
+					exit();
+				}
+			}
+			$this->render("home");
+		}
 	}
 
 	public function action_logout()
@@ -124,7 +124,7 @@ class Controller_login_signup extends Controller
 
 		// $this->render("home");
 	}
-	
+
 
 	public function valid_input($data)
 	{

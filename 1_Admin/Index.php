@@ -1,6 +1,16 @@
 <?php if (session_status() != PHP_SESSION_ACTIVE) {
     session_start();
-} ?>
+}
+
+if (!isset($_SESSION['login'])) {
+    header("Location: ../?controller=home&action=home");
+}
+
+if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
+    header("Location: ../2_User/?controller=home&action=home");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

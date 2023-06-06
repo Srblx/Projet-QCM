@@ -108,3 +108,11 @@ input[type="checkbox"] {
   width: 25px;
   height: 25px;
 }
+
+#question_correct {
+  background-color: rgb(127, 250, 127);
+}
+
+#question_incorrect {
+  background-color: rgb(255, 108, 108);
+}

@@ -27,7 +27,9 @@
                         ?>
                         <label for="qst<?= $cptReponse ?>" <?php if ($reponse->correct == '1') {
                               echo 'id="question_correct"';
-                          } ?>>
+                          } ?><?php if ($isCorrect == '0') {
+                               echo 'id="question_incorrect"';
+                           } ?>>
                             <?= substr(htmlspecialchars($reponse->reponse), 3) ?>
                             <?php if ($isCorrect): ?>
                                 <!-- Si la réponse est correcte -->

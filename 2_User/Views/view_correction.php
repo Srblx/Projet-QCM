@@ -25,7 +25,9 @@
                             $isCorrect = $isChecked && $reponse->correct == '1';
                         }
                         ?>
-                        <label for="qst<?= $cptReponse ?>">
+                        <label for="qst<?= $cptReponse ?>" <?php if ($reponse->correct == '1') {
+                              echo 'id="question_correct"';
+                          } ?>>
                             <?= substr(htmlspecialchars($reponse->reponse), 3) ?>
                             <?php if ($isCorrect): ?>
                                 <!-- Si la réponse est correcte -->

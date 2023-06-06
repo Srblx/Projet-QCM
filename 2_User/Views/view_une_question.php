@@ -39,7 +39,7 @@ echo $_SESSION['niveau']; */
                         </label>
                         <?php $cptReponse++ ?>
                     <?php endforeach; ?>
-                    <?php echo $ReponseDB; ?>
+                    <?php /*  echo $ReponseDB;  */?>
                     <?php $cpt = $_SESSION['cpt']; ?>
                     <?php $ListeReponseDB = $_SESSION['ListeReponseDB']; ?>
                     <?php $ListeReponseDB[$cpt] = $ReponseDB;
@@ -52,27 +52,14 @@ echo $_SESSION['niveau']; */
                 </div>
             </form>
             <?php
-            echo "<pre>" . "<br>" . "listeReponseUser :";
-            var_dump($_SESSION['ListeReponseUser']);
-            echo "<br>" . "listeReponseBD :";
-            var_dump($_SESSION['ListeReponseDB']);
-            echo "</pre>";
+            /*             echo "<pre>" . "<br>" . "listeReponseUser :";
+                        var_dump($_SESSION['ListeReponseUser']);
+                        echo "<br>" . "listeReponseBD :";
+                        var_dump($_SESSION['ListeReponseDB']);
+                        echo "</pre>"; */
             ?>
             <?php
-            // $reponseUtilisateur = $_SESSION["reponseUtilisateur"];
-            // echo $reponseUtilisateur . "<br/>";
-            // if (isset($_SESSION['timer'])) {
-            //     echo $_SESSION['timer'];
-            // }
-            ?>
-            <!-- <br> -->
-            <!-- <span> -->
-            <?php //foreach ($reponses as $reponse){
-            //    $_SESSION['correctionReponse'] = $reponse->correct;
-            //    echo $_SESSION['correctionReponse'];
-            // }
-            
-            echo "<br> score : " . $_SESSION['score'];
+            /* "<br> score : " . $_SESSION['score']; */
             ?>
             </span>
         </div>

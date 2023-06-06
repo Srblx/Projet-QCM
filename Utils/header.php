@@ -21,17 +21,16 @@
 				<li class="nav-item">
 					<a class="nav-link" href="?controller=contact&action=contact">Contact</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="?controller=login_signup&action=login">Connexion</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./2_User/?controller=home&action=home">User</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./1_Admin/?controller=home&action=home">Admin</a>
-				</li>
-
-			</ul>
-		</div>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa-solid fa-user-plus fa-bounce"></i>
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="?controller=login_signup&action=login">Connexion</a>				
+					<a class="dropdown-item" href="?controller=login_signup&action=signup">Inscription</a>				
+				</div>
+			</li>
+				</ul>
+			</div>
 	</nav>
 </header>

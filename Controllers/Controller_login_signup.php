@@ -57,8 +57,6 @@ class Controller_login_signup extends Controller
 
 			$this->render("connexion");
 		}
-	
-		$this->render("login");
 	}
 
 	public function action_login_validate()

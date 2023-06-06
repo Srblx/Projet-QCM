@@ -16,7 +16,7 @@ body {
 }
 
 #nav_nav {
-  padding: 15px 2rem;
+  padding: 15px 8rem;
 }
 
 .nav-link {
@@ -41,73 +41,6 @@ body {
   );
   background-attachment: fixed;
   background-size: cover;
-}
-
-#home-main {
-  /* margin: 30% 0; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#home-h1-bytemaster {
-  font-size: 2rem;
-  margin: 0;
-  font-weight: bold;
-}
-
-#home-btn-jouer {
-  width: 43%;
-  height: auto;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-radius: 40px;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin: 1rem 0 20% 0;
-  border: 2px solid black;
-  box-shadow: 4px 4px 5px black;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgb(255, 56, 172) 100%
-  );
-}
-
-#home-span-jouer {
-  font-size: 3vw;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-}
-
-#about-main {
-  padding: 2rem;
-}
-
-.about-div-qr {
-  margin-bottom: 1rem;
-}
-
-.about-question {
-  background-color: #f0f0f0;
-  padding: 1rem;
-  cursor: pointer;
-}
-
-.about-answer {
-  display: none;
-  background-color: #ffffff;
-  padding: 1rem;
-  animation: fade-in 0.3s ease;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 /** Style pour la page Contact */

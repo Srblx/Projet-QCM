@@ -9,8 +9,7 @@ a:active {
 }
 
 #nav_nav {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 8rem;
 }
 
 .nav-link {
@@ -22,8 +21,15 @@ a:active {
     font-weight: bold;
 }
 
+.img_logo_nav {
+    min-width: 25px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(to bottom,
             rgba(255, 129, 203, 1),
             rgba(255, 203, 234, 1),
@@ -32,12 +38,12 @@ body {
     background-size: cover;
 }
 
-
 #home-main {
     /* margin: 30% 0; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 8rem;
 }
 
 #home-h1-bytemaster {
@@ -47,6 +53,7 @@ body {
 }
 
 #home-btn-jouer {
+    min-width: 300px;
     width: 43%;
     height: auto;
     padding-top: 2rem;
@@ -54,20 +61,45 @@ body {
     border-radius: 40px;
     text-transform: uppercase;
     cursor: pointer;
-    margin: 1rem 0 20% 0;
+    margin: 1rem 0 2% 0;
     border: 2px solid black;
     box-shadow: 4px 4px 5px black;
     background: radial-gradient(circle at center,
             rgba(255, 255, 255, 0.5) 0%,
             rgb(255, 56, 172) 100%);
+    transition: all 0.1s;
+}
+
+#home-btn-jouer:hover {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#home-logo-img {
+    min-width: 250px;
+    min-height: 130px;
+    width: 30%;
+    height: 60%;
 }
 
 #home-span-jouer {
-    font-size: 3vw;
+    font-size: 4vh;
     color: rgb(0, 0, 0);
     font-weight: bold;
 }
-
 
 #about-main {
     padding: 2rem;

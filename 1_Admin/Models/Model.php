@@ -318,20 +318,96 @@ class Model
         $r->execute();
     }
 
+      
     public function get_random_question()
     {
-        $id = $_GET['id'];
+        // Récupère une liste de questions aléatoires en fonction de l'ID du thème et du niveau
+        $id = $_GET['theme'];
         $niveau = $_GET['niveau'];
-        $r = $this->bd->prepare("SELECT DISTINCT q.id AS question_id, q.question AS question, r.id AS reponse_id, r.reponse, r.correct AS correct
-        FROM (
-            SELECT id, question
-            FROM question WHERE theme_id = '$id' AND question.niveau = '$niveau'
+        $r = $this->bd->prepare("
+            SELECT id
+            FROM question WHERE theme_id = :id AND question.niveau = :niveau
             ORDER BY RAND()
             LIMIT 20
-        ) q
-        JOIN reponse r ON q.id = r.question_id
-        LIMIT 4");
+        ");
+        $r->bindParam(':id', $id, PDO::PARAM_INT);
+        $r->bindParam(':niveau', $niveau, PDO::PARAM_STR);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_une_question($id_question)
+    {
+        // Récupère une seule question en fonction de son ID
+        $r = $this->bd->prepare("SELECT * FROM question WHERE id = :id_question");
+        $r->bindParam(':id_question', $id_question, PDO::PARAM_INT);
+        $r->execute();
+        return $r->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function get_les_responses($id_question)
+    {
+        // Récupère les réponses associées à une question en fonction de son ID
+        $r = $this->bd->prepare("SELECT reponse, question_id, correct FROM reponse WHERE question_id = :id_question");
+        $r->bindParam(':id_question', $id_question, PDO::PARAM_INT);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_insert_repondre($scores, $temps, $niveau, $user_id, $theme_id)
+    {
+        // Insère les résultats de l'utilisateur dans la table "repondre"
+        $r = $this->bd->prepare("INSERT INTO repondre (scores, temps, niveau, valide, user_id, theme_id) VALUES (:scores, :temps, :niveau, 1, :user_id, :theme_id)");
+        $r->bindParam(':scores', $scores, PDO::PARAM_INT);
+        $r->bindParam(':temps', $temps, PDO::PARAM_STR);
+        $r->bindParam(':niveau', $niveau, PDO::PARAM_STR);
+        $r->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $r->bindParam(':theme_id', $theme_id, PDO::PARAM_INT);
+        $r->execute();
+    }
+
+    public function get_all_main_leaderboard()
+    {
+        // Récupère les résultats des meilleurs utilisateurs dans le classement principal
+        $r = $this->bd->prepare("SELECT user.id, user.pseudo, repondre.scores, repondre.temps, theme.id, theme.nom_theme, repondre.niveau
+        FROM repondre
+        INNER JOIN user ON repondre.user_id = user.id
+        INNER JOIN theme ON repondre.theme_id = theme.id
+        ORDER BY scores DESC
+        ");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+    public function get_all_user_leaderboard()
+    {
+        $theme = $_SESSION['theme'];
+        $niveau = $_SESSION['niveau'];
+        // Récupère les résultats des meilleurs utilisateurs dans le classement principal
+        $r = $this->bd->prepare("SELECT user.id, user.pseudo, repondre.scores, repondre.temps, theme.id, theme.nom_theme, repondre.niveau
+            FROM repondre
+            INNER JOIN user ON repondre.user_id = user.id
+            INNER JOIN theme ON repondre.theme_id = theme.id
+            WHERE repondre.theme_id = :theme
+            AND repondre.niveau = :niveau
+            ORDER BY scores DESC
+            LIMIT 10");
+
+        $r->bindParam(':theme', $theme);
+        $r->bindParam(':niveau', $niveau);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_all_result_quizz_user()
+    {
+        // Récupère les résultats du dernier utilisateur ayant passé le quiz
+        $r = $this->bd->prepare("SELECT user.id, user.pseudo, repondre.scores, repondre.temps, theme.id, theme.nom_theme, repondre.niveau
+            FROM repondre
+            INNER JOIN user ON repondre.user_id = user.id
+            INNER JOIN theme ON repondre.theme_id = theme.id
+            ORDER BY repondre.id DESC
+            LIMIT 1");
+        $r->execute();
+        return $r->fetch(PDO::FETCH_OBJ);
     }
 }

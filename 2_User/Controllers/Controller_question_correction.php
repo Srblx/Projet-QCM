@@ -89,11 +89,11 @@ class Controller_question_correction extends Controller
                 $reponseUser = $LreponseUser[$cpt];
                 $LreponseDB = $_SESSION['ListeReponseDB'];
                 $reponseDB = $LreponseDB[$cpt];
-                echo $reponseDB . " " . $reponseUser;
+               // echo $reponseDB . " " . $reponseUser;
 
                 if ($reponseDB == $reponseUser) {
                     $score = $_SESSION['score'];
-                    echo "OK : " . $score;
+                    //echo "OK : " . $score;
                     $score++;
                     $_SESSION['score'] = $score;
                 }

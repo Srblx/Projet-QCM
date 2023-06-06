@@ -113,6 +113,7 @@
 
 .bio-graph-info {
     color: #000;
+    margin-top: 40px;
 }
 
 .bio-graph-info h1 {
@@ -371,4 +372,8 @@ ul.summary-list > li:last-child  {
 
 .activity-desk .album a:last-child{
     margin-right: 0px;
+}
+
+#tableau_profil_info {
+    margin-bottom: 70px;
 }

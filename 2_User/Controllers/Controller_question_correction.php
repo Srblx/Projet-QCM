@@ -31,6 +31,12 @@ class Controller_question_correction extends Controller
         $score = 0;
         $_SESSION['score'] = $score;
 
+        if (!isset($_SESSION['timer'])) {
+            $_SESSION['timer'] = 0;
+        }
+        // Accès à la valeur de 'timer'
+        $timerValue = $_SESSION['timer'];
+
         $id_question = $liste_id[$cpt]->id;
 
         $m = Model::get_model();

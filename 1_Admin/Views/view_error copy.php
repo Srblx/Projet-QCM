@@ -1,3 +1,0 @@
-Erreur
-<p> <?= $error ?>
-<p>

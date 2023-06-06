@@ -52,11 +52,11 @@
                 </div>
             </form>
             <?php
-            echo "<pre>" . "<br>" . "listeReponseUser :";
-            var_dump($_SESSION['ListeReponseUser']);
-            echo "<br>" . "listeReponseBD :";
-            var_dump($_SESSION['ListeReponseDB']);
-            echo "</pre>";
+            // echo "<pre>" . "<br>" . "listeReponseUser :";
+            // var_dump($_SESSION['ListeReponseUser']);
+            // echo "<br>" . "listeReponseBD :";
+            // var_dump($_SESSION['ListeReponseDB']);
+            // echo "</pre>";
             ?>
         </div>
     </div>

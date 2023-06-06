@@ -193,10 +193,6 @@ class Model
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
-
-
-
-
     public function get_all_question_reponse_difficulte()
     {
         $niveau = $_POST["all_question_reponse_difficulte"];
@@ -224,9 +220,7 @@ class Model
 
     public function get_all_result()
     {
-        $r = $this->bd->prepare("SELECT * FROM repondre r
-        INNER JOIN user u ON u.id = r.user_id 
-        INNER JOIN theme t ON t.id = r.theme_id");
+        $r = $this->bd->prepare("SELECT user.id AS user_id, user.pseudo, repondre.scores, repondre.temps, theme.id AS theme_id, theme.nom_theme, repondre.niveau, repondre.id FROM repondre INNER JOIN user ON repondre.user_id = user.id INNER JOIN theme ON repondre.theme_id = theme.id ORDER BY scores DESC");
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
@@ -272,7 +266,6 @@ class Model
     //     $r->execute();
     //     return $r->fetchAll(PDO::FETCH_OBJ);
     // }
-
 
     // ! UPDATE
     public function get_update_score($id)
@@ -413,6 +406,7 @@ class Model
     }
 
 
+
     public function get_count_quizz_user_html()
     {
         $id_user = $_SESSION["id"];
@@ -454,6 +448,28 @@ class Model
     }
 
 
+
+    public function get_user_by_id($id)
+    {
+        $query = "SELECT * FROM user WHERE id = :id";
+        $r = $this->bd->prepare($query);
+        $r->bindParam(':id', $id, PDO::PARAM_INT);
+        $r->execute();
+        return $r->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function get_crud_confirm_update_user($id, $nom, $prenom, $pseudo, $email)
+    {
+        $query = "UPDATE `user` SET `nom` = :nom, `prenom` = :prenom, `pseudo` = :pseudo, `email` = :email WHERE `id` = :id";
+        $r = $this->bd->prepare($query);
+        $r->bindParam(':id', $id, PDO::PARAM_INT);
+        $r->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $r->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+        $r->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+        $r->bindParam(':email', $email, PDO::PARAM_STR);
+        $r->execute();
+    }
+
     public function valid_input($data)
     {
         //todo Supprime les espaces en début et fin de chaîne
@@ -469,6 +485,6 @@ class Model
         // $data = filter_var($data, FILTER_SANITIZE_ENCODED);
         //todo Retourne la chaîne de caractères validée
         return $data;
+
     }
 }
-

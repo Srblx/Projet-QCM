@@ -115,9 +115,9 @@
           <form action="?controller=crud&action=crud_resultat_utilisateur" method="post" class="form_score_resultat">
             <select name="all_score_resultat" id="all_score_resultat">
               <option value="Par Score">Recherche par Score</option>
-              <?php foreach ($all_score as $aib) : ?>
-                <option value="<?= $aib->scores ?>"><?= $aib->scores ?></option>
-              <?php endforeach; ?>
+              <?php for ($i = 0; $i <= 20; $i++) : ?>
+                <option value="<?= $i ?>"><?= $i ?></option>
+              <?php endfor; ?>
             </select>
             <input type="submit" value="Lancer la recherche" name="submit_all_result_score">
           </form>

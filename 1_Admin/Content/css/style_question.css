@@ -1,16 +1,18 @@
 body {
-    background-image: linear-gradient(to bottom,
-            rgba(255, 129, 203, 1),
-            rgba(255, 203, 234, 1),
-            rgba(255, 154, 213, 1));
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 129, 203, 1),
+      rgba(255, 203, 234, 1),
+      rgba(255, 154, 213, 1)
+    );
     font-family: cursive;
     background-attachment: fixed;
     background-size: cover;
-}
-
-.container_question {
-
-    width: 710px;
+  }
+  
+  .container_question {
+    min-width: 710px;
+    width: min-content;
     min-height: 570px;
     height: max-content;
     margin: 25px auto;
@@ -20,10 +22,9 @@ body {
     border-radius: 50px;
     border: 2px solid #cbcbcb;
     box-shadow: 10px 15px 5px #cbcbcb;
-
-}
-
-#byte {
+  }
+  
+  #byte {
     background: #ff9fd8;
     color: black;
     margin-top: 20px;
@@ -32,25 +33,25 @@ body {
     padding: 2px 0 13px 0;
     border-radius: 50px;
     border: 2px solid black;
-}
-
-.button-grp {
+  }
+  
+  .button-grp {
     margin-top: 30px;
-}
-
-.titre_section_demarrage {
+  }
+  
+  .titre_section_demarrage {
     text-align: center;
-}
-
-.reponses-qcm {
+  }
+  
+  .reponses-qcm {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 1rem;
     text-align: center;
     margin-top: 3rem;
-}
-
-.reponses-qcm label {
+  }
+  
+  .reponses-qcm label {
     border: 2px solid black;
     width: 100%;
     cursor: pointer;
@@ -59,15 +60,14 @@ body {
     border-radius: 30px;
     padding: 1rem;
     user-select: none;
-}
-
-
-.qcm-question-valider {
+  }
+  
+  .qcm-question-valider {
     display: flex;
     justify-content: center;
-}
-
-button[type="submit"] {
+  }
+  
+  input[type="submit"] {
     background: #ff9fd8;
     color: black;
     margin-top: 60px;
@@ -79,13 +79,41 @@ button[type="submit"] {
     width: 250px;
     justify-self: center;
     border: 2px solid black;
-}
-
-button[type="submit"]:hover {
+  }
+  
+  button[type="submit"]:hover {
     background: #009cf9;
     color: white;
-}
-
-/* input {
+  }
+  
+  input[type="checkbox"] {
     display: none;
-} */
+  }
+  
+  .infos_question_qcm {
+    display: flex !important;
+    justify-content: space-around !important;
+  }
+  /* /////////////// Correction /////////////////// */
+  
+  .checkmark.correct {
+    width: 25px;
+    height: 25px;
+    position: relative;
+  }
+  
+  .checkmark.incorrect {
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+  }
+  
+  #question_correct {
+    background-color: rgb(127, 250, 127);
+  }
+  
+  #question_incorrect {
+    background-color: rgb(255, 108, 108);
+  }
+  

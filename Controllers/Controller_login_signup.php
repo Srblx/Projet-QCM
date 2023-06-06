@@ -73,7 +73,7 @@ class Controller_login_signup extends Controller
 				$nom = $user->nom;
 				$prenom = $user->prenom;
 				$pseudo = $user->pseudo;
-				$mail = $user->mail;
+				$mail = $user->email;
 				$est_administrateur = $user->admin;
 				if (session_status() != PHP_SESSION_ACTIVE) {
 					session_start();

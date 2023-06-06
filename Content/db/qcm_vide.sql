@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `question` (
   `id` int(11) NOT NULL,
-  `texte` varchar(255) DEFAULT NULL,
+  `question` varchar(255) DEFAULT NULL,
   `niveau` varchar(255) DEFAULT NULL,
   `nb_points` int(11) DEFAULT NULL,
   `tps_question` time DEFAULT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE `repondre` (
 
 CREATE TABLE `reponse` (
   `id` int(11) NOT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `reponse` varchar(255) DEFAULT NULL,
   `question_id` int(11) DEFAULT NULL,
   `Correct` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;

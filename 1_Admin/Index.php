@@ -54,6 +54,7 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"
         defer></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 
@@ -98,8 +99,8 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
 
     //* Inclure le fichier de pied de page
     require_once 'Utils/footer.php';
-    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
-    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
+    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "<b>";
+    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "<b>";
     ?>
 </body>
 

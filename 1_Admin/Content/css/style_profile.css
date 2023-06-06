@@ -104,6 +104,7 @@
     color: #000;
     text-align: center;
     font-style: italic;
+    
     padding: 40px 110px;
     border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
@@ -113,6 +114,7 @@
 
 .bio-graph-info {
     color: #000;
+    margin-top:40px;
 }
 
 .bio-graph-info h1 {
@@ -147,7 +149,7 @@
 
 .bio-desk h4 {
     font-size: 15px;
-    font-weight:400;
+    font-weight:bold;
 }
 
 .bio-desk h4.terques {
@@ -164,13 +166,6 @@
 
 .bio-desk h4.purple {
     color: #30537c;
-}
-
-.red,
-.terques,
-.green,
-.purple {
-    font-weight: bold;
 }
 
 .file-pos {
@@ -372,3 +367,21 @@ ul.summary-list > li:last-child  {
 .activity-desk .album a:last-child{
     margin-right: 0px;
 }
+
+.container_information_quizz {
+    background: #0000007a;
+    margin-bottom: 90px;
+    border: white 3px solid;
+    border-radius: 10px;
+}
+
+.titre_profil_utilisateur {
+    text-decoration: underline;
+}
+#tableau_profil_info {
+    margin-bottom: 70px;
+}
+
+
+
+

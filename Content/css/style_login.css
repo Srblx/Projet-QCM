@@ -9,9 +9,16 @@ margin-bottom: 10rem;
 }
 
 .link_condition_generales {
-  text-decoration: underline;
-  color: rgb(255, 83, 244);
+  text-decoration: none;
+  color: black;
 }
+
+.link_condition_generales:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+
 
 .text_condition_generales {
   text-align: left;
@@ -162,7 +169,7 @@ margin-bottom: 10rem;
 }
 
 .up:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 

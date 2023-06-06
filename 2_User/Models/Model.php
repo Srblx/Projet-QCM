@@ -83,7 +83,8 @@ class Model
         FROM repondre
         INNER JOIN user ON repondre.user_id = user.id
         INNER JOIN theme ON repondre.theme_id = theme.id
-        ORDER BY scores DESC
+        ORDER BY scores DESC, temps ASC
+        LIMIT 50
         ");
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
@@ -99,7 +100,7 @@ class Model
             INNER JOIN theme ON repondre.theme_id = theme.id
             WHERE repondre.theme_id = :theme
             AND repondre.niveau = :niveau
-            ORDER BY scores DESC
+            ORDER BY scores DESC, temps ASC
             LIMIT 10");
 
         $r->bindParam(':theme', $theme);

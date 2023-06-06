@@ -3,17 +3,17 @@
 require_once('../config.php');
 
 class Model
-{   //* Début de la Classe
+{ //* Début de la Classe
 
     private $bd;
 
     private static $instance = null;
 
     /*
-         * Constructeur créant l'objet PDO et l'affectant à $bd
-         */
+     * Constructeur créant l'objet PDO et l'affectant à $bd
+     */
     private function __construct()
-    {  //* Fonction qui sert à faire le lien avec la BDD
+    { //* Fonction qui sert à faire le lien avec la BDD
 
         $this->bd = new PDO(DSN, LOGIN, MDP);
         $this->bd->query("SET NAMES 'utf8'");
@@ -31,8 +31,8 @@ class Model
         }
         return self::$instance;
     }
-    
-    public function get_all_user() 
+
+    public function get_all_user()
     {
         $query = ("SELECT * FROM user;");
         $r = $this->bd->prepare($query);
@@ -84,10 +84,10 @@ class Model
 
         $r = $this->bd->prepare($query);
         $r->execute();
-        return $r->fetchAll(PDO::FETCH_OBJ);        
+        return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    
-    
+
+
     public function get_all_niveau()
     {
         $query = "SELECT DISTINCT niveau FROM question";
@@ -139,7 +139,7 @@ class Model
     //! ////////////// fin code Mathieu //////////////////////////////
 
 
-        public function get_all_user_name_affiche()
+    public function get_all_user_name_affiche()
     {
         $name = $_POST["all_name_user"];
 
@@ -159,7 +159,7 @@ class Model
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    
+
     public function get_all_user_mail_affiche()
     {
         $email = $_POST["all_mail_user"];
@@ -179,7 +179,7 @@ class Model
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
-    
+
     public function get_all_question_reponse_recherche_theme()
     {
         $theme = $_POST["all_question_reponse_theme"];
@@ -192,12 +192,11 @@ class Model
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
- 
-    
+
     public function get_all_question_reponse_difficulte()
     {
         $niveau = $_POST["all_question_reponse_difficulte"];
-        
+
         $r = $this->bd->prepare("SELECT * FROM question q 
         INNER JOIN reponse r ON q.id = r.question_id
         WHERE niveau = :niveau;");
@@ -205,11 +204,11 @@ class Model
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    
+
     public function get_all_question_reponse_time()
     {
         $temps = $_POST["all_question_reponse_time"];
-        
+
         $r = $this->bd->prepare("SELECT * FROM question q 
         INNER JOIN reponse r ON q.id = r.question_id
         WHERE tps_question = :temps;");
@@ -217,15 +216,15 @@ class Model
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    
-    
+
+
     public function get_all_result()
     {
         $r = $this->bd->prepare("SELECT user.id AS user_id, user.pseudo, repondre.scores, repondre.temps, theme.id AS theme_id, theme.nom_theme, repondre.niveau, repondre.id FROM repondre INNER JOIN user ON repondre.user_id = user.id INNER JOIN theme ON repondre.theme_id = theme.id ORDER BY scores DESC");
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
-   
+
     public function get_all_result_score()
     {
         $score = $_POST["all_score_resultat"];
@@ -237,7 +236,7 @@ class Model
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    
+
     public function get_all_score_nom()
     {
         $nom_score = $_POST["all_user_resultat_nom"];
@@ -249,7 +248,7 @@ class Model
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
-    
+
     public function get_all_score_mail()
     {
         $mail_score = $_POST["all_mail_user"];
@@ -312,7 +311,7 @@ class Model
         $r->execute();
     }
 
-      
+
     public function get_random_question()
     {
         // Récupère une liste de questions aléatoires en fonction de l'ID du thème et du niveau
@@ -367,7 +366,8 @@ class Model
         FROM repondre
         INNER JOIN user ON repondre.user_id = user.id
         INNER JOIN theme ON repondre.theme_id = theme.id
-        ORDER BY scores DESC
+        ORDER BY scores DESC, temps ASC
+        LIMIT 50
         ");
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
@@ -383,7 +383,7 @@ class Model
             INNER JOIN theme ON repondre.theme_id = theme.id
             WHERE repondre.theme_id = :theme
             AND repondre.niveau = :niveau
-            ORDER BY scores DESC
+            ORDER BY scores DESC, temps ASC
             LIMIT 10");
 
         $r->bindParam(':theme', $theme);
@@ -404,6 +404,7 @@ class Model
         $r->execute();
         return $r->fetch(PDO::FETCH_OBJ);
     }
+
 
     // test Mathieu //
 
@@ -426,5 +427,23 @@ class Model
         $r->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
         $r->bindParam(':email', $email, PDO::PARAM_STR);
         $r->execute();
+
+    public function valid_input($data)
+    {
+        //todo Supprime les espaces en début et fin de chaîne
+        $data = trim($data);
+        //todo Supprime les barres obliques inverses de la chaîne
+        $data = stripslashes($data);
+        //todo Supprime les balises et les caractères spéciaux
+        $data = htmlspecialchars($data);
+        // $data = filter_var($data, FILTER_SANITIZE_STRING);
+        //todo Convertit les caractères spéciaux en entités HTML
+        // $data = filter_var($data, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        //todo Encode les caractères spéciaux en UTF-8
+        // $data = filter_var($data, FILTER_SANITIZE_ENCODED);
+        //todo Retourne la chaîne de caractères validée
+        return $data;
+
     }
 }
+

@@ -83,7 +83,8 @@ class Model
         FROM repondre
         INNER JOIN user ON repondre.user_id = user.id
         INNER JOIN theme ON repondre.theme_id = theme.id
-        ORDER BY scores DESC
+        ORDER BY scores DESC, temps ASC
+        LIMIT 50
         ");
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
@@ -99,7 +100,7 @@ class Model
             INNER JOIN theme ON repondre.theme_id = theme.id
             WHERE repondre.theme_id = :theme
             AND repondre.niveau = :niveau
-            ORDER BY scores DESC
+            ORDER BY scores DESC, temps ASC
             LIMIT 10");
 
         $r->bindParam(':theme', $theme);
@@ -119,5 +120,22 @@ class Model
             LIMIT 1");
         $r->execute();
         return $r->fetch(PDO::FETCH_OBJ);
+    }
+
+    function valid_input($data)
+    {
+        //todo Supprime les espaces en début et fin de chaîne
+        $data = trim($data);
+        //todo Supprime les barres obliques inverses de la chaîne
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        //todo Supprime les balises et les caractères spéciaux
+        // $data = filter_var($data, FILTER_SANITIZE_STRING);
+        //todo Convertit les caractères spéciaux en entités HTML
+        // $data = filter_var($data, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        //todo Encode les caractères spéciaux en UTF-8
+        // $data = filter_var($data, FILTER_SANITIZE_ENCODED);
+        //todo Retourne la chaîne de caractères validée
+        return $data;
     }
 }

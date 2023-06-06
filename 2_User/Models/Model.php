@@ -121,4 +121,21 @@ class Model
         $r->execute();
         return $r->fetch(PDO::FETCH_OBJ);
     }
+
+    function valid_input($data)
+    {
+        //todo Supprime les espaces en début et fin de chaîne
+        $data = trim($data);
+        //todo Supprime les barres obliques inverses de la chaîne
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        //todo Supprime les balises et les caractères spéciaux
+        // $data = filter_var($data, FILTER_SANITIZE_STRING);
+        //todo Convertit les caractères spéciaux en entités HTML
+        // $data = filter_var($data, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        //todo Encode les caractères spéciaux en UTF-8
+        // $data = filter_var($data, FILTER_SANITIZE_ENCODED);
+        //todo Retourne la chaîne de caractères validée
+        return $data;
+    }
 }

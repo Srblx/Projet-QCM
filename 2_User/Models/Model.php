@@ -121,5 +121,45 @@ class Model
         return $r->fetch(PDO::FETCH_OBJ);
     }
 
+    
+    public function get_count_quizz_user_html()
+    {
+        $id_user = $_SESSION["id"];
+        $query = "SELECT COUNT(*) AS total FROM repondre r
+        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 1"; 
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_count_quizz_user_css()
+    {
+        $id_user = $_SESSION["id"];
+        $query = "SELECT COUNT(*) AS total FROM repondre r
+        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 2"; 
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_count_quizz_user_js()
+    {
+        $id_user = $_SESSION["id"];
+        $query = "SELECT COUNT(*) AS total FROM repondre r
+        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 3"; 
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get_count_quizz_user_php()
+    {
+        $id_user = $_SESSION["id"];
+        $query = "SELECT COUNT(*) AS total FROM repondre r
+        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 4"; 
+        $r = $this->bd->prepare($query);
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
   
 }

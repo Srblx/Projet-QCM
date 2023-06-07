@@ -3,3 +3,5 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "?controller=choice&action=choice";
     });
 });
+
+

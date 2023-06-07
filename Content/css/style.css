@@ -135,3 +135,24 @@ body {
     opacity: 1;
   }
 }
+
+.show > .navbar-nav {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 5px;
+  top: 4rem;
+  background: #0000006e;
+  text-align: right;
+  padding: 5px 20px 5px 20px;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+  z-index: 10;
+}
+
+.navbar-toggler {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 7px;
+}

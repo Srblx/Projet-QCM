@@ -1,0 +1,25 @@
+.mention_legal_text {
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+
+}
+
+.mention_legal_text > p {
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.mention_legal_text > ul {
+    list-style: none;
+}
+
+.liste_mention_legal {
+    margin-bottom: 20px;
+}
+
+.liste_mention_legal > b {
+    text-decoration: underline;
+}
+
+

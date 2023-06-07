@@ -1,4 +1,3 @@
-
 <div class="container bootstrap snippets bootdey">
 <div class="row">
   <div class="profile-nav col-md-3">

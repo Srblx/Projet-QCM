@@ -71,8 +71,6 @@
 <style>
     .scroll-animation {
   width: 100%;
-  height: 2000px; /* Hauteur de votre contenu pour créer une barre de défilement */
-  overflow-y: scroll;
 }
 
 /* Style personnalisé pour la barre de défilement */

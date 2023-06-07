@@ -151,7 +151,8 @@ class Controller_question_correction extends Controller
                 $m->get_insert_repondre($score, $temps, $niveau, $user_id, $theme_id);
 
                 unset($_SESSION['timer']);
-                header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");
+                // header("Location: ./?controller=leaderboard&action=leaderboard_fin_quizz");
+                echo '<script>window.location.href="?controller=leaderboard&action=leaderboard_fin_quizz"</script>';
             }
         }
     }
@@ -175,7 +176,8 @@ class Controller_question_correction extends Controller
 
             $this->render("correction", $data);
         } else {
-            header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");
+            // header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");
+            echo '<script>window.location.href="?controller=leaderboard&action=leaderboard_fin_quizz"</script>';
         }
     }
 }

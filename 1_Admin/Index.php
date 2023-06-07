@@ -34,6 +34,7 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
     <link rel="stylesheet" href="./Content/css/style_question.css">
     <link rel="stylesheet" href="./Content/css/style_contact.css">
     <link rel="stylesheet" href="./Content/css/style_about.css">
+    <link rel="stylesheet" href="./Content/css/style_mention_legal.css">
     <link rel="stylesheet" href="./Content/css/style_demarrage_quizz.css">
     <link rel="stylesheet" href="./Content/css/style_profile.css">
 
@@ -42,8 +43,6 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- link boostrap -->
 
     <!-- Link font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -54,8 +53,10 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"
         defer></script>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <script src="./Content/js/app_nav.js" defer></script>
+
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+
 </head>
 
 <body>

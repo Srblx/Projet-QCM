@@ -24,6 +24,7 @@ class Controller_question_correction extends Controller
         $this->render("generate_questions", $data);
     }
 
+
     public function action_une_question()
     {
         $cpt = $_SESSION['cpt'];

@@ -1,4 +1,6 @@
-<a href="?controller=crud&action=crud" class="link_back_up_crud">Effectuer une nouvelle recherche</a>
+<div class="crud_new_search">
+	<a href="?controller=crud&action=crud" class="link_back_up_crud">Effectuer une nouvelle recherche</a>
+</div>
 
 <?php if ($position == 1 ) :  ?>
 <table class='table'>

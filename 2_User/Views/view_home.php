@@ -12,4 +12,7 @@ if (isset($_SESSION['theme']) || isset($_SESSION['niveau'])) {
   unset($_SESSION['theme']);
   unset($_SESSION['niveau']);
 }
+
+var_dump($_SESSION);
+
 ?>

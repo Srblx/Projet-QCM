@@ -55,7 +55,7 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"
         defer></script>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
+        <script src="./Content/js/app_nav.js" defer></script>
 </head>
 
 <body>

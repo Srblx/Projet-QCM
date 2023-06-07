@@ -1,3 +1,4 @@
+<header>
 <!-- Barre de navigation -->
 <nav class="navbar navbar-expand-lg navbar-light" id="nav_nav">
 	<a class="navbar-brand" href="?controller=home&action=home"><img src="Content/img/logo_detoure.png" alt="" width="3%" class="img_logo_nav">

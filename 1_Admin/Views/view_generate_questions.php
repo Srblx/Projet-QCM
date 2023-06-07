@@ -8,5 +8,5 @@ $_SESSION['ListeReponseUser'] = $ListeReponseUser;
 
 /* var_dump($_SESSION['liste_id']); */
 
-header(('Location: ?controller=question_correction&action=une_question'));
+header('Location: ?controller=question_correction&action=une_question');
 ?>

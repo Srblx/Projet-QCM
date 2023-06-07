@@ -11,7 +11,7 @@ a:active {
 }
 
 .nav-link {
-  font-weight: bold;
+  font-weight: bold !important;
   color: #ffffff !important;
 }
 
@@ -70,6 +70,10 @@ body {
     rgb(255, 56, 172) 100%
   );
   transition: all 0.1s;
+}
+
+.link-home-btn-jouer {
+  text-decoration: none !important;
 }
 
 #home-btn-jouer:hover {

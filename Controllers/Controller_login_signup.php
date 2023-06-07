@@ -92,12 +92,8 @@ class Controller_login_signup extends Controller
 					header('Location: 2_User/?controller=home&action=home');
 					exit();
 				}
-				if (!$user) {
-					header('Location: ?controller=home&action=home');
-					exit();
-				}
 			}
-			$this->render("home");
+			$this->render("login");
 		}
 	}
 

@@ -71,25 +71,9 @@ class Model
         $stmt = $this->bd->prepare($requete);
         $stmt->bindParam(':Mail', $Mail);
         $stmt->execute();
-        $row = $stmt->fetch();
-
-
-        if ($stmt->rowCount() < 0) {
-
-            $requete2 = "UPDATE user SET password = :password  WHERE email = :mail";
-            $stmt2 = $this->bd->prepare($requete2);
-            $stmt2->bindParam(':mail', $Mail);
-            $stmt2->bindParam(':password', $Password);
-            $stmt2->execute();
-
-        } else if ($stmt->rowCount() > 0) {
-
-            exit('Cet email existe déjà');
-        }
-
+        $stmt->fetch();
 
         if ($stmt->rowCount() == 0) {
-
 
             $r = "INSERT INTO user (`nom`, `prenom`, `pseudo`, `email`, `password`, `admin`) VALUES (:Nom, :Prenom, :pseudo, :Mail, :Password, '0')";
             $stmt = $this->bd->prepare($r);
@@ -100,8 +84,12 @@ class Model
                 ':Mail' => $Mail,
                 ':Password' => $Password
             ]);
+            $error = false; // Pas d'erreur
+        } else {
+            $error = true; // L'e-mail existe déjà
         }
 
+        return $error;
     }
 
     public function get_connexion_utilisateur($email, $password)

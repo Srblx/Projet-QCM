@@ -49,16 +49,16 @@ class Controller_login_signup extends Controller
 
 			// Insertion dans la base de données via le modèle
 			$m = Model::get_model();
-			$m->get_inscription($Nom, $Prenom, $Pseudo, $Mail, $hashedPassword);
+			$error = $m->get_inscription($Nom, $Prenom, $Pseudo, $Mail, $hashedPassword);
 
-			$this->render("login");
+			if ($error) {
+				$data['error'] = "L'e-mail existe déjà.";
+				$this->render("signup", $data);
+			} else {
+				$this->render("login");
+			}
 
-		} else {
-
-			$this->render("connexion");
 		}
-
-		$this->render("login");
 	}
 
 	public function action_login_validate()
@@ -73,7 +73,7 @@ class Controller_login_signup extends Controller
 				$nom = $user->nom;
 				$prenom = $user->prenom;
 				$pseudo = $user->pseudo;
-				$mail = $user->email;
+				$mail = $user->mail;
 				$est_administrateur = $user->admin;
 				if (session_status() != PHP_SESSION_ACTIVE) {
 					session_start();

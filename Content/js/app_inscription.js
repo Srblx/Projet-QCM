@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let form = document.querySelector(".form");
     form.addEventListener("submit", function (event) {
       event.preventDefault(); // Empêche la soumission du formulaire par défaut
-      
+
       // Récupération des valeurs des champs
       let nom = document.querySelector(".input-nom").value.trim();
       let prenom = document.querySelector(".input-prenom").value.trim();
@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
       let password = document.querySelector(".input-pwd").value;
       let confirmPassword = document.querySelector(".input-cpwd").value;
       let checkBox = document.querySelector("#condition_general");
-      
+
       // Réinitialisation des messages d'erreur
       let errorMessages = document.querySelectorAll(".error-message");
       for (let i = 0; i < errorMessages.length; i++) {
         errorMessages[i].textContent = "";
       }
-      
+
       // Validation des conditions
       let isValid = true;
       console.log(isValid);
@@ -51,8 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (password === "") {
-        document.querySelector(".error-message-password").textContent =
-          "Ce champ est obligatoire";
+        document.querySelector(".error-message-password").textContent = "Ce champ est obligatoire";
         isValid = false;
       } else if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}/.test(password)) {
         document.querySelector(".error-message-password").textContent =
@@ -61,8 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (confirmPassword === "") {
-        document.querySelector(".error-message-cpassword").textContent =
-          "Ce champ est obligatoire";
+        document.querySelector(".error-message-cpassword").textContent = "Ce champ est obligatoire";
         isValid = false;
       } else if (confirmPassword !== password) {
         document.querySelector(".error-message-cpassword").textContent =
@@ -83,6 +81,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-
-

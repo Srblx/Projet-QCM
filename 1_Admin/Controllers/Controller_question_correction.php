@@ -24,6 +24,7 @@ class Controller_question_correction extends Controller
         $this->render("generate_questions", $data);
     }
 
+
     public function action_une_question()
     {
         $cpt = $_SESSION['cpt'];
@@ -88,14 +89,14 @@ class Controller_question_correction extends Controller
 
 
             $m = Model::get_model();
-            if ($cpt < 19) {
+            if ($cpt < 9) {
                 $liste_id = $_SESSION['liste_id'];
                 $id_question = $liste_id[$cpt]->id;
                 $LreponseUser = $_SESSION['ListeReponseUser'];
                 $reponseUser = $LreponseUser[$cpt];
                 $LreponseDB = $_SESSION['ListeReponseDB'];
                 $reponseDB = $LreponseDB[$cpt];
-               // echo $reponseDB . " " . $reponseUser;
+                // echo $reponseDB . " " . $reponseUser;
 
                 if ($reponseDB == $reponseUser) {
                     $score = $_SESSION['score'];
@@ -150,7 +151,8 @@ class Controller_question_correction extends Controller
                 $m->get_insert_repondre($score, $temps, $niveau, $user_id, $theme_id);
 
                 unset($_SESSION['timer']);
-                header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");
+                // header("Location: ./?controller=leaderboard&action=leaderboard_fin_quizz");
+                echo '<script>window.location.href="?controller=leaderboard&action=leaderboard_fin_quizz"</script>';
             }
         }
     }
@@ -174,7 +176,8 @@ class Controller_question_correction extends Controller
 
             $this->render("correction", $data);
         } else {
-            header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");
+            // header("Location: ?controller=leaderboard&action=leaderboard_fin_quizz");
+            echo '<script>window.location.href="?controller=leaderboard&action=leaderboard_fin_quizz"</script>';
         }
     }
 }

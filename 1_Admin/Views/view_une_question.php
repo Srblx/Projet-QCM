@@ -9,7 +9,7 @@ echo $_SESSION['niveau']; */
     <div class="infos_question_qcm">
         <div class="compteur_question_qcm">
             <p>Question
-                <?= $_SESSION['cpt'] + 1 ?>/20
+                <?= $_SESSION['cpt'] + 1 ?>/10
             </p>
         </div>
         <div class="timer">

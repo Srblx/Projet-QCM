@@ -321,7 +321,7 @@ class Model
             SELECT id
             FROM question WHERE theme_id = :id AND question.niveau = :niveau
             ORDER BY RAND()
-            LIMIT 20
+            LIMIT 10
         ");
         $r->bindParam(':id', $id, PDO::PARAM_INT);
         $r->bindParam(':niveau', $niveau, PDO::PARAM_STR);
@@ -411,7 +411,7 @@ class Model
     {
         $id_user = $_SESSION["id"];
         $query = "SELECT COUNT(*) AS total FROM repondre r
-        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 1"; 
+        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 1";
         $r = $this->bd->prepare($query);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
@@ -421,7 +421,7 @@ class Model
     {
         $id_user = $_SESSION["id"];
         $query = "SELECT COUNT(*) AS total FROM repondre r
-        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 2"; 
+        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 2";
         $r = $this->bd->prepare($query);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
@@ -431,7 +431,7 @@ class Model
     {
         $id_user = $_SESSION["id"];
         $query = "SELECT COUNT(*) AS total FROM repondre r
-        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 3"; 
+        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 3";
         $r = $this->bd->prepare($query);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
@@ -441,7 +441,7 @@ class Model
     {
         $id_user = $_SESSION["id"];
         $query = "SELECT COUNT(*) AS total FROM repondre r
-        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 4"; 
+        INNER JOIN theme t ON r.theme_id = t.id WHERE r.user_id = $id_user AND t.id = 4";
         $r = $this->bd->prepare($query);
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);

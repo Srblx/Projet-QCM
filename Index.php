@@ -37,6 +37,8 @@
     <!-- link js -->
     <script src="./Content/js/app_home.js" defer></script>
     <script src="./Content/js/app_login.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="./Content/js/emailJS.js" defer></script>
     <script src="./Content/js/app_inscription.js" defer></script>
     <script src="./Content/js/app_nav.js" defer></script>
 

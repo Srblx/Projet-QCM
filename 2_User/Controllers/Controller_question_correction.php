@@ -89,14 +89,14 @@ class Controller_question_correction extends Controller
 
 
             $m = Model::get_model();
-            if ($cpt < 19) {
+            if ($cpt < 9) {
                 $liste_id = $_SESSION['liste_id'];
                 $id_question = $liste_id[$cpt]->id;
                 $LreponseUser = $_SESSION['ListeReponseUser'];
                 $reponseUser = $LreponseUser[$cpt];
                 $LreponseDB = $_SESSION['ListeReponseDB'];
                 $reponseDB = $LreponseDB[$cpt];
-               // echo $reponseDB . " " . $reponseUser;
+                // echo $reponseDB . " " . $reponseUser;
 
                 if ($reponseDB == $reponseUser) {
                     $score = $_SESSION['score'];

@@ -1,33 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
-a,
-a:visited,
-a:hover,
-a:active {
-  color: inherit;
-  text-decoration: none;
-}
-
-#nav_nav {
-  padding: 15px 8rem;
-}
-
-.nav-link {
-  font-weight: bold;
-  color: #ffffff !important;
-}
-
-.navbar-brand {
-  font-weight: bold;
-}
-
-.img_logo_nav {
-  min-width: 25px;
-}
-
-.navbar-brand {
-  font-weight: bold;
-}
 
 body {
   background-image: linear-gradient(

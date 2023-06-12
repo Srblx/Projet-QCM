@@ -6,17 +6,6 @@ a:active {
   text-decoration: none !important;
 }
 
-body {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(255, 129, 203, 1),
-    rgba(255, 203, 234, 1),
-    rgba(255, 154, 213, 1)
-  );
-  background-attachment: fixed;
-  background-size: cover;
-}
-
 #nav_nav {
   padding: 15px 8rem;
 }
@@ -30,6 +19,38 @@ a.navbar-brand {
   font-weight: bold;
   width: 100%;
   color: black !important;
+}
+
+.show > .navbar-nav {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 5px;
+  top: 4rem;
+  background: #0000006e;
+  text-align: right;
+  padding: 5px 20px 5px 20px;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+  z-index: 10;
+}
+
+.navbar-toggler {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 7px;
+}
+
+a.dropdown-item {
+  background: transparent;
+}
+
+.dropdown-menu.show {
+  background-image: linear-gradient(to bottom,
+      rgba(255, 129, 203, 1),
+      rgba(255, 203, 234, 1),
+      rgba(255, 154, 213, 1));
 }
 
 
@@ -118,42 +139,3 @@ a.navbar-brand {
   flex: 1 0 auto;
 }
 
-#sticky-footer {
-  background-color: rgba(0, 0, 0, 0.533) !important;
-}
-
-.text_footer {
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.mention {
-  text-decoration: underline;
-}
-
-.text-white-50 {
-  color: white !important;
-}
-
-
-.show > .navbar-nav {
-  position: absolute;
-  right: 0;
-  margin-right: 20px;
-  margin-top: 5px;
-  top: 4rem;
-  background: #0000006e;
-  text-align: right;
-  padding: 5px 20px 5px 20px;
-  border-radius: 0.5rem;
-  border: 2px solid black;
-  z-index: 10;
-}
-
-.navbar-toggler {
-  position: absolute;
-  right: 0;
-  margin-right: 20px;
-  margin-top: 7px;
-}

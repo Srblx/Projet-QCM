@@ -11,6 +11,8 @@ body {
       rgba(255, 129, 203, 1),
       rgba(255, 203, 234, 1),
       rgba(255, 154, 213, 1));
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #nav_nav {
@@ -26,15 +28,6 @@ a.navbar-brand {
   font-weight: bold;
   width: 100%;
   color: black !important;
-}
-
-body {
-  background-image: linear-gradient(to bottom,
-      rgba(255, 129, 203, 1),
-      rgba(255, 203, 234, 1),
-      rgba(255, 154, 213, 1));
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 /* Footer */

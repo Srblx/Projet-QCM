@@ -13,6 +13,7 @@
     <script src="Content/js/app.js" defer></script>
     <!-- link css -->
     <link rel="stylesheet" href="Content/css/style.css">
+    <link rel="stylesheet" href="Content/css/style_nav.css">
     <link rel="stylesheet" href="Content/css/style_about.css">
     <link rel="stylesheet" href="Content/css/style_contact.css">
     <link rel="stylesheet" href="Content/css/style_login.css">

@@ -34,7 +34,7 @@ $_SESSION['niveau'] = $_GET['niveau'];
             </p>
             <img src="./Content/img/<?= $_GET['theme'] ?>.png" alt="" class="img_section_demarrage"
                 id="img_section_demarrage">
-            <p class="para_section_demarrage">Ce QCM comporte 20 questions, pour chaque question vous avez 45
+            <p class="para_section_demarrage">Ce QCM comporte 10 questions, pour chaque question vous avez 45
                 secondes pour
                 répondre.</p>
             <a

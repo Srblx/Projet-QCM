@@ -1,5 +1,5 @@
 <main id="login_main">
-  <form class="form" action="?controller=login_signup&action=login_validate" method="POST">
+  <form class="form" id="form_login" action="?controller=login_signup&action=login_validate" method="POST">
     <div class="form-title"><span>Connexion a votre compte</span></div>
     <div class="title-2">ByteMaster</div>
     <div class="input-container">

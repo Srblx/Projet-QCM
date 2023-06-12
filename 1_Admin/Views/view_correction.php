@@ -2,7 +2,7 @@
     <div class="infos_question_qcm">
         <div class="compteur_question_qcm">
             <p>Question
-                <?= $_SESSION['cpt'] + 2 ?>/20
+                <?= $_SESSION['cpt'] + 2 ?>/10
             </p>
         </div>
     </div>

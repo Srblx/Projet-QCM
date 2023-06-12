@@ -6,6 +6,26 @@ a:active {
   text-decoration: none;
 }
 
+#nav_nav {
+  padding: 15px 8rem;
+}
+
+.nav-link {
+  font-weight: bold !important;
+  color: #ffffff !important;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.img_logo_nav {
+  min-width: 25px;
+}
+
+/* .navbar-brand {
+  width: 100%;
+} */
 
 body {
   background-image: linear-gradient(
@@ -18,12 +38,12 @@ body {
   background-size: cover;
 }
 
-
 #home-main {
   /* margin: 30% 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 8rem;
 }
 
 #home-h1-bytemaster {
@@ -33,6 +53,7 @@ body {
 }
 
 #home-btn-jouer {
+  min-width: 300px;
   width: 43%;
   height: auto;
   padding-top: 2rem;
@@ -40,7 +61,7 @@ body {
   border-radius: 40px;
   text-transform: uppercase;
   cursor: pointer;
-  margin: 1rem 0 20% 0;
+  margin: 1rem 0 2% 0;
   border: 2px solid black;
   box-shadow: 4px 4px 5px black;
   background: radial-gradient(
@@ -48,14 +69,41 @@ body {
     rgba(255, 255, 255, 0.5) 0%,
     rgb(255, 56, 172) 100%
   );
+  transition: all 0.1s;
+}
+
+.link-home-btn-jouer {
+  text-decoration: none !important;
+}
+
+#home-btn-jouer:hover {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#home-logo-img {
+  min-width: 250px;
+  min-height: 130px;
+  width: 30%;
+  height: 60%;
 }
 
 #home-span-jouer {
-  font-size: 3vw;
+  font-size: 4vh;
   color: rgb(0, 0, 0);
   font-weight: bold;
 }
-
 
 #about-main {
   padding: 2rem;
@@ -82,7 +130,44 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
+}
+
+.show > .navbar-nav {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 5px;
+  top: 4rem;
+  background: #0000006e;
+  text-align: right;
+  padding: 5px 20px 5px 20px;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+  z-index: 10;
+  width: 90%;
+  height: 40vh;
+}
+
+.navbar-toggler {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 7px;
+}
+
+a.dropdown-item {
+  background: transparent;
+}
+
+.dropdown-menu.show {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 129, 203, 1),
+    rgba(255, 203, 234, 1),
+    rgba(255, 154, 213, 1)
+  );
 }

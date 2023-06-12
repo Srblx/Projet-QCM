@@ -56,6 +56,8 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 1) {
         defer></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="./Content/js/app_nav.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="./Content/js/emailJS.js" defer></script>
 </head>
 
 <body>

@@ -12,6 +12,9 @@
 	<div class="container text-center">
 		<small class="text_footer">Copyright 2023 &copy; ByteMaster</small>
 		<a href="?controller=home&action=mention_legal" class="text_footer mention">Mentions Légales</a>
-		<p class="text_footer">Alexis | Mathieu | Alex | Ahmed</p>
+		<p class="text_footer"><a href="https://serbelloni.vercel.app/">Alexis<a> | <a
+						href="https://soussignan.netlify.app/">Mathieu<a> | <a
+								href="https://rusescu-alexandru.netlify.app/">Alex<a>
+									| <a href="https://github.com/4hm3dx">Ahmed<a> </p>
 	</div>
 </footer>

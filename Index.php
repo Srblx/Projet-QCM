@@ -32,9 +32,10 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"
         defer></script>
 
-        
+
 
     <!-- link js -->
+    <script src="./Content/js/app_login.js" defer></script>
     <script src="./Content/js/app_inscription.js" defer></script>
     <script src="./Content/js/app_nav.js" defer></script>
 

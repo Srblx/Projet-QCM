@@ -1,3 +1,12 @@
+<?php
+
+if (isset($_SESSION['error'])) {
+  echo $_SESSION['error'];
+  unset($_SESSION['error']);
+}
+
+?>
+
 <main id="login_main">
   <form class="form" id="form_login" action="?controller=login_signup&action=login_validate" method="POST">
     <div class="form-title"><span>Connexion a votre compte</span></div>

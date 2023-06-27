@@ -77,12 +77,12 @@ class Model
                 return $user;
             } else {
                 // Le mot de passe est incorrect
-                echo "<script>alert('Le mot de passe est incorrect !');</script>";
+                $_SESSION['error'] = "<script>alert('Le mot de passe est incorrect !');</script>";
                 return false;
             }
         } else {
             // L'utilisateur n'existe pas dans la base de données
-            echo "<script>alert('Cette adresse e-mail n\'est pas enregistrée, veuillez vous inscrire !');</script>";
+            $_SESSION['error'] = "<script>alert('Cette adresse e-mail n\'est pas enregistrée, veuillez vous inscrire !');</script>";
             return false;
         }
     }

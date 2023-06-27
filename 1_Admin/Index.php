@@ -12,7 +12,7 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -22,6 +22,7 @@ if (isset($_SESSION['login']) && $_SESSION['admin'] == 0) {
 
     <!-- link js -->
 
+    <script src="./Content/js/about.js" defer></script>
     <script src="./Content/js/question.js" defer></script>
 
     <!-- link css -->

@@ -1,10 +1,12 @@
-Ce projet est actuellement en cours de developpement !
+## ByteMaster
+
+Ce projet est actuellement en cours de développement !
 
 Bienvenue sur notre projet !
 
-## Nom-du-Projet
+## ByteMaster
 
-Description succincte du projet réalisé en utilisant [Technologie-1](lien-vers-technologie-1), [Technologie-2](lien-vers-technologie-2), [Technologie-3](lien-vers-technologie-3), etc.
+Description succincte du projet réalisé en utilisant les technologies HTML, CSS, JavaScript et PHP avec une architecture MVC.
 
 <a href="http://bytemaster.alwaysdata.net/" target="_blank">**Voir en ligne** 🚀</a>
 
@@ -26,4 +28,6 @@ Bienvenue dans notre projet, bienvenue sur ByteMaster.
 
 © 2023
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) by <p class="text_footer"><a href="https://serbelloni.vercel.app/">Alexis<a> | <a
+            href="https://soussignan.netlify.app/">Mathieu<a> | <a href="https://rusescu-alexandru.netlify.app/">Alex<a>
+| <a href="https://github.com/4hm3dx">Ahmed<a> </p>

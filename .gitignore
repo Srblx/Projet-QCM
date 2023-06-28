@@ -9,7 +9,6 @@ yarn-error.log*
 Thumbs.db
 
 # Dossiers spécifiques à certains langages ou outils
-/Config
 /node_modules
 /vendor
 /.idea
@@ -32,6 +31,6 @@ yarn.lock
 /log
 
 # Fichiers de données sensibles
-config.php
+Utils/config.php
 database.php
 secrets.json

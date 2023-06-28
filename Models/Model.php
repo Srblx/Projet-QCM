@@ -1,6 +1,6 @@
 <?php
 
-require_once('./Config/config.php');
+require_once('./Utils/config.php');
 
 class Model
 { //* Début de la Classe

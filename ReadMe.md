@@ -2,6 +2,16 @@ Ce projet est actuellement en cours de developpement !
 
 Bienvenue sur notre projet !
 
+## Nom-du-Projet
+
+Description succincte du projet réalisé en utilisant [Technologie-1](lien-vers-technologie-1), [Technologie-2](lien-vers-technologie-2), [Technologie-3](lien-vers-technologie-3), etc.
+
+<a href="http://bytemaster.alwaysdata.net/" target="_blank">**Voir en ligne** 🚀</a>
+
+## 📌 Aperçu du projet 🙈 :
+
+![Capture-d-écran](./Content/img/accueil_screen.png)
+
 Notre projet est le fruit d'une collaboration passionnante et d'un travail d'équipe. Nous avons mis tout notre savoir-faire et notre créativité pour développer une solution innovante qui répond à vos besoins. Que vous soyez un développeur chevronné ou un débutant curieux, notre projet est conçu pour vous faciliter la vie et vous offrir une expérience exceptionnelle.
 
 Qu'est-ce qui rend notre projet unique ? Nous avons mis l'accent sur la simplicité, la flexibilité et la convivialité. Nous avons veillé à ce que chaque ligne de code soit optimisée, chaque fonctionnalité soigneusement pensée et chaque aspect du projet parfaitement exécuté. Nous avons travaillé dur pour créer une interface intuitive et agréable à utiliser, tout en offrant une multitude de fonctionnalités puissantes pour répondre à vos besoins les plus spécifiques.
@@ -13,3 +23,7 @@ Nous sommes fiers de vous présenter notre travail et nous espérons qu'il vous 
 Rejoignez-nous dans cette aventure passionnante et découvrez comment notre projet peut changer votre façon de développer et d'innover. Ensemble, nous pouvons repousser les limites et construire un avenir meilleur.
 
 Bienvenue dans notre projet, bienvenue sur ByteMaster.
+
+© 2023
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)

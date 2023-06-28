@@ -28,6 +28,6 @@ Bienvenue dans notre projet, bienvenue sur ByteMaster.
 
 © 2023
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) by <p class="text_footer"><a href="https://serbelloni.vercel.app/">Alexis<a> | <a
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) <br> BY <p class="text_footer"><a href="https://serbelloni.vercel.app/">Alexis<a> | <a
             href="https://soussignan.netlify.app/">Mathieu<a> | <a href="https://rusescu-alexandru.netlify.app/">Alex<a>
 | <a href="https://github.com/4hm3dx">Ahmed<a> </p>
